@@ -1,0 +1,40 @@
+\startbuffer[demo]
+<?xml version='1.0' standalone='yes'?>
+<book>
+<chapter>
+<title>The title</title>
+<para>a paragraph of text</para>
+<para>another paragraph of text</para>
+</chapter>
+</book>
+\stopbuffer
+
+\setupbodyfont[modern]
+
+\startxmlsetups xml:demo:base
+ \xmlsetsetup{#1}{*}{xml:demo:*}
+\stopxmlsetups
+
+\xmlregisterdocumentsetup{demo}{xml:demo:base}
+
+\startxmlsetups xml:demo:book
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:demo:chapter
+ \startchapter[title=\xmlfirst{#1}{/title}]
+ \xmlflush{#1}
+ \stopchapter
+\stopxmlsetups
+
+\startxmlsetups xml:demo:title
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:demo:para
+ \xmlflush{#1}\endgraf
+\stopxmlsetups
+
+\starttext
+\xmlprocessbuffer{main}{demo}{}
+\stoptext

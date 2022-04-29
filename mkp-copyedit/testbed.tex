@@ -1,0 +1,34 @@
+\setupbodyfont[modern]
+\setupwhitespace[medium]
+\setuppagenumbering[location=]
+\setuphead[chapter][number=no]
+
+\definehead[LearnObj][section]
+\setuphead[LearnObj][number=no,style=bold]
+
+\setupexternalfigures[directory=C:/Work/svn/MPE graphics]
+
+\starttext
+
+ \startLearnObj[title=Test title]
+  Test content.
+ \stopLearnObj
+
+\startxtable
+\startxtablehead
+\startxrow
+\startxcell one \stopxcell
+\startxcell two \stopxcell
+\stopxrow
+\stopxtablehead
+\startxtablebody
+\startxrow
+\startxcell alpha \stopxcell
+\startxcell beta \stopxcell
+\stopxrow
+\stopxtablebody
+\stopxtable
+
+\externalfigure[mkp-spinaf0108][conversion=mp]
+
+\stoptext

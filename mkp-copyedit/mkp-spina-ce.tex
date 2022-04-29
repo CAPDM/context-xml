@@ -1,0 +1,240 @@
+%Baseline setups
+
+\setupbodyfont[modern,11pt]
+\setupwhitespace[medium]
+\setupalign[right,nothyphenated]
+\setupinterlinespace[line=4ex]
+\setuppagenumbering[location=]
+
+%XML baseline
+
+\startxmlsetups xml:mkp:base
+ \xmlsetsetup{#1}{*}{xml:mkp:*}
+\stopxmlsetups
+
+\xmlregisterdocumentsetup{mkp}{xml:mkp:base}
+
+%Entities
+\xmltexentity{nbsp}{\ }
+
+%Hierarchicals
+
+\startxmlsetups xml:mkp:book
+ \setupheader[state=high]
+ \cbox{\hsize=\makeupwidth\tfd\bf \xmlfirst{#1}{/title}}
+ \page[yes]
+ \setupheader[state=high]
+ \setvariable{book}{title}{\xmlfirst{#1}{/title}}
+ \xmlall{#1}{/!title}
+\stopxmlsetups
+
+\setuphead[chapter][number=no,header=high]
+
+\startxmlsetups xml:mkp:chapter
+ \startchapter[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
+  \setupfootertexts[text][\getvariable{book}{title}][\completepagenumber][\getvariable{book}{title}][\completepagenumber]
+  \xmlall{#1}{/!title}
+ \stopchapter
+ \page[yes]
+\stopxmlsetups
+
+%Features
+
+\definehead[LearnObj][section]
+\setuphead[LearnObj][number=no,style=bold]
+
+\startxmlsetups xml:mkp:learnobj
+ \startLearnObj[title=\xmlfirst{#1}{/title}]
+  \xmlall{#1}{/!title}
+ \stopLearnObj
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:tip
+ \xmlflush{#1}
+\stopxmlsetups
+
+%Lists
+
+\definedescription[varlistentry][headstyle=bold,style=normal,align=flushleft,alternative=serried,width=broad]
+
+\startxmlsetups xml:mkp:variablelist
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:term
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:varlistentry
+ \pagebreak[preference]
+ \startvarlistentry{\xmlfirst{#1}{/term}}
+  {\xmlall{#1}{/!term}}
+ \stopvarlistentry
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:lists
+ \xmlsetsetup{#1}{itemizedlist[@mark='bullet']}{xml:mkp:itemizedlist:bullet}
+\stopxmlsetups
+\xmlregisterdocumentsetup{mkp}{xml:mkp:lists}
+
+\startxmlsetups xml:mkp:itemizedlist:bullet
+ \startitemize[1]
+  \xmlflush{#1}
+ \stopitemize
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:orderedlist
+ \startitemize[n]
+  \xmlflush{#1}
+ \stopitemize
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:listitem
+ \xmldoifelse{#1}{ancestor::variablelist}{
+  \xmlflush{#1}
+ }{
+  \startitem
+   \xmlflush{#1}
+  \stopitem
+ }
+\stopxmlsetups
+
+%Tables
+
+\setupTABLE[offset=.3em,framecolor=gray,split=yes]
+
+\startxmlsetups xml:mkp:informaltable
+ \blank
+ \bTABLE
+  \xmlflush{#1}
+ \eTABLE
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:tgroup
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:thead
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:tbody
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:row
+ \bTR
+  \xmlflush{#1}
+ \eTR
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:entry
+ \xmldoifelse{#1}{ancestor::thead}{
+  \bTH
+   \xmlflush{#1}
+  \eTH
+ }{
+  \bTD
+   \xmlflush{#1}
+  \eTD
+ }
+\stopxmlsetups
+
+%Figures
+
+\setupexternalfigures[directory=C:/Work/svn/MPE graphics,maxwidth=\textwidth]
+
+\startxmlsetups xml:mkp:informalfigure
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:mediaobject
+ \xmldoifatt{#1}{vendor}{playlist}{\color[blue]{Video playlist}}
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:inlinemediaobject
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:imageobject
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:images
+ \xmlsetsetup{#1}{imagedata[@entityref]}{xml:mkp:imagedata:entityref}
+ \xmlsetsetup{#1}{imagedata[@fileref]}{xml:mkp:imagedata:fileref}
+\stopxmlsetups
+\xmlregisterdocumentsetup{mkp}{xml:mkp:images}
+
+\startxmlsetups xml:mkp:imagedata:entityref
+ \starttexcode\externalfigure[\xmlatt{#1}{entityref}][conversion=mp]\stoptexcode
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:imagedata:fileref
+ \starttexcode\externalfigure[\xmlatt{#1}{fileref}][conversion=mp]\stoptexcode
+ \xmlflush{#1}
+\stopxmlsetups
+
+%Callouts
+
+\startxmlsetups xml:mkp:mediaobjectco
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:imageobjectco
+ \blank
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:calloutlist
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:callout
+ \xmlflush{#1}
+\stopxmlsetups
+
+%Shared
+
+\startxmlsetups xml:mkp:para
+ \xmlflush{#1}\endgraf
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:emphases
+ \xmlsetsetup{#1}{emphasis[@role='italic']}{xml:mkp:emphasis:italic}
+ \xmlsetsetup{#1}{emphasis[@role='bold']}{xml:mkp:emphasis:bold}
+\stopxmlsetups
+\xmlregisterdocumentsetup{mkp}{xml:mkp:emphases}
+
+\startxmlsetups xml:mkp:emphasis %default
+ {\bf\xmlflush{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:emphasis:bold
+ {\bf\xmlflush{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:emphasis:italic
+ {\it\xmlflush{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:title
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:bridgehead
+ \pagebreak[preference]
+ {\tfa\bf\xmlflush{#1}}\endgraf
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:ulink % copy-edit format just needs the text and link
+ \xmlflush{#1} {\tfx\color[blue]{\xmlatt{#1}{url}}}
+\stopxmlsetups
+
+%Process
+
+\starttext
+\xmlprocessfile{mkp}{mkp-spina-wb-sample.xml}{}
+\stoptext

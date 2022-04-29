@@ -1,0 +1,83 @@
+\startbuffer[demo]
+<book>
+ <chapter>
+  <title>Chapter title</title>
+  <para>A paragraph of text.</para>
+  <para>Another paragraph of text.</para>
+  <section>
+   <title>Section title</title>
+   <para>A paragraph of text.</para>
+   <para>Another paragraph of text.</para>
+   <informaltable>
+      <row>
+       <entry>First</entry>
+       <entry>Second</entry>
+      </row>
+      <row>
+       <entry>Third</entry>
+       <entry>Fourth</entry>
+      </row>
+   </informaltable>
+  </section>
+ </chapter>
+</book>
+\stopbuffer
+
+\startxmlsetups xml:demo:base
+ \xmlsetsetup{#1}{*}{xml:demo:*}
+\stopxmlsetups
+
+\xmlregisterdocumentsetup{demo}{xml:demo:base}
+
+\startxmlsetups xml:demo:book
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:demo:chapter
+ \startchapter[title=\xmlfirst{#1}{/title}]
+  \xmlall{#1}{/!title}
+ \stopchapter
+\stopxmlsetups
+
+\startxmlsetups xml:demo:section
+ \startsection[title=\xmlfirst{#1}{/title}]
+  \xmlall{#1}{/!title}
+ \stopsection
+\stopxmlsetups
+
+\startxmlsetups xml:demo:title
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:demo:para
+ \xmlflush{#1}\endgraf
+\stopxmlsetups
+
+\startxmlsetups xml:demo:informaltable
+% \startxtable
+ \bTABLE
+  \xmlflush{#1}
+ \eTABLE
+% \stopxtable
+\stopxmlsetups
+
+\startxmlsetups xml:demo:row
+% \startxrow
+ \bTR
+  \xmlflush{#1}
+ \eTR
+% \stopxrow
+\stopxmlsetups
+
+\startxmlsetups xml:demo:entry
+% \startxcell
+ \bTD
+  \xmlflush{#1}
+ \eTD
+% \stopxcell
+\stopxmlsetups
+
+\setupbodyfont[modern]
+\starttext
+\xmlprocessbuffer{demo}{demo}{}
+\stoptext

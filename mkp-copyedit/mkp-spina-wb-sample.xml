@@ -1,0 +1,2814 @@
+<?xml version="1.0"?>
+
+<book id="mkp-spina-wb">
+  <title>Spina Bifida and Hydrocephalus</title>
+  <bookinfo>
+    <authorgroup>
+      <editor>
+        <firstname>Gillian</firstname>
+        <surname>Robinson</surname>
+        <firstname>Katherine</firstname>
+        <surname>Martin</surname>
+        <firstname>Kris </firstname>
+        <surname>Worsley</surname>
+      </editor>
+    </authorgroup>
+    <pubdate>2021</pubdate>
+    <copyright>
+      <year/>
+      <holder>© 2021 Mac Keith Press</holder>
+    </copyright>
+    <edition>2021.1</edition>
+    <keywordset>
+      <keyword role="dom">mkp</keyword>
+      <keyword role="subj">spina</keyword>
+      <keyword role="comp">wb</keyword>
+    </keywordset>
+  </bookinfo>
+  <chapter id="chapter_nzf_xrr_lrb">
+    <title>Aims</title>
+    <learnobj>
+      <title>Condition specific aims </title>
+      <informaltable frame="topbot" colsep="0" rowsep="0">
+        <title/>
+        <tgroup cols="3" align="left">
+          <colspec colname="c1" colnum="1" colwidth="1*"/>
+          <colspec colname="c2" colnum="2" colwidth="1*"/>
+          <colspec colname="c3" colnum="3" colwidth="7*"/>
+          <thead>
+            <row>
+              <entry align="left">RCPCH Level</entry>
+              <entry align="left">Learning outcome</entry>
+              <entry align="left"/>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>1</entry>
+              <entry>4</entry>
+              <entry>Recognises and initiates investigations of the common causes of <phrase
+                  role="notcovered">microcephaly, macrocephaly and</phrase> hydrocephalus.</entry>
+            </row>
+            <row>
+              <entry>1</entry>
+              <entry>4</entry>
+              <entry>Recognises and manages blocked ventricular shunts.</entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>4 (17)</entry>
+              <entry>Recognises and manages the complications of neural tube defects.</entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>4 (16)</entry>
+              <entry>Investigates and manages <phrase role="notcovered">enuresis and</phrase> other
+                voiding disorders according to clinical guidelines.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </learnobj>
+    <learnobj>
+      <title>Generic aims </title>
+      <informaltable frame="topbot" colsep="0" rowsep="0">
+        <title/>
+        <tgroup cols="3" align="left">
+          <colspec colname="c1" colnum="1" colwidth="1*"/>
+          <colspec colname="c2" colnum="2" colwidth="1*"/>
+          <colspec colname="c3" colnum="3" colwidth="7*"/>
+          <thead>
+            <row>
+              <entry align="left">RCPCH Level</entry>
+              <entry align="left">Learning outcome</entry>
+              <entry align="left"/>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>1</entry>
+              <entry>4 (19)</entry>
+              <entry>Recognises the impact of mental health problems on physical health and the
+                impact of physical health problems on mental health.</entry>
+            </row>
+            <row>
+              <entry>1</entry>
+              <entry>4 (19)</entry>
+              <entry>Manages the CYP presenting with deliberate self-harm.</entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>4 (14)</entry>
+              <entry>Develops strategies and skills to support and engage parents of children with
+                emotional or mental health difficulties.</entry>
+            </row>
+            <row>
+              <entry>2</entry>
+              <entry>4 (14)</entry>
+              <entry>Assesses and manages acute presentations of psychological distress
+                  (self-harm<phrase role="notcovered">, overdose and somatic symptoms of
+                  distress</phrase>) and refers on when appropriate.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </learnobj>
+  </chapter>
+
+  <chapter id="chapter_ozf_xrr_lrb">
+    <title>What are neural tube defects?</title>
+    <para>Neural tube defects (NTDs) are amongst the most common birth defects. The prevalence has
+      dropped in the UK from around 4.5 per 1000 live births to less than 1 per 1000 live births.
+      This is attributed to a combination of screening and preconception folate supplementation. </para>
+    <para>NTD is a broad term encompassing a heterogeneous group of congenital spinal anomalies that
+      result from defective closure of the neural tube early in foetal life. The upper and lower
+      ends of the neural tube close last and these tend to be common sites of the anomalies. There
+      are 2 broad categories: open lesions when the skin fails to close in the midline, and closed
+      where there is skin coverage. The presentation varies with both the site and the extent of the
+      lesion.   </para>
+    <?capdm hvp type=accordion?>
+    <variablelist>
+      <varlistentry>
+        <term>Open neural tube defects</term>
+        <listitem>
+          <para>These describe lesions when there has been failure to close the neural tube (either
+            brain or spinal cord) leading to herniation of neural tissue through a bony and skin
+            defect where there has also been a failure of midline fusion in utero. </para>
+          <informaltable frame="topbot">
+            <tgroup cols="4" colsep="0" rowsep="0">
+              <colspec colnum="1" colname="col1" colwidth="10*"/>
+              <colspec colname="newCol2" colnum="2" colwidth="4*"/>
+              <colspec colnum="3" colname="col2" colwidth="43*"/>
+              <colspec colnum="4" colname="col3" colwidth="43*"/>
+              <thead>
+                <row rowsep="1">
+                  <entry colname="col1"/>
+                  <entry>&nbsp;</entry>
+                  <entry colname="col2">Malformation</entry>
+                  <entry colname="col3">Clinical course</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry colname="col1"><inlinemediaobject>
+                      <imageobject>
+                        <imagedata entityref="mkp-spinaf0101"/>
+                      </imageobject>
+                    </inlinemediaobject></entry>
+                  <entry/>
+                  <entry colname="col2"><emphasis>Anencephaly</emphasis>: Forebrain fails to form </entry>
+                  <entry colname="col3">A lethal condition. Any infants born alive do not survive
+                    beyond a few hours. </entry>
+                </row>
+                <row>
+                  <entry colname="col1"><inlinemediaobject>
+                      <imageobject>
+                        <imagedata entityref="mkp-spinaf0102"/>
+                      </imageobject>
+                    </inlinemediaobject></entry>
+                  <entry/>
+                  <entry colname="col2"><emphasis>Encephalocele</emphasis>: Herniation of meninges
+                    and brain </entry>
+                  <entry colname="col3">If there is significant brain herniation then infants will
+                    die in the new born period.</entry>
+                </row>
+                <row>
+                  <entry colname="col1"><inlinemediaobject>
+                      <imageobject>
+                        <imagedata entityref="mkp-spinaf0103"/>
+                      </imageobject>
+                    </inlinemediaobject></entry>
+                  <entry/>
+                  <entry colname="col2"><emphasis>Spina bifida manifesta</emphasis>
+                    <?capdm *force_line_stop?>Meninges &plusmn; spinal cord protruding through a
+                    defect in the posterior spine (meningocele/
+                    myelomeningocele).<?capdm *force_line_stop?> This is an example of open spinal
+                    dysraphism as vertebra and failed to close.</entry>
+                  <entry colname="col3">The spinal cord defect will require surgical closure at
+                    birth and there will be long-term neurological deficits </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </informaltable>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Closed neural tube defects</term>
+        <listitem>
+          <informaltable frame="topbot">
+            <tgroup cols="4" colsep="0" rowsep="0">
+              <colspec colnum="1" colname="col1" colwidth="10*"/>
+              <colspec colname="newCol2" colnum="2" colwidth="4*"/>
+              <colspec colnum="3" colname="col2" colwidth="43*"/>
+              <colspec colnum="4" colname="col3" colwidth="43*"/>
+              <thead>
+                <row rowsep="1">
+                  <entry colname="col1"/>
+                  <entry>&nbsp;</entry>
+                  <entry colname="col2">Malformation</entry>
+                  <entry colname="col3">Clinical course</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry colname="col1"><inlinemediaobject>
+                      <imageobject>
+                        <imagedata entityref="mkp-spinaf0104"/>
+                      </imageobject>
+                    </inlinemediaobject></entry>
+                  <entry/>
+                  <entry colname="col2"><emphasis>Spina bifida occulta </emphasis>: Failure of
+                    spinal arch to close </entry>
+                  <entry colname="col3">These can be seen clinically by a tuft of hair, or deviated
+                    natal cleft. The incidence of spina bifida occulta is high (~10% of the
+                    population) and most are asymptomatic and incidentally recognized on routine
+                    radiography.</entry>
+                </row>
+                <row>
+                  <entry colname="col1"><inlinemediaobject>
+                      <imageobject>
+                        <imagedata entityref="mkp-spinaf0105"/>
+                      </imageobject>
+                    </inlinemediaobject></entry>
+                  <entry/>
+                  <entry colname="col2"><emphasis>Lipomeningocele</emphasis>: A meningocele with an
+                    associated fatty mass </entry>
+                  <entry colname="col3">This is presents sent as fatty mass over the spine –
+                    requires imaging to clarify if dysraphism or cord involvement.</entry>
+                </row>
+                <row>
+                  <entry colname="col1"><inlinemediaobject>
+                      <imageobject>
+                        <imagedata entityref="mkp-spinaf0106"/>
+                      </imageobject>
+                    </inlinemediaobject></entry>
+                  <entry/>
+                  <entry colname="col2"><emphasis>Thickened filum terminale </emphasis>
+                  </entry>
+                  <entry colname="col3">This presents during childhood due to thethering of the cord
+                    with problems with leg movement, bladder and bowel control, lower back pain and
+                    spinal deformity. The presentation may be delayed until adulthood. It is
+                    important to diagnose and intervene as early as possible to minimize functional
+                    loss. </entry>
+                </row>
+                <row>
+                  <entry colname="col1"><inlinemediaobject>
+                      <imageobject>
+                        <imagedata entityref="mkp-spinaf0107"/>
+                      </imageobject>
+                    </inlinemediaobject></entry>
+                  <entry/>
+                  <entry colname="col2"><emphasis>Dermal sinus </emphasis></entry>
+                  <entry colname="col3">A pit at the base of spine, for which the base cannot be
+                    seen. If missed on neonatal examination it presents as meningitis in
+                    infancy.</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </informaltable>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </chapter>
+  <chapter id="chapter_rzf_xrr_lrb">
+    <title>Life story – antenatal</title>
+    <para>Fiona is a 28 year old young woman in her first pregnancy. Although this was unplanned she
+      is delighted with the news and attends for routine antenatal screening which shows that there
+      are signs of spina bifida. You have been asked to meet her and she has written down the
+      questions she would most like to ask you. </para>
+    <?capdm hvp type=imagehotspots ?>
+    <mediaobjectco>
+      <imageobjectco>
+        <areaspec units="calspair">
+          <area id="mm0101" coords="15,30"/>
+          <area id="mm0102" coords="15,90"/>
+          <area id="mm0103" coords="81,30"/>
+        </areaspec>
+        <imageobject>
+          <imagedata fileref="mkp-spinaf0108" width="600" depth="300"/>
+        </imageobject>
+        <calloutlist>
+          <callout arearefs="mm0101">
+            <bridgehead>How do you know and are you sure?</bridgehead>
+            <para>All pregnancies in the UK are offered the ‘triple test’, which is a blood test for
+              alpha fetoprotein (AFP), beta human chorionic gonadotrophin and oestriol. Many places
+              add in a nuchal translucency test which helps to identify foetus’s with Downs syndrome
+              and thus becomes a quadruple test. A raised AFP can be associated with incomplete
+              closure of the spinal canal. In addition all women have an antenatal ultrasound.
+              Together, these tests offer a 70% sensitivity marker of Down’s syndrome, Edwards
+              Syndrome and Patau’s syndrome. Foetal ultrasonography looks particularly at the
+              development of the spinal cord and canal, which in the hands of an expert radiographer
+              will demonstrate the lesion which can then be confirmed non-invasively with a foetal
+              MRI scan. Some babies may be offered antenatal surgery to close the neural tube defect
+              and the evidence suggests that this decreases the likelihood of developing
+              hydrocephalus. </para>
+          </callout>
+          <callout arearefs="mm0102">
+            <bridgehead>Why has this happened and will it happen again?</bridgehead>
+            <para>Factors associated with spina bifida include: </para>
+            <itemizedlist mark="bullet">
+              <listitem>
+                <para>Spina bifida is more common among Hispanic and white people of Northern
+                  European descent. Genetic studies have identified 42 candidate genes and more are
+                  likely to be found as technology advances.</para>
+              </listitem>
+              <listitem>
+                <para>Folic acid deficiency – taking folate supplements decreases the risk of spina
+                  bifida.</para>
+              </listitem>
+              <listitem>
+                <para>Diabetes – particularly if poor control of diabetes in early pregnancy.</para>
+              </listitem>
+              <listitem>
+                <para>Maternal obesity. </para>
+              </listitem>
+              <listitem>
+                <para> Medications – in particular sodium valproate (Epilim) increases the risk of
+                  spina bifida by around 4-5 times. Young women should not be treated with sodium
+                  valproate for epilepsy unless all other treatments have been tried. The advice is
+                  that if on sodium valproate they should also be using contraception and they are
+                  aware of the risk birth malformation in particular spina bifida and cleft palate.
+                  To ensure women are aware there is now a pregnancy prevention programme for women
+                  on valproate and they need to sign a form on an annual basis to make sure clinical
+                  teams have counselled them. </para>
+              </listitem>
+              <listitem>
+                <para><ulink
+                    url="https://www.gov.uk/drug-safety-update/valproate-pregnancy-prevention-programme-actions-required-now-from-gps-specialists-and-dispensers"
+                    role="external linkicon"
+                    >https://www.gov.uk/drug-safety-update/valproate-pregnancy-prevention-programme-actions-required-now-from-gps-specialists-and-dispensers</ulink></para>
+              </listitem>
+              <listitem>
+                <para>Family history – Couples who have had one child with a neural tube defect have
+                  a slightly higher chance of having another baby with the same defect. That risk
+                  increases if two previous children have been affected by the condition. In
+                  addition, a woman who was born with a neural tube defect, or who has a close
+                  relative with one, has a greater chance of giving birth to a child with spina
+                  bifida. </para>
+              </listitem>
+            </itemizedlist>
+            <para>Prevention: </para>
+            <itemizedlist mark="bullet">
+              <listitem>
+                <para>All women should take folate (400mcg) if planning a pregnancy, and for the
+                  first 12 weeks of pregnancy. If they or a close family member has previously had
+                  an affected child in the family then they should take a high dose folate
+                  supplement of 4mg again for one to three months prior to conception and for the
+                  first three months of pregnancy. </para>
+              </listitem>
+              <listitem>
+                <para> If diabetic optimise diabetic control prior to conception.</para>
+              </listitem>
+              <listitem>
+                <para>If on sodium valproate young women should be changed to a suitable alternative
+                  anti epileptic in consultation with the team managing their epilepsy prior to
+                  planning a pregnancy </para>
+              </listitem>
+            </itemizedlist>
+          </callout>
+          <callout arearefs="mm0103">
+            <bridgehead>What will it mean for my child and us as a family?</bridgehead>
+            <itemizedlist mark="bullet">
+              <listitem>
+                <para><emphasis>Will my baby survive the pregnancy and delivery? </emphasis></para>
+                <para>Almost certainly your baby will be born alive. It can be helpful to see
+                  pictures of babies with previous lesions in order to prepare themselves for
+                  delivery. It is also important to explain that this is an issue about the way the
+                  spinal cord was formed and hat whilst the baby will have specific needs that will
+                  have to be promptly addressed after birth they are not otherwise ill or fragile.
+                </para>
+              </listitem>
+              <listitem>
+                <para><emphasis>What will happen after my baby is born? </emphasis></para>
+                <para>When the baby is born there will be a lot of people in the room to make sure
+                  the baby is immediately appropriately cared for. That the baby will need to go to
+                  special care baby unit and if this is an open lesion will require immediate
+                  surgery. Some babies may develop hydrocephalus, or increased fluid in the central
+                  spaces within the brain that may also require treatment with a tube or shunt. We
+                  will also need to help you baby empty their bladder by putting a tube into their
+                  bladder. It is helpful for parents to have a leaflet about the neonatal unit so
+                  they know what this will look like and what to expect. </para>
+              </listitem>
+              <listitem>
+                <para><emphasis>In what ways will I have to adapt my parenting to meet my child
+                    needs? </emphasis></para>
+                <para>You will be helped to learn skills to keep your child well which will include
+                  learning to use a catheter to empty their bladder, signs to look out for
+                  suggesting problems with their shunt and techniques to help with their mobility.
+                  There are ways for an older child to be socially continent and ways to optimise
+                  their independent mobility.   </para>
+              </listitem>
+              <listitem>
+                <para><emphasis>Will one of us have to stop working to meet our child’s needs?
+                  </emphasis></para>
+                <para>All babies need a lot of care and your baby is no different, but the way you
+                  care for them may be different; you may need to learn to catheterise rather than
+                  change a nappy. Therapy and nursing staff will be happy to teach these skills to
+                  anyone caring for your child, so it should be possible to keep working. </para>
+              </listitem>
+              <listitem>
+                <para><emphasis>Will my child have a happy life? </emphasis></para>
+                <para>Most children lead very happy and fulfilled lives, and lots live independently
+                  as adults. <ulink url="https://www.shinecharity.org.uk">Shine</ulink> is a charity
+                  that supports people with spina bifida and their families. They have an excellent
+                  website that will help you to see how people have lived inspiring lives. </para>
+              </listitem>
+              <listitem>
+                <para><emphasis>Will my child be able to talk? How will it affect their learning?
+                  </emphasis></para>
+                <para>Most children with spina bifida and/or hydrocephalus are able communicators,
+                  have intellectual abilities within the typical range for their age and will go to
+                  mainstream schools. Some children with spina bifida and/or hydrocephalus will have
+                  learning difficulties, some of whom will go to more specialist schools, depending
+                  on their individual needs and choices. With appropriate support, based on
+                  assessment of individual needs, all children with spina bifida and/or
+                  hydrocephalus should be able to participate in most activities and enjoy good
+                  quality of life.</para>
+              </listitem>
+              <listitem>
+                <para><emphasis>Will it affect the length of my child’s life? </emphasis></para>
+                <para>Most children with spina bifida will have medical issues and it is important
+                  that these are managed well as they impact on both the quality of the child’s life
+                  and also its length. There are also other medical issues that can crop up, such as
+                  hip problems, but these are not because parents have missed caring in an
+                  appropriate way. In recent years, with improved understanding of long term needs
+                  and the importance of specialist follow-up into adulthood, instances have greatly
+                  reduced of secondary issues such as renal impairment which used to be seen in
+                  adults with spina bifida. This has been associated with an increase in lifespan.
+                </para>
+              </listitem>
+            </itemizedlist>
+          </callout>
+        </calloutlist>
+      </imageobjectco>
+      <textobject>
+        <phrase>Image of a pregnant woman with speech bubbles asking questions.</phrase>
+      </textobject>
+    </mediaobjectco>
+    <para>More information on <ulink url="#" role="external">how to approach antenatal
+        counselling</ulink>.</para>
+  </chapter>
+  <chapter id="chapter_szf_xrr_lrb">
+    <title>Medical issues associated with spina bifida</title>
+    <?capdm hvp type=imagehotspots ?>
+    <mediaobjectco>
+      <imageobjectco>
+        <areaspec units="calspair">
+          <area coords="35,89" id="mi0101"/>
+          <area coords="28,60" id="mi0102"/>
+          <area coords="31.5,12" id="mi0103"/>
+          <area coords="76,62" id="mi0104"/>
+          <area coords="77,90" id="mi0105"/>
+        </areaspec>
+        <imageobject>
+          <imagedata fileref="mkp-spinaf0109" width="600" depth="300"/>
+        </imageobject>
+        <calloutlist>
+          <callout arearefs="mi0101">
+            <bridgehead>Weakness and low tone below the level of the lesion</bridgehead>
+            <para>The symptoms and signs in spinal cord lesions can be predicted from the anatomy.
+              Important factors to consider are: </para>
+            <orderedlist>
+              <listitem>
+                <para>The spinal level. </para>
+              </listitem>
+              <listitem>
+                <para>The site in the spine – before or after the last cell body will determine if
+                  it is an upper or lower motor neurone sign.</para>
+              </listitem>
+              <listitem>
+                <para>Whether it is affecting the whole cross-section of the cord or only a part of
+                  it.</para>
+              </listitem>
+              <listitem>
+                <para>The underlying cause – in this case we are thinking about spina bifida. Acute
+                  injuries to the spine such as trauma present with features of spinal shock.
+                </para>
+              </listitem>
+            </orderedlist>
+            <para>There can be orthopaedic complications as a longer term consequence including hip
+              dysplasia and talipes. It is helpful to warn families about these so they do not feel
+              it is their fault. </para>
+          </callout>
+          <callout arearefs="mi0102">
+            <bridgehead>Sexual dysfunction</bridgehead>
+            <para>Sexual dysfunction can be common in young people with spina bifida. It can affect
+              their relationships, sex lives and fertility. </para>
+            <para>Early referral to appropriate experts in sexual health including urology and
+              gynaecology can be discussed with young people, based on their individual needs and
+              choices.</para>
+          </callout>
+          <callout arearefs="mi0103">
+            <bridgehead>Hydrocephalus</bridgehead>
+            <informalfigure>
+              <mediaobject vendor="playlist">
+                <videoobject>
+                  <videodata fileref="Hydrocephaluspathophysiology.mp4"/>
+                </videoobject>
+                <videoobject>
+                  <videodata fileref="Causesofhydrocephalus.mp4"/>
+                </videoobject>
+                <videoobject>
+                  <videodata fileref="Clinicalpresentationofhydrocephalus.mp4"/>
+                </videoobject>
+                <videoobject>
+                  <videodata fileref="Hydrocephalusassessmentandmanagement.mp4"/>
+                </videoobject>
+                <videoobject>
+                  <videodata fileref="Shuntproblemsandcomorbidities.mp4"/>
+                </videoobject>
+                <videoobject>
+                  <videodata fileref="Hydrocephalussummary.mp4"/>
+                </videoobject>
+              </mediaobject>
+            </informalfigure>
+          </callout>
+          <callout arearefs="mi0104">
+            <bridgehead>Neuropathic bladder</bridgehead>
+            <informalfigure>
+              <mediaobject vendor="playlist">
+                <videoobject>
+                  <videodata fileref="Neuropathicbladderpassurinegaincontinence.mp4"/>
+                </videoobject>
+                <videoobject>
+                  <videodata fileref="Neuropathicbladderspinalproblems.mp4"/>
+                </videoobject>
+                <videoobject>
+                  <videodata fileref="Neuropathicbladderassessmentandmanagement.mp4"/>
+                </videoobject>
+                <videoobject>
+                  <videodata fileref="Neuropathicbowels.mp4"/>
+                </videoobject>
+                <videoobject>
+                  <videodata fileref="NeuropathicbladderKeymessages.mp4"/>
+                </videoobject>
+              </mediaobject>
+            </informalfigure>
+          </callout>
+          <callout arearefs="mi0105">
+            <bridgehead>Insensate skin</bridgehead>
+            <para>Pressure sores can bechallenging and are best prevented. It is important to treat
+              early and involve tissue viability experts about management. Pressures sores are more
+              likely if the young person is obese or has a spinal curvature as this increases
+              specific areas of pressure on the skin. For this group other skin problems include
+              latex allergy from repeated exposure are common and it is advisable for these children
+              to avoid all latex products from birth. </para>
+            <tip>
+              <para><emphasis>Tips on pressure sore prevention </emphasis></para>
+              <para>Lift or shift bottom from chair every 20 minutes and change position of legs at
+                the same time. Check skin all over at least once a day (twice is better). If wet or
+                soiled, the quicker the clean up and change, the better. </para>
+              <para>Wheelchair users should take care with transfers to avoid skin damage.  </para>
+            </tip>
+          </callout>
+        </calloutlist>
+      </imageobjectco>
+      <textobject>
+        <phrase>Image of a child with various conditions highlighted.</phrase>
+      </textobject>
+    </mediaobjectco><para>Statistics from: <emphasis role="italic">Spina bifida outcome: a 25-year prospective
+      study</emphasis>. R M Bowman RM, D G McLone D G , J A Grant JA et al . Pediatr Neurosurg.
+      2001 Mar;34(3):114-20.</para>
+  </chapter>
+  <!--  <chapter id="chapter_wzf_xrr_lrb">
+    <title>John’s life story – birth</title>
+    <?capdm template layout=12121 1=1,2.1=2,2.2=5,3=2,4.1=1,4.2=1,5=* ?>
+    <para>Baby John is born by elective caesarean section at term in a tertiary centre which has a
+      paediatric neurology and neurosurgical team, urology and orthopaedics. He does not require any
+      resuscitation at birth. </para>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata entityref="mkp-spinaf0110"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+    <bridgehead>Initial assessment and management led by paediatric neurosurgical and urology
+      teams</bridgehead>
+    <itemizedlist mark="bullet">
+      <title>Spina bifida – if open </title>
+      <listitem>
+        <para>Dressed using aseptic technique.</para>
+      </listitem>
+      <listitem>
+        <para>IV antibiotics commenced.</para>
+      </listitem>
+      <listitem>
+        <para>Bladder catheterised until back wound healed, then three-hourly clean intermittent
+          catheterisation commenced.</para>
+      </listitem>
+      <listitem>
+        <para>Surgical closure of open spinal lesion.</para>
+      </listitem>
+    </itemizedlist>
+    <para>Assessment of neurological deficit:</para>
+    <orderedlist>
+      <listitem>
+        <para>Motor: based on observation of pattern of movement, assessment of tone and
+          neurological examination.</para>
+      </listitem>
+      <listitem>
+        <para>Sensory: based on neurological examination.</para>
+      </listitem>
+    </orderedlist>
+    <itemizedlist mark="bullet">
+      <title>Hydrocephalus</title>
+      <listitem>
+        <para>Antenatal ultrasound and/or MRI reviewed.</para>
+      </listitem>
+      <listitem>
+        <para>Head circumference measured.</para>
+      </listitem>
+      <listitem>
+        <para>Urgent ultrasound or MRI of head as required, with consideration of shunt insertion if
+          required. </para>
+      </listitem>
+    </itemizedlist>
+    <informaltable frame="topbot">
+      <title>Bladder</title>
+      <tgroup cols="3" colsep="0" rowsep="0">
+        <colspec colnum="1" colname="col1" colwidth="*"/>
+        <colspec colnum="2" colname="col2" colwidth="*"/>
+        <colspec colnum="3" colname="col3" colwidth="*"/>
+        <thead>
+          <row rowsep="1">
+            <entry colname="col1">Clinical observation</entry>
+            <entry colname="col2">Clinical sign</entry>
+            <entry colname="col3"> Interpretation</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry colname="col1"><emphasis>Observe the stream of urine </emphasis></entry>
+            <entry colname="col2"> Continuous dribbling </entry>
+            <entry colname="col3">Sphincter incompetence </entry>
+          </row>
+          <row>
+            <entry colname="col1"/>
+            <entry colname="col2">Discrete spontaneous stream </entry>
+            <entry colname="col3">Contractile bladder </entry>
+          </row>
+          <row rowsep="1">
+            <entry colname="col1"/>
+            <entry colname="col2">Interrupted stream </entry>
+            <entry colname="col3">Dysynergia</entry>
+          </row>
+          <row rowsep="1">
+            <entry colname="col1"><emphasis>Is the bladder palpable?</emphasis></entry>
+            <entry colname="col2">Palpable bladder </entry>
+            <entry colname="col3">Out flow tract obstruction due to tight sphincter </entry>
+          </row>
+          <row>
+            <entry colname="col1"><emphasis>Can the bladder be expressed by hand?</emphasis></entry>
+            <entry colname="col2">Yes</entry>
+            <entry colname="col3">Neuropathic bladder +/- sphincter incompetence </entry>
+          </row>
+          <row>
+            <entry colname="col1"/>
+            <entry colname="col2">No</entry>
+            <entry colname="col3">Sphincter competence or empty bladder due to gross incompetence
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+    <itemizedlist mark="bullet">
+      <title>Bowels</title>
+      <listitem>
+        <para>is the anus open? </para>
+      </listitem>
+      <listitem>
+        <para>is there an intact anocutaneous reflex?</para>
+      </listitem>
+      <listitem>
+        <para>monitor bowels </para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Joint problems</title>
+      <listitem>
+        <para>congenital hip dislocation or talipes</para>
+      </listitem>
+    </itemizedlist>
+  </chapter>
+  <chapter id="chapter_yny_yjj_srb">
+    <title>Rules of thumb for spinal level</title>
+    <informaltable frame="topbot">
+      <tgroup cols="3" colsep="0" rowsep="0">
+        <colspec colnum="1" colname="col1" colwidth="20*"/>
+        <colspec colnum="2" colname="col2" colwidth="80*"/>
+        <colspec colname="newCol3" colnum="3" colwidth="20*"/>
+        <thead>
+          <row rowsep="1">
+            <entry colname="col1">Level</entry>
+            <entry colname="col2">Clinical signs</entry>
+            <entry>Likelihood of walking</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry colname="col1"><emphasis>Above L1</emphasis>
+            </entry>
+            <entry colname="col2">Absent hip flexion leading to frog leg position </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry colname="col1"><emphasis>L1/2</emphasis></entry>
+            <entry colname="col2">Hips held in flexion and adduction </entry>
+            <entry/>
+          </row>
+          <row>
+            <entry colname="col1"><emphasis>L3/4</emphasis></entry>
+            <entry colname="col2">Hips held in flexion and adduction <?capdm *force_line_stop?> Some
+              kicking movement – knee flexion and extension <?capdm *force_line_stop?>Patellar
+              reflex present </entry>
+            <entry>45%</entry>
+          </row>
+          <row>
+            <entry colname="col1">
+              <emphasis>L5</emphasis></entry>
+            <entry colname="col2">Active hip flexion <?capdm *force_line_stop?>Active ankle
+              dorsiflexion <?capdm *force_line_stop?>Ankle reflex present </entry>
+            <entry>60%</entry>
+          </row>
+          <row>
+            <entry colname="col1"><emphasis>S1/2</emphasis></entry>
+            <entry colname="col2">Lack of hip extension </entry>
+            <entry>87%</entry>
+          </row>
+          <row>
+            <entry colname="col1"><emphasis>S3</emphasis></entry>
+            <entry colname="col2">Normal lower limb neurology but bowel and bladder dysfunction </entry>
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+    <para>Source: <emphasis role="italic">Early childhood neurodevelopmental outcome after open
+        prenatal spina bifida aperta repair</emphasis>: Hepp ZS, Haas VM, Latal B et al.
+      DMCN;611302-7.</para>
+  </chapter>
+  <chapter id="chapter_zzf_xrr_lrb">
+    <title>John's life story - post birth </title>
+    <para>John’s defect was successfully closed and the wound has healed well. He had hydrocephalus
+      and a VP shunt was inserted at the time of spinal surgery and his head circumference has
+      stabilised on the 98th percentile. He has established feeding well. He has normal tone and
+      movement in his arms but his legs are flaccid and held in a frog posture. In supine he is able
+      to flex his hips. He does not respond to light pin prick below his knees. He has absent knee,
+      ankle and plantar reflexes. There is no anocutaneous reflex. His anus appears normal and his
+      bowels are opened twice a day. He has bilateral positional talipes . </para>
+    <itemizedlist mark="bullet">
+      <listitem>
+        <para>What are the key medical goals? </para>
+      </listitem>
+      <listitem>
+        <para>What actions are needed and plans in place prior to John’s discharge? </para>
+      </listitem>
+    </itemizedlist>
+    <para>Think about the outcomes the family are looking for John. Complete these sections in the
+      form below. Reveal the answer to goals, then actions and outcomes to understand the clinical
+      plan.</para>
+<!-\- RBK Slides 18-21 -\->
+<uqf:task id="Slides18to21" role="dwb">
+  <uqf:title/>
+  <uqf:questionobject id="Slides18to2101">
+    <?capdm advanced template=mkp-spina-slide18-layout.template ?>
+    <uqf:qpart>
+<informaltable frame="none">
+  <tgroup cols="4" colsep="0" rowsep="0">
+    <colspec colnum="1" colname="col1"/>
+    <colspec colnum="2" colname="col2" />
+    <colspec colnum="3" colname="col3" />
+    <colspec colnum="4" colname="col4" />
+    <tbody>
+      <row rowsep="0" id="Slides18to2101r01">
+        <entry colname="col1" morerows="4">
+                    <bridgehead>Underlying issues</bridgehead>
+                    <para>Spina bifida</para>
+                    <para>Defect at L2/3</para>
+                    <para>? neuropathic bladder</para>
+                    <para>VP shunt in situ</para>
+                    <para>Positional talipes</para>
+                  </entry>
+        <entry colname="col2"><bridgehead>Goals</bridgehead></entry>
+        <entry colname="col3"><bridgehead>Actions</bridgehead></entry>
+        <entry colname="col4"><bridgehead>Outcomes</bridgehead></entry>
+      </row>
+      <row rowsep="0" id="Slides18to2101r02">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Family goals</bridgehead>
+          <para>How do we look after John?</para>
+          <para>How will I know if there are problems with the shunt?</para>
+        </entry>
+        <entry colname="col3" morerows="1">
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para>
+                    <para><blank id="Slides18to2101fibc0301" role="useranswer large"
+                        ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para>
+                  </entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Fitness</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides18to2101fibc0401" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides18to2101r03">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Health goals</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para>
+          <para><blank id="Slides18to2101fibc0201" role="useranswer medium"
+                        ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para>
+        </entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Fun</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides18to2101fibc0402" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides18to2101r04">
+        <entry colname="col2"></entry>
+        <entry colname="col3"></entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Friendships</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides18to2101fibc0403" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides18to2101r05">
+        <entry colname="col2"></entry>
+        <entry colname="col3"></entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Future</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides18to2101fibc0404" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides18to2101r06">
+        <entry colname="col1"></entry>
+        <entry colname="col2"/>
+        <entry colname="col3"/>
+        <entry colname="col4"/>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+    </uqf:qpart>
+    <uqf:apart>
+      <uqf:ansopt correct="Y" linkend="Slides18to2101fibc0201" markval="1">
+        <uqf:statement>
+          <para>Safe management of VP shunt</para>
+          <para>Optimum management of neuropathic bladder.</para>
+          <para>Optimum management of bowels.</para>
+          <para>Optimum management of talipes.</para>
+        </uqf:statement>
+      </uqf:ansopt>
+      <uqf:ansopt correct="Y" linkend="Slides18to2101fibc0301" markval="1">
+        <uqf:statement>
+              <para><emphasis role="bold">VP shunt</emphasis></para>
+              <para>Identify lead paediatric neurosurgeon.</para>
+              <para>Family-held Emergency Health Care Plan in place, including red flags for when to
+                seek help, who to contact etc. (see <ulink
+                  url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/VP_shunt_plan.pdf"
+                  role="external pdf linkicon">VP shunt emergency management plan</ulink>).</para>
+              <para>Ensure family and others who need to know have access to <ulink
+                  url="https://www.shinecharity.org.uk/for-parents/your-child-and-hydrocephalus"
+                  role="external linkicon">SHINE information</ulink>. </para>
+              <para><emphasis role="bold">Renal tract</emphasis></para>
+              <para>Identify lead paediatric urologist and lead paediatric urology nurse
+                specialist.</para>
+              <para>Renal ultrasound and/or other imaging.</para>
+              <para>Start clean intermittent catheterisation 48 hours after catheter removal.</para>
+              <para>Educate parents to monitor for UTI.</para>
+              <para><emphasis role="bold">Bowels</emphasis></para>
+              <para>Identify lead for bowel management, most likely paediatric urologist and lead
+                paediatric urology nurse specialist. </para>
+              <para>Manage constipation early</para>
+              <para><emphasis role="bold">Talipes</emphasis></para>
+              <para>Identify lead paediatric orthopaedic surgeon.</para>
+              <para>Early physiotherapy assessment and advice including on handling, positioning,
+                skin care, exercises for family to do and any strapping or orthoses required.</para>
+            </uqf:statement>
+      </uqf:ansopt>
+      <uqf:ansopt correct="Y" linkend="Slides18to2101fibc0401" markval="1">
+        <uqf:statement>
+          <para>Healthy skin</para>
+          <para>Healthy kidneys</para>
+          <para>Healthy brain - prevent brain damage from increased ICP</para>
+        </uqf:statement>
+      </uqf:ansopt>
+      <uqf:ansopt correct="Y" linkend="Slides18to2101fibc0402" markval="1">
+        <uqf:statement>
+          <para>Remember to prioritise having fun together</para>
+        </uqf:statement>
+      </uqf:ansopt>
+      <uqf:ansopt correct="Y" linkend="Slides18to2101fibc0403" markval="1">
+        <uqf:statement>
+          <para>Early attachment is key to future relationships and friendships</para>
+        </uqf:statement>
+      </uqf:ansopt>
+      <uqf:ansopt correct="Y" linkend="Slides18to2101fibc0404" markval="1">
+        <uqf:statement>
+          <para>Well child</para>
+        </uqf:statement>
+      </uqf:ansopt>
+    </uqf:apart>
+  </uqf:questionobject>
+</uqf:task>
+  </chapter>
+  <chapter id="chapter_a1g_xrr_lrb">
+    <title>Key learning 1</title>
+    <uqf:task id="KEYLEARN0101" role="dwb">
+      <uqf:question id="KEYLEARN0101_01" role="3after">
+        <uqf:content>
+          <para>What have you learned that is important to remember when assessing a baby with a
+            neural tube defect? </para>
+        </uqf:content>
+        <uqf:answerTemplate>
+          <para><blank id="KEYLEARN0101_01fib" size="100" rows="3"
+              ><?xm-replace_text {blank}?></blank></para>
+        </uqf:answerTemplate>
+        <uqf:answer>
+          <itemizedlist mark="bullet">
+            <listitem>
+              <para>Review <link linkend="chapter_wzf_xrr_lrb">Initial assessment and
+                  management</link></para>
+            </listitem>
+            <listitem>
+              <para>Review <link linkend="chapter_szf_xrr_lrb">Medical issues and spina
+                  bifida</link></para>
+            </listitem>
+            <listitem>
+              <para>Review <link linkend="chapter_yny_yjj_srb">Rules of thumb for spinal
+                  level</link></para>
+            </listitem>
+            <listitem>
+              <para>See <ulink
+                  url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/VP_shunt_plan.pdf"
+                  role="external pdf linkicon">VP shunt emergency management plan</ulink></para>
+            </listitem>
+            <listitem>
+              <para>See <ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/Bladder.pdf"
+                  role="external pdf linkicon">Spina bifida continence flow chart</ulink>
+              </para>
+            </listitem>
+          </itemizedlist>
+        </uqf:answer>
+      </uqf:question>
+    </uqf:task>
+  </chapter><chapter id="chapter_b1g_xrr_lrb">
+    <title>Important actions in infancy</title>
+    <itemizedlist mark="bullet">
+      <listitem>
+        <para>Encourage the family to enjoy playing and engaging with their baby. </para>
+      </listitem>
+      <listitem>
+        <para>Monitor urinary tract – John should be followed up in a spina bifida clinic or urology
+          clinic. Encourage the families to continue with clean intermittent catherization. The
+          frequency of this will be determined by follow up investigations looking at John’s
+          bladder. When seeing children with spina bifida, it is important to encourage good fluid
+          intake, monitor their growth, blood pressure and urinalysis. It is also sensible to keep
+          an eye on their creatinine at three months and then on a yearly basis. The best guide to
+          the frequency for clean intermittent catheterisation is renal ultrasound that should be
+          repeated at three and six months and then yearly. If there is dilatation of the upper
+          tracts or a residual volume of more than 30 ml, then a discussion with the urology team
+          would be needed. During the first year of life a DMSA and video urodynamics (if available)
+          would normally be organised by the urology team. </para>
+      </listitem>
+      <listitem>
+        <para>Manage bowels – use laxatives earlier rather than later.</para>
+      </listitem>
+      <listitem>
+        <para>To work with physio on developing core strength and sitting balance.</para>
+      </listitem>
+      <listitem>
+        <para>Ensure appropriate support for bathing.</para>
+      </listitem>
+      <listitem>
+        <para>Ensure appropriate seating for feeding and playing after 6 months.</para>
+      </listitem>
+      <listitem>
+        <para>Encourage families to join <ulink url="https://www.shinecharity.org.uk/"
+            role="external">Shine</ulink>. They have excellent parent information packs. </para>
+      </listitem>
+    </itemizedlist>
+  </chapter>
+  <chapter id="chapter_c1g_xrr_lrb">
+    <title>Key learning 2</title>
+    <uqf:task id="KEYLEARN0102" role="dwb">
+      <uqf:preamble>
+        <para>John is admitted aged eight months with a two-day history of not being himself and has
+          vomited on one occasion.</para>
+      </uqf:preamble>
+      <uqf:question id="KEYLEARN0102_01" role="3after">
+        <uqf:content>
+          <para>What differential diagnosis should you consider specifically in a child with spina
+            bifida? </para>
+        </uqf:content>
+        <uqf:answerTemplate>
+          <para><blank id="KEYLEARN0102_01fib" size="100" rows="4"
+              ><?xm-replace_text {blank}?></blank></para>
+        </uqf:answerTemplate>
+        <uqf:answer>
+          <itemizedlist mark="bullet">
+            <listitem>
+              <para>Urinary tract infection (UTI) </para>
+            </listitem>
+            <listitem>
+              <para> Shunt problems </para>
+            </listitem>
+            <listitem>
+              <para> Fractures – can be plainless </para>
+            </listitem>
+            <listitem>
+              <para>Any new medication</para>
+            </listitem>
+            <listitem>
+              <para>Common childhood illnesses </para>
+            </listitem>
+          </itemizedlist>
+        </uqf:answer>
+      </uqf:question>
+    </uqf:task>
+  </chapter><chapter id="chapter_d1g_xrr_lrb">
+    <title>Clinical approach</title>
+    <para>Clearly there is need to approach this as with any other child with an intercurrent
+      illness but specific factors to consider in the recent history: </para>
+    <itemizedlist mark="bullet">
+      <listitem>
+        <para><emphasis>VP shunt</emphasis> – Are there any signs of raised intracranial pressure
+          such as headache, vomiting, new or different seizure activity, irritability or
+          drowsiness?</para>
+      </listitem>
+      <listitem>
+        <para><emphasis>UTI</emphasis> – Is there a history of fever, recent fluid intake, decreased
+          frequency of clean intermittent catherization and any difficulties? Any recent history of
+          constipation?</para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis>Fracture</emphasis> – Remember that fractures below the level of the injury will
+          be painless but could there could be abnormal limb positioning or movement. </para>
+      </listitem>
+      <listitem>
+        <para><emphasis>Medications</emphasis> – particularly any started recently. </para>
+      </listitem>
+    </itemizedlist>
+    <bridgehead>Approach to clinical exam for a child with spina bifida</bridgehead>
+    <informalfigure orient="port" id="mkp-spinaf0111">
+      <mediaobject>
+        <imageobject>
+          <imagedata entityref="mkp-spinaf0111"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </chapter>
+  <chapter id="chapter_bmj_p2c_qrb">
+    <title>Shunt problems: red flags</title>
+    <bridgehead>Algorithm for shunt problems</bridgehead>
+    <para>Children with blocked shunts can deteriorate quickly. It is important to involve a
+      consultant paediatrician early and liaise with neurosurgical team.</para>
+    <para>For a child with a VP shunt, the first question is: could this be blocked or
+      infected?</para>
+    <informalfigure orient="port" id="mkp-spinaf0112">
+      <mediaobject>
+        <imageobject>
+          <imagedata entityref="mkp-spinaf0112"/>
+        </imageobject>
+      </mediaobject>
+      <note>
+        <para>Adapted from West Yorkshire clinical network algorithm.</para>
+      </note>
+    </informalfigure>
+    <para>The second question is: Could this be a UTI? Urinalysis should help and, if this shows
+      nitrites and leucocytes, then it is important that a catheter sample is sent to the lab for
+      MC+S, and appropriate antibiotics started. Provided there have been no recent infections this
+      should be trimethoprim, but it is important to check if there has been any recent urine
+      samples that have been tested as there may be antibiotic resistance. </para>
+    <para>It important to remember the children with spina bifida will have the same rate of other
+      illnesses as typically developing peers. </para>
+  </chapter>
+  <chapter id="chapter_e1g_xrr_lrb">
+    <title>Key learning 3</title>
+    <uqf:task id="KEYLEARN0103" role="dwb">
+      <uqf:question id="KEYLEARN0103_01" role="3after">
+        <uqf:content>
+          <para>What have you learned that is important to remember when assessing a child who is
+            unwell with a neural tube defect? </para>
+        </uqf:content>
+        <uqf:answerTemplate>
+          <para><blank id="KEYLEARN0103_01fib" size="100" rows="3"
+              ><?xm-replace_text {blank}?></blank></para>
+        </uqf:answerTemplate>
+        <uqf:answer>
+          <itemizedlist mark="bullet">
+            <listitem>
+              <para>Review <link linkend="chapter_d1g_xrr_lrb">Clinical approach</link>
+              </para>
+            </listitem>
+            <listitem>
+              <para>See <ulink
+                  url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/VP_shunt_plan.pdf"
+                  role="external pdf linkicon">VP shunt emergency management plan</ulink></para>
+            </listitem>
+          </itemizedlist>
+        </uqf:answer>
+      </uqf:question>
+    </uqf:task>
+  </chapter><chapter id="chapter_f1g_xrr_lrb">
+    <title>John’s life story – early childhood</title>
+    <para> John is now 2½ years old. When you last saw him at 18 months he has been sitting from 10
+      months and but needed his calipers to stand in a frame. He has a good pincer grasp and had 3
+      words. His family describe that he is frustrated and cross for a lot of the day which is
+      making home life challenging. He is tolerating twice daily catheterisations but recently has
+      had 2 urinary tract infections. </para>
+    <para>You are now going to see John in clinic. Think about what additional information you would
+      need from that consultation and complete the consultation proforma. </para>
+    <!-\- RBK Slides 31-32 -\->
+    <uqf:task id="Slides31to32" role="dwb">
+      <uqf:title/>
+      <uqf:questionobject id="Slides31to3201">
+        <?capdm advanced template=mkp-spina-slide31-layout.template ?>
+        <uqf:qpart id="Slides31to32qpart">
+          <para><blank id="Slides31to320101" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <para><blank id="Slides31to320102" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <para><blank id="Slides31to320103" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <para><blank id="Slides31to320104" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <informalfigure>
+            <mediaobject>
+              <imageobject>
+                <imagedata entityref="mkp-spinafslide31"/>
+              </imageobject>
+            </mediaobject>
+          </informalfigure>
+        </uqf:qpart>
+        <uqf:apart>
+          <uqf:ansopt correct="Y" linkend="Slides31to320101" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>Can sit unsupported<?capdm *force_line_stop?> Cannot move independently and
+                finds this frustrating<?capdm *force_line_stop?> Stand with calipers on but not
+                independently<?capdm *force_line_stop?> Good range of
+                grasps<?capdm *force_line_stop?> Drawing lines<?capdm *force_line_stop?> Understands
+                2 part commands<?capdm *force_line_stop?> Speaks 2-3 word
+                sentences<?capdm *force_line_stop?> Feeds himself fork &amp;
+                spoon<?capdm *force_line_stop?> Twice daily CIC+nappies</para>
+            </uqf:statement>
+          </uqf:ansopt>
+          <uqf:ansopt correct="Y" linkend="Slides31to320102" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>Constipated BO every 3 days<?capdm *force_line_stop?> 2 UTIs in last 6
+                months<?capdm *force_line_stop?>Can be cross and frustrated
+                <?capdm *force_line_stop?> Normal BP<?capdm *force_line_stop?> Normal
+                urianalysis<?capdm *force_line_stop?> Normal U+E<?capdm *force_line_stop?> U/s at 2
+                years showed thick walled bladder with 20ml residual<?capdm *force_line_stop?>
+                Normal MCUG<?capdm *force_line_stop?> Normal hearing<?capdm *force_line_stop?>
+                Normal vision with glasses</para>
+            </uqf:statement>
+          </uqf:ansopt>
+          <uqf:ansopt correct="Y" linkend="Slides31to320103" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>Parents in strong supported family <?capdm *force_line_stop?> Baby sister aged 3
+                months demanding his mother's time</para>
+            </uqf:statement>
+          </uqf:ansopt>
+          <uqf:ansopt correct="Y" linkend="Slides31to320104" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>John's mother is finding it challenging to go to stay and play with 2
+                children<?capdm *force_line_stop?> Due to start school nursery next
+                term<?capdm *force_line_stop?>  Likes to see cousin, and play farms
+                together<?capdm *force_line_stop?>  Dependent for parents for all care needs</para>
+            </uqf:statement>
+          </uqf:ansopt>
+        </uqf:apart>
+      </uqf:questionobject>
+    </uqf:task>
+  </chapter><chapter id="chapter_g1g_xrr_lrb">
+    <?capdm template layout=2col left=5,right=*?>
+    <title>Important actions in early childhood</title>
+    <itemizedlist mark="bullet">
+      <title>Monitor urinary tract</title>
+      <listitem>
+        <para> Continue to encourage good fluid intake.</para>
+      </listitem>
+      <listitem>
+        <para>Monitor their growth, blood pressure and urinalysis.</para>
+      </listitem>
+      <listitem>
+        <para>Follow up in a spina bifida clinic or urology clinic who will determine the frequency
+          of catheterisation.</para>
+      </listitem>
+      <listitem>
+        <para>Encourage preschool children to be involved in catheterisation and when suitable this
+          should be moved to the toilet.</para>
+      </listitem>
+      <listitem>
+        <para>John should have an annual renal ultrasound and creatinine. Having these results
+          available at the time of the urology clinic will be helpful.   </para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Working towards using the toilet</title>
+      <listitem>
+        <para>Use appropriate doses of laxatives to keep daily soft bowel action.</para>
+      </listitem>
+      <listitem>
+        <para>When walking towards using the toilet consider suppositories as this can help with a
+          more predictable time for bowels to be open.</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Movement </title>
+      <listitem>
+        <para>Support from physio to develop standing balance with calipers and to develop self
+          propelling skills in manual wheelchair.</para>
+      </listitem>
+      <listitem>
+        <para>Ensure appropriate equipment for bathing, and to be able to participate in family meal
+          times.</para>
+      </listitem>
+      <listitem>
+        <para>Start to think about equipment and adaptions needed if unable to transfer
+          independently, these can take over 12 months to be implemented. Plan early!   </para>
+      </listitem>
+      <listitem>
+        <para>Monitor spine.</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Mental health </title>
+      <listitem>
+        <para>Think about barriers to joining in activities and try to address these.</para>
+      </listitem>
+      <listitem>
+        <para>Encourage family to have positive times together and to give their child positive
+          messages about their strengths. </para>
+      </listitem>
+      <listitem>
+        <para>Encourage children to join in with typically developing peers and also children with
+          similar additional needs.</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Education</title>
+      <listitem>
+        <para>Ensure appropriate support and equipment in place for transition into nursery and then
+          on to primary school. This needs to include appropriate training for all who will be
+          involved in aspects of care and access to any equipment required, based on individual
+          assessed needs and choices. With parents’ permission, the Special Educational needs
+          Coordinator should be made aware of the child’s needs, including the importance of early
+          assessment of learning abilities and wider needs, so that all needs can be mapped to the
+          Early Years Special Educational Needs and Disability (SEND) ranges. For some children with
+          spina bifida and/or hydrocephalus, the threshold will be met for Education, Health and
+          Care planning. In some cases, adaptations to nursery or school buildings may be required
+          to allow for physical access and appropriate, private facilities for catheterisation.
+          Early planning is essential, as building adaptations can take 12 months or more!</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Social support </title>
+      <listitem>
+        <para>Ensure the family have appropriate benefit; DLA and if appropriate carers allowance.
+        </para>
+      </listitem>
+      <listitem>
+        <para>Ensure the family are aware of <ulink url="https://www.shinecharity.org.uk/">Shine
+            charity</ulink> who offer support and advice not only to families but will provide
+          training and reassurance to schools, nurseries, etc.</para>
+      </listitem>
+      <listitem>
+        <para> Ask if the family have a disabled parking badge (blue badge) in the UK; this is after
+          2 years of age if you receive the higher rate of DLA, or over 3 years and unable to walk
+          50m.</para>
+      </listitem>
+      <listitem>
+        <para>Discuss with the family and therapy colleagues if any adaptions are needed as the
+          child grows. </para>
+      </listitem>
+      <listitem>
+        <para>Support the child and family in being able to access mainstream activities.</para>
+      </listitem>
+      <listitem>
+        <para>Encourage the family to know the disabled sports officer and know about local
+          wheelchair sports.</para>
+      </listitem>
+    </itemizedlist>
+  </chapter>
+  <chapter id="chapter_h1g_xrr_lrb">
+    <title>Goals, actions and outcomes</title>
+    <para>You now know a lot about John </para>
+    <itemizedlist mark="bullet">
+      <listitem>
+        <para>What are the key medical goals? </para>
+      </listitem>
+      <listitem>
+        <para>What actions are needed to achieve these goals? </para>
+      </listitem>
+    </itemizedlist>
+    <para>Think about the outcomes the family are looking for John. Complete these sections in the
+      form below. Reveal the answer to goals, then actions and outcomes to understand the clinical
+      plan.</para>
+    <!-\- Slides 36-39 -\->
+    <uqf:task id="Slides36to39" role="dwb">
+      <uqf:title/>
+      <uqf:questionobject id="Slides36to3901">
+    <?capdm advanced template=mkp-spina-slide36-layout.template ?>
+    <uqf:qpart>
+      <informaltable frame="none">
+        <tgroup cols="4" colsep="0" rowsep="0">
+    <colspec colnum="1" colname="col1"/>
+    <colspec colnum="2" colname="col2" />
+    <colspec colnum="3" colname="col3" />
+    <colspec colnum="4" colname="col4" />
+    <tbody>
+      <row rowsep="0" id="Slides36to3901r01">
+        <entry colname="col1" morerows="4">
+          <bridgehead>Underlying issues</bridgehead>
+          <para>Spina bifida</para>
+          <para>Defect at L2/3</para>
+          <para>neuropathic bladder</para>
+          <para>constipation</para>
+          <para>VP shunt in situ</para>
+          <para>Glasses for myopia</para>
+        </entry>
+        <entry colname="col2"><bridgehead>Goals</bridgehead></entry>
+        <entry colname="col3"><bridgehead>Actions</bridgehead></entry>
+        <entry colname="col4"><bridgehead>Outcomes</bridgehead></entry>
+      </row>
+      <row rowsep="0" id="Slides36to3901r02">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Child goals</bridgehead>
+          <para>To be able to get to the toys I want by self</para>
+        </entry>
+        <entry colname="col3" morerows="3">
+          <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
+          <para><blank id="Slides36to3901fibc0301" role="useranswer large"><?xm-replace_text {blank}?></blank></para>
+          <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+        </entry>
+        <entry colname="col4">
+          <bridgehead renderas="sect5">Fitness</bridgehead>
+          <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
+          <para><blank id="Slides36to3901fibc0401" role="useranswer small"><?xm-replace_text {blank}?></blank></para>
+          <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides36to3901r03">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Family goals</bridgehead>
+          <para>To have a happier boy</para>
+          <para>To start nursery so that John's mother can enjoy time with new baby sister</para>
+        </entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Fun</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides36to3901fibc0402" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides36to3901r04">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Health issues</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides36to3901fibc0201" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para>
+        </entry>
+        <entry colname="col3"></entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Friendships</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides36to3901fibc0403" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides36to3901r05">
+        <entry colname="col2"></entry>
+        <entry colname="col3"></entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Future</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides36to3901fibc0404" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+</uqf:qpart>
+<uqf:apart>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides36to3901fibc0201">
+    <uqf:statement>
+      <para>Manage constipation</para>
+      <para>Optimum renal health</para>
+      <para>Strength, bone health and alignment</para>
+      <para>Encourage healthy eating and monitor weight</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides36to3901fibc0301">
+    <uqf:statement>
+              <para>Refer for self-propelled wheelchair assessment</para>
+              <para><emphasis role="bold">Nursery</emphasis></para>
+              <para>In collaboration with SENCO, occupational therapy and physiotherapy:</para>
+              <para>Ensure adequate funding secured to meet all health needs, including one-to-one
+                support as required.</para>
+              <para>Assessment of nursery environment to ensure timely adaptations to allow for safe
+                access to all areas.</para>
+              <para>Appropriate height adjustable seating and table as required to join in with
+                activities with peers.</para>
+              <para>Manual handling training for all staff.</para>
+              <para>Arrange paediatric continence nurse specialist training in clean intermittent
+                catheterisation. </para>
+              <para>Ensure Emergency Health Care Plan for VP shunt is in place and shared with all
+                staff, including awareness of red flags for shunt complications. </para>
+              <para>Proactively plan for the same support, equipment and environmental adjustments
+                in primary school for when the time comes to transition.</para>
+              <para><emphasis role="bold">Training in CIC</emphasis></para>
+              <para>For an emergency VP shunt management plan to be in place and staff to be trained
+                about this</para>
+              <para><emphasis role="bold">Health</emphasis></para>
+              <para>Proactive bowel and bladder management, in liaison with paediatric urology team
+                and continence nurse specialists </para>
+              <para>Use orthoses and equipment as advised by physiotherapist and orthopaedic team to
+                optimise posture, mobility and bone strength.</para>
+              <para><emphasis role="bold">Health</emphasis></para>
+              <para>Family to use positive comments and actions to help with self esteem</para>
+            </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides36to3901fibc0401">
+    <uqf:statement>
+      <para>Good renal health</para>
+      <para>Using standing frame in nursery to help with strength and bone health</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides36to3901fibc0402">
+    <uqf:statement>
+      <para>John can move around to find the toys he wants</para>
+              <para>John can move around to play with his friends</para>
+      <para>John feels good about himself</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides36to3901fibc0403">
+    <uqf:statement>
+      <para>John is able to play with his peers and nursery and makes 2 friends!</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides36to3901fibc0404">
+    <uqf:statement>
+      <para>John enjoys nursery and is rarely ill</para>
+      <para>For John to have a smooth transition to primary school with all the right support,
+                equipment and environmental adjustments in place</para>
+    </uqf:statement>
+  </uqf:ansopt>
+</uqf:apart>
+</uqf:questionobject>
+    </uqf:task>
+  </chapter>
+  <chapter id="chapter_i1g_xrr_lrb">
+    <title>Every picture tells a story</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata entityref="mkp-spinaf0114"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </chapter><chapter id="chapter_j1g_xrr_lrb" role="essential">
+    <?capdm template layout=2col left=3,right=1?>
+    <title>Mental health – Self-esteem</title>
+    <para>We are all affected by self esteem, and this can be more an issue for children with a
+      disability who may see themselves as different. For children, self-esteem comes from:</para>
+    <itemizedlist mark="bullet">
+      <listitem>
+        <para>knowing that they’re loved and that they belong to a family and a community that
+          values them;</para>
+      </listitem>
+      <listitem>
+        <para> spending quality time with their families;</para>
+      </listitem>
+      <listitem>
+        <para> being encouraged to try new things, finding things they’re good at and being praised
+          for things that are important to them. </para>
+      </listitem>
+    </itemizedlist>
+    <tip>
+      <title>Top tips on how parents can help children with their self esteem</title>
+      <itemizedlist mark="bullet">
+        <listitem>
+          <para>Tell your child you love them; say if often and for no reason other than to show you
+            appreciate them. </para>
+        </listitem>
+        <listitem>
+          <para> Try to have family rituals for example how you say good bye or good night that make
+            your children feel special. </para>
+        </listitem>
+        <listitem>
+          <para> Try to have 10 minutes of one to one time with your child in an activity they enjoy
+            every day.</para>
+        </listitem>
+        <listitem>
+          <para>Encourage friendships with playdates. Have an activity to share if they are
+            struggling to play together such as playdough or den building. </para>
+        </listitem>
+        <listitem>
+          <para>Praise your child, but be specific, e.g well done, that’s a good picture, you knew
+            that that was red. </para>
+        </listitem>
+        <listitem>
+          <para> Put up their pictures on the fridge! </para>
+        </listitem>
+      </itemizedlist>
+    </tip>
+  </chapter>
+  <chapter id="chapter_v4k_jsr_lrb">
+    <title>Key learning 4</title>
+    <uqf:task id="KEYLEARN0104" role="dwb">
+      <uqf:question id="KEYLEARN0104_01" role="3after">
+        <uqf:content>
+          <para>What have you learned that is important to remember about early childhood?</para>
+        </uqf:content>
+        <uqf:answerTemplate>
+          <para><blank id="KEYLEARN0104_01fib" size="100" rows="3"
+              ><?xm-replace_text {blank}?></blank></para>
+        </uqf:answerTemplate>
+        <uqf:answer>
+          <itemizedlist mark="bullet">
+            <listitem>
+              <para>Review <link linkend="chapter_g1g_xrr_lrb">Important actions in early
+                  childhood</link>
+              </para>
+            </listitem>
+            <listitem>
+              <para>Review <link linkend="chapter_j1g_xrr_lrb">Self-esteem top tips</link>
+              </para>
+            </listitem>
+          </itemizedlist>
+        </uqf:answer>
+      </uqf:question>
+    </uqf:task>
+  </chapter><chapter id="chapter_k1g_xrr_lrb">
+    <title>John’s life story – mid childhood</title>
+    <para>John is aged 10 years and is settled in his mainstream primary school. When you saw him
+      last he was fully mobile with his self propelled wheelchair and was enjoying mainstream school
+      where he was making expected progress and his general health had been good. </para>
+    <para>You are now going to see John in clinic. Think about what additional information you would
+      need from that consultation and complete the consultation proforma. </para>
+    <uqf:task id="Slides44to45" role="dwb">
+      <uqf:title/>
+      <uqf:questionobject id="Slides44to4501">
+        <?capdm advanced template=mkp-spina-slide44-layout.template ?>
+        <uqf:qpart id="Slides44to45qpart">
+          <para><blank id="Slides44to450101" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <para><blank id="Slides44to450102" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <para><blank id="Slides44to450103" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <para><blank id="Slides44to450104" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <informalfigure>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="mkp-spinafslide44"/>
+              </imageobject>
+            </mediaobject>
+          </informalfigure>
+        </uqf:qpart>
+        <uqf:apart>
+          <uqf:ansopt correct="Y" linkend="Slides44to450101" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>Can sit unaided with c shaped spine, but sits well in supported
+                seating.<?capdm *force_line_stop?> Independent for
+                transfers<?capdm *force_line_stop?> Able manual wheelchair
+                user<?capdm *force_line_stop?> Good hand skills – neat
+                script<?capdm *force_line_stop?> Able communicator <?capdm *force_line_stop?> Feed
+                himself<?capdm *force_line_stop?> Embarrassed by soiling<?capdm *force_line_stop?>
+                Not wanting to perform clean intermittent catheterisation</para>
+            </uqf:statement>
+          </uqf:ansopt>
+          <uqf:ansopt correct="Y" linkend="Slides44to450102" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>2 UTIs in last 6 months <?capdm *force_line_stop?>Lacking confidence
+                <?capdm *force_line_stop?>BP 100/65 normal U+E<?capdm *force_line_stop?>DMSA scarred
+                R kidney<?capdm *force_line_stop?>Shunt replaced aged 8 years – fine
+                <?capdm *force_line_stop?>Skin healthy<?capdm *force_line_stop?>FROM at hips/ knees
+                /ankles<?capdm *force_line_stop?>Vision – fine with
+                glasses<?capdm *force_line_stop?>Hearing – normal</para>
+            </uqf:statement>
+          </uqf:ansopt>
+          <uqf:ansopt correct="Y" linkend="Slides44to450103" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>John lives with both his parents and his sister. His mother works part time and
+                his father is now often away with work. His sister is 8 years and is a keen swimmer.
+                Family have moved to a bungalow to help with level access.</para>
+            </uqf:statement>
+          </uqf:ansopt>
+          <uqf:ansopt correct="Y" linkend="Slides44to450104" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>John continues to have the right level of support in place in school with
+                appropriate environmental adaptations and equipment and staff trained to support his
+                needs. Only two friends are going to same high
+                school<?capdm *force_line_stop?>Enjoying wheelchair tennis but does not want to go
+                to local youth group as he is not confident<?capdm *force_line_stop?>Will wash hands
+                and brush teeth<?capdm *force_line_stop?>Reluctant with clean intermittent
+                catheterisation<?capdm *force_line_stop?>Able to dress upper but not lower
+                body<?capdm *force_line_stop?>Likes to try to get own breakfast</para>
+            </uqf:statement>
+          </uqf:ansopt>
+        </uqf:apart>
+      </uqf:questionobject>
+    </uqf:task>
+  </chapter><chapter id="chapter_l1g_xrr_lrb">
+    <?capdm template layout=2col left=5,right=*?>
+    <title>Important actions in mid childhood</title>
+    <itemizedlist mark="bullet">
+      <title>Monitor urinary tract</title>
+      <listitem>
+        <para> Continue to encourage good fluid intake.</para>
+      </listitem>
+      <listitem>
+        <para>Monitor their growth, blood pressure and urinalysis.</para>
+      </listitem>
+      <listitem>
+        <para>Ensure any scans as advised by the paediatric urology and continence team are
+          completed and available for review.</para>
+      </listitem>
+      <listitem>
+        <para>Encourage independence with catheterisations working closely with advice from the
+          paediatric urology and continence nurse specialists. </para>
+      </listitem>
+      <listitem>
+        <para>If there is evidence of raised bladder pressure or leaking, the paediatric urology
+          team may consider oxybutynin, or a surgical intervention.</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Manage bowels – social continence </title>
+      <listitem>
+        <para>For some children regular medication and/ or suppositories with toilet sitting will
+          achieve a regular bowel action. If this is not the case, the paediatric urology and
+          continence specialist nursing team may consider either anal irrigation or an Antegrade
+          Continence Enema (ACE) procedure to enable this.</para>
+      </listitem>
+      <listitem>
+        <para>Anal plugs can also be used to prevent leakage.</para>
+      </listitem>
+      <listitem>
+        <para>Make sure they have an appropriate toilet with appropriate support. You can also get
+          automated toilets that wash and dry bottoms which helps with privacy and dignity. </para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Movement </title>
+      <listitem>
+        <para>Ensure access to appropriate mobility support. The NHS will provide one chair but if
+          you are interested in sports then additional chairs are likely to be needed. Charities
+          such as Whizz kids can help and support families in applying for this funding. </para>
+      </listitem>
+      <listitem>
+        <para>Ensure there are appropriate adaption for home, school and out of school activities to
+          enable children to join in. </para>
+      </listitem>
+      <listitem>
+        <para>Consider a comfortable chair at home if appropriate.</para>
+      </listitem>
+      <listitem>
+        <para>Monitor spine and range of movement at affected joints. </para>
+      </listitem>
+      <listitem>
+        <para>Encourage healthy eating and monitor weight.</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Mental health </title>
+      <listitem>
+        <para>Physical health problems can impact on a child's mental health. </para>
+      </listitem>
+      <listitem>
+        <para>It is important to identify and address the health issues that are important to the
+          child. </para>
+      </listitem>
+      <listitem>
+        <para>Ask about pain and make an appropriate pain management plan</para>
+      </listitem>
+      <listitem>
+        <para>Continue to work on self-esteem including supporting friendships and attending local
+          groups. </para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Independence</title>
+      <listitem>
+        <para>It is important to encourage age-appropriate independence including:</para>
+        <itemizedlist mark="dash">
+          <listitem>
+            <para>Life skills – being able to use a mobile phone, being on time, managing money
+              including a bank account.</para>
+          </listitem>
+          <listitem>
+            <para>Home skills – to be able to prepare and later plan meals, help with the dishes and
+              laundry.</para>
+          </listitem>
+          <listitem>
+            <para> Travel skills – to encourage independence in the local area including public
+              transport.</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>Managing health needs – to start to lead the conversation at appointments.</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Education</title>
+      <listitem>
+        <para>Remember we have talked to family about what is spina bifida but we need to remember
+          to have these conversations with children too.</para>
+      </listitem>
+      <listitem>
+        <para>Some children with spina bifida should have an education, health and care plan in
+          place but you still need to support the transition to high school. Issues to be considered
+          include: </para>
+        <itemizedlist mark="dash">
+          <listitem>
+            <para> Consider if adaptations will be needed, for example if the school is on multiple
+              levels so will the child get to all his lessons. The Special needs coordinator may
+              need to work with the person who writes the timetable to enable this. If the school
+              has a lift can he have a lift pass. Think about the equipment to enable the child to
+              access science and design and technology. </para>
+          </listitem>
+          <listitem>
+            <para>Staff training, e.g. support with clean intermittent catheterisation and
+              appropriate private toileting facilities, moving and handling training</para>
+          </listitem>
+          <listitem>
+            <para>Appropriate emergency management plans in place such as VP shunt or
+              seizures</para>
+          </listitem>
+          <listitem>
+            <para> Appropriate PE lessons – could access the gym, become a referee or be able to
+              leave school early to join in wheelchair sports</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Social support </title>
+      <listitem>
+        <para>Ensure the family have appropriate benefits; disability living allowance and if
+          appropriate carers allowance. </para>
+      </listitem>
+      <listitem>
+        <para> Ask if the family have a disabled parking badge (blue badge) in the UK this is after
+          two years of age if you receive the higher rate of disability living allowance or over
+          three years and unable to walk 50m. </para>
+      </listitem>
+      <listitem>
+        <para>Discuss with the family and therapy colleagues if any adaptions are needed as the
+          child grows.   </para>
+      </listitem>
+      <listitem>
+        <para>Encourage independence from the family with the help of support workers funded by
+          social care if needed. </para>
+      </listitem>
+    </itemizedlist>
+  </chapter>
+  <chapter id="chapter_dky_1cp_prb">
+    <title>Goals, actions and outcomes</title>
+    <para>You now know a lot about John </para>
+    <itemizedlist mark="bullet">
+      <listitem>
+        <para>What are the key medical goals? </para>
+      </listitem>
+      <listitem>
+        <para>What actions are needed? </para>
+      </listitem>
+    </itemizedlist>
+    <para>Think about the outcomes the family are looking for John. Complete these sections in the
+      form below. Reveal the answer to goals, then actions and outcomes to understand the clinical
+      plan. </para>
+    <!-\- Slides 49-52 -\->
+    <uqf:task id="Slides49to52" role="dwb">
+      <uqf:title/>
+      <uqf:questionobject id="Slides49to5201">
+    <?capdm advanced template=mkp-spina-slide49-layout.template ?>
+    <uqf:qpart>
+      <informaltable frame="none">
+        <tgroup cols="4" colsep="0" rowsep="0">
+    <colspec colnum="1" colname="col1"/>
+    <colspec colnum="2" colname="col2" />
+    <colspec colnum="3" colname="col3" />
+    <colspec colnum="4" colname="col4" />
+    <tbody>
+      <row rowsep="0" id="Slides49to5201r01">
+        <entry colname="col1" morerows="4">
+          <bridgehead>Underlying issues</bridgehead>
+          <para>Spina bifida</para>
+          <para>Defect at L2/3</para>
+          <para>neuropathic bladder</para>
+          <para>constipation</para>
+          <para>VP shunt in situ</para>
+          <para>Glasses for myopia</para>
+        </entry>
+        <entry colname="col2"><bridgehead>Goals</bridgehead></entry>
+        <entry colname="col3"><bridgehead>Actions</bridgehead></entry>
+        <entry colname="col4"><bridgehead>Outcomes</bridgehead></entry>
+      </row>
+      <row rowsep="0" id="Slides49to5201r02">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Child goals</bridgehead>
+          <para>To no longer soil and be in pants</para>
+          <para>To be able to go on school adventure weekend with mates</para>
+        </entry>
+        <entry colname="col3">
+          <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
+          <para><blank id="Slides49to5201fibc0301" role="useranswer small"><?xm-replace_text {blank}?></blank></para>
+          <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+        </entry>
+        <entry colname="col4">
+          <bridgehead renderas="sect5">Fitness</bridgehead>
+          <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
+          <para><blank id="Slides49to5201fibc0401" role="useranswer small"><?xm-replace_text {blank}?></blank></para>
+          <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides49to5201r03">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Family goals</bridgehead>
+          <para>To be clean and dry in pants</para>
+          <para>To increase independence in particular hygiene needs</para>
+                    <para>To increase self confidence, he worries about soiling</para>
+        </entry>
+        <entry colname="col3" morerows="3">
+          <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
+          <para><blank id="Slides49to5201fibc0302" role="useranswer small"><?xm-replace_text {blank}?></blank></para>
+          <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+        </entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Fun</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides49to5201fibc0402" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides49to5201r04">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Health issues</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides49to5201fibc0201" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para>
+        </entry>
+        <entry colname="col3" morerows="3">
+          <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
+          <para><blank id="Slides49to5201fibc0303" role="useranswer small"><?xm-replace_text {blank}?></blank></para>
+          <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+        </entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Friendships</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides49to5201fibc0403" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides49to5201r05">
+        <entry colname="col2"></entry>
+        <entry colname="col3"></entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Future</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides49to5201fibc0404" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+</uqf:qpart>
+<uqf:apart>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides49to5201fibc0201">
+    <uqf:statement>
+      <para>To have healthy renal tract</para>
+      <para>To achieve continence</para>
+      <para>To have healthy skin</para>
+      <para>To maintain physical fitness</para>
+      <para>To have a straight spine</para>
+      <para>To have appropriate shunt emergency management plan</para>
+              <para>To feel good about yourself</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides49to5201fibc0301">
+    <uqf:statement>
+      <para>The paediatric urology and continence team may advise a trial of rectal irrigation and
+                consideration of a Mitrofanoff procedure.</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides49to5201fibc0302">
+    <uqf:statement>
+      <para>Refer to occupational therapy for advice on independent showering including further
+                adaptations to house bathroom</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides49to5201fibc0303">
+    <uqf:statement>
+      <para>Ensure Emergency Health Care Plan is up to date.</para>
+              <para>Ensure medical advice across settings is up to date, including in the Education,
+                Health and Care plan if there is one in place.</para>
+              <para>Work on self-esteem.</para>
+      <para>Discuss with teaching staff about adventure weekend and address any health concerns so that John is included</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides49to5201fibc0401">
+    <uqf:statement>
+      <para>John really enjoys outward bound</para>
+      <para>He joins wheelchair sports including tennis and canoeing</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides49to5201fibc0402">
+    <uqf:statement>
+      <para>Able to go to cinema with friends</para>
+      <para>John develops an interest in canoeing</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides49to5201fibc0403">
+    <uqf:statement>
+      <para>Cements friendships with new peers on school outward bound weekend</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides49to5201fibc0404">
+    <uqf:statement>
+      <para>To be clean and dry and manage own continence needs</para>
+      <para>To be independent with dressing</para>
+      <para>To have confidence in wide range of social situations</para>
+    </uqf:statement>
+  </uqf:ansopt>
+</uqf:apart>
+</uqf:questionobject>
+    </uqf:task>
+  </chapter>
+  <chapter id="chapter_dxp_fwc_srb">
+    <title>Every picture tells a story</title>
+    <informalfigure>
+      <title>John really enjoyed his outward bound adventure</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata entityref="mkp-spinaf0116"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </chapter><chapter id="chapter_m1g_xrr_lrb" role="essential">
+    <?capdm template layout=2col left=4,right=*?>
+    <title>Mental health – self-esteem</title>
+    <para>Encourage parents to keep working on self esteem. It is important not just in childhood
+      but how children will tackle their adult life too. </para>
+    <para>Remember to model this in clinic by telling children what they are good at and how they
+      have helped. </para>
+    <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/Selfesteem.pdf"
+        role="external pdf linkicon">Download the self-esteem printout</ulink></para>
+    <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/Selfesteem.pdf"
+        role="external"><inlinemediaobject>
+          <imageobject>
+            <imagedata entityref="mkp-spinaf0117"/>
+          </imageobject>
+        </inlinemediaobject></ulink></para>
+  </chapter>
+  <chapter id="chapter_ibw_hsr_lrb">
+    <title>Key learning 5</title>
+    <uqf:task id="KEYLEARN0105" role="dwb">
+      <uqf:question id="KEYLEARN0105_01" role="3after">
+        <uqf:content>
+          <para>What have you learned that is important to remember about mid childhood?</para>
+        </uqf:content>
+        <uqf:answerTemplate>
+          <para><blank id="KEYLEARN0105_01fib" size="100" rows="3"
+              ><?xm-replace_text {blank}?></blank></para>
+        </uqf:answerTemplate>
+        <uqf:answer>
+          <itemizedlist mark="bullet">
+            <listitem>
+              <para>Review <link linkend="chapter_l1g_xrr_lrb">Important actions in mid
+                  childhood</link>
+              </para>
+            </listitem>
+            <listitem>
+              <para>Review <link linkend="chapter_m1g_xrr_lrb">Self-esteem top tips</link>
+              </para>
+            </listitem>
+          </itemizedlist>
+        </uqf:answer>
+      </uqf:question>
+    </uqf:task>
+  </chapter><chapter id="chapter_n1g_xrr_lrb">
+    <title>John’s life story – Transition</title>
+    <para>John is aged 16 years and is progressing well in mainstream high school. He has moved on
+      from wheelchair tennis to wheelchair basket ball and is playing at county level. He is
+      struggling with how he sees himself as different to his typically developing peers and in
+      particular he would like to have a girlfriend he could take to the school prom. </para>
+    <para>You are now going to see John in clinic. Think about what additional information you would
+      need from that consultation and complete the consultation proforma. </para>
+    <uqf:task id="Slides57to58" role="dwb">
+      <uqf:title/>
+      <uqf:questionobject id="Slides57to5801">
+        <?capdm advanced template=mkp-spina-slide57-layout.template ?>
+        <uqf:qpart id="Slides57to58qpart">
+          <para><blank id="Slides57to580101" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <para><blank id="Slides57to580102" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <para><blank id="Slides57to580103" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <para><blank id="Slides57to580104" rows="20" size="50" role="useranswer"
+              ><?xm-replace_text {blank}?></blank></para>
+          <informalfigure>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="mkp-spinafslide57"/>
+              </imageobject>
+            </mediaobject>
+          </informalfigure>
+        </uqf:qpart>
+        <uqf:apart>
+          <uqf:ansopt correct="Y" linkend="Slides57to580101" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>Can sit unaided with c shaped spine, but sits well in supported seating.
+                <?capdm *force_line_stop?>Independent for transfers<?capdm *force_line_stop?>Able
+                manual wheelchair user<?capdm *force_line_stop?>Good hand skills
+                <?capdm *force_line_stop?>Able communicator<?capdm *force_line_stop?>Feed
+                himself<?capdm *force_line_stop?>Still needs help with underpants and
+                trousers<?capdm *force_line_stop?>Socially continent</para>
+            </uqf:statement>
+          </uqf:ansopt>
+          <uqf:ansopt correct="Y" linkend="Slides57to580102" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>John is delighted with mitroffanof and is catheterising 3 hourly, and has had no
+                more UTIs, BP and renal u/s normal<?capdm *force_line_stop?>Bowels fine with anal
+                irrigation – no accidents<?capdm *force_line_stop?>Mood is low and self harmed on at
+                least 2 occasions. Sees himself as different. Wants a girlfriend but thinks this
+                will not happen. <?capdm *force_line_stop?>Good hearing
+                <?capdm *force_line_stop?>Myopia unchanged – fed up of glasses</para>
+            </uqf:statement>
+          </uqf:ansopt>
+          <uqf:ansopt correct="Y" linkend="Slides57to580103" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>Both of John’s parents are working full time. They are worried that he is
+                becoming increasingly withdrawn and his sleep and eating has deteriorated. When at
+                home he is spending increasing time in his bedroom online. </para>
+            </uqf:statement>
+          </uqf:ansopt>
+          <uqf:ansopt correct="Y" linkend="Slides57to580104" markval="1">
+            <uqf:statement>
+              <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+              <para>John had been doing well at school but recently his school performance has
+                declined, but he should still have good GCSE passes. He is planning to stay on at
+                6th form at his school although it doesn’t offer the subjects he wants as he knows
+                the staff and does not want to take on the challenge of a new
+                college.<?capdm *force_line_stop?>Has group of friends both high school peers and
+                from basketball team but needs parents help with transport – would like to go to
+                wheelchair basketball summer school but issues around funding
+                <?capdm *force_line_stop?>Good with time, money and managing
+                technology<?capdm *force_line_stop?>Difficulties with cooking because of kitchen
+                layout </para>
+            </uqf:statement>
+          </uqf:ansopt>
+        </uqf:apart>
+      </uqf:questionobject>
+    </uqf:task>
+  </chapter><chapter id="chapter_o1g_xrr_lrb">
+    <?capdm template layout=2col left=9,right=*?>
+    <title>Transition: 14 to 18 years</title>
+    <para>During transition the following issues need to be addressed:</para>
+    <itemizedlist mark="bullet">
+      <title>The young person's understanding </title>
+      <listitem>
+        <para>Does he understand about what spina bifida is and how he can look after himself and
+          can he identify where he needs additional support to lead a healthy life?</para>
+      </listitem>
+      <listitem>
+        <para>Does he understand about VP shunts, how to recognize if there are problems and how to
+          seek help? </para>
+      </listitem>
+      <listitem>
+        <para>Does he understand about why he has bladder and bowel difficulties and why it is
+          important to manage these well?</para>
+      </listitem>
+      <listitem>
+        <para>Does he understand about how to look after his skin?</para>
+      </listitem>
+      <listitem>
+        <para> Does he know how to get his medications, and supplies – e.g. catheters? </para>
+      </listitem>
+      <listitem>
+        <para>Does he know who will help if he has a problem with his wheelchair?</para>
+      </listitem>
+      <listitem>
+        <para>Does he know who to contact if there are problems? </para>
+      </listitem>
+      <listitem>
+        <para> Is he aware of the Importance of exercise and a healthy diet?</para>
+      </listitem>
+      <listitem>
+        <para> Is he aware of risk from drugs, alcohol, and smoking?</para>
+      </listitem>
+      <listitem>
+        <para> Is he aware of implications for sexual health and to know how to access help if
+          needed? </para>
+      </listitem>
+    </itemizedlist>
+    <bridgehead>Medical issues</bridgehead>
+    <itemizedlist mark="bullet">
+      <title>Urinary tract </title>
+      <listitem>
+        <para>Continue to monitor his growth, blood pressure and urinalysis and result of annual
+          ultrasound transfer to adult urology. Also check if he knows how to get their own
+          catheters and gel.</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Manage bowels</title>
+      <listitem>
+        <para> Is he happy with his bowel management? In the case of John – anal irrigation – and
+          does he know how to get supplies of equipment? </para>
+      </listitem>
+      <listitem>
+        <para> Does he have additional support around his toilet, as this will need to be replicated
+          when he moves on to university?   </para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Movement </title>
+      <listitem>
+        <para>Ensure access to appropriate chair with easy transfer into car.</para>
+      </listitem>
+      <listitem>
+        <para>Ensure there are appropriate adaption for home, school and out of school activities to
+          allow John to join in. This support needs to be mirrored when moving to university.
+          Universities have disabled friendly accommodation on site.</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Monitor spine and range of movement at affected joints </title>
+      <listitem>
+        <para>If John has a scoliosis, there is a risk of progression during the pubertal growth
+          spurt. Referral to the spinal orthopaedic surgical team is recommended as soon as
+          scoliosis is first identified</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Encourage a healthy diet </title>
+      <listitem>
+        <para>John’s energy needs will be different to a mobile peer as his level of activity will
+          be different. Input from dietetic team should be considered if weight is a concern.</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Independence</title>
+      <listitem>
+        <para>It is important to encourage age appropriate independence including:</para>
+        <itemizedlist mark="dash">
+          <listitem>
+            <para>Self-care feeding, toileting and hygiene needs.</para>
+          </listitem>
+          <listitem>
+            <para>Life skills – being able to use a mobile phone, being on time, managing money
+              including a bank account.</para>
+          </listitem>
+          <listitem>
+            <para>Home skills – to be able to prepare and later plan meals, help with the dishes and
+              laundry. </para>
+          </listitem>
+          <listitem>
+            <para> Travel skills – to encourage independence in the local area including public
+              transport</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para> Make the young person aware they can apply for a driving licence from the age of 16
+          years, and where they can access an OT assessment to identify the adaptions needed for
+          driving.</para>
+      </listitem>
+      <listitem>
+        <para>Managing health needs – to start to lead the conversation at appointments.</para>
+      </listitem>
+      <listitem>
+        <para>Understand about their ability to access benefits.   </para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Mental health</title>
+      <listitem>
+        <para>Ask about unwelcome comments and bullying. Is the young person feel that if this is an
+          issue they are being supported, and if not find someone who can! </para>
+      </listitem>
+      <listitem>
+        <para>Can they manage emotions such as anger and anxiety. Many schools have support programs
+          in place to help young people handle emotions.</para>
+      </listitem>
+      <listitem>
+        <para>Do they have someone the feel they can talk to, and if not discuss the options and
+          encourage school or family to commit to this support.</para>
+      </listitem>
+      <listitem>
+        <para>Ask about how he feels about the way he looks.</para>
+      </listitem>
+      <listitem>
+        <para>Ask about friends out of school and how easy is it to see them. Look at strategies to
+          be able to do this without direct parental support. If an adult support is needed then
+          encourage the family to engage with social care disability team to look for funding to
+          enable support from a personal assistant. </para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Education</title>
+      <listitem>
+        <para>If an Education, Health and Care plan is in place, this will be reviewed annually and
+          can continue to 25 years of age. What is most important is that the young person’s needs
+          continue to be appropriately met, with staff trained, equipment and environmental
+          adjustments in place, including proactive planning for changes in setting, such as to
+          college, University, apprenticeship or the workplace, linking with the relevant Disability
+          Officer. </para>
+      </listitem>
+      <listitem>
+        <para>Moving to university or college has similar challenges including building in the
+          appropriate support to enable independent living. </para>
+      </listitem>
+      <listitem>
+        <para>Encourage the young person to be involved with work experience and voluntary work to
+          build up their CV.  </para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist mark="bullet">
+      <title>Social support </title>
+      <listitem>
+        <para>At the age of 16 years DLA will become PIPs (Personal Independence Payments) which are
+          paid to the young person. </para>
+      </listitem>
+      <listitem>
+        <para>Encourage independence from the family with the help of support workers funded by
+          social care if needed. </para>
+      </listitem>
+    </itemizedlist>
+  </chapter><chapter id="chapter_p1g_xrr_lrb">
+  <title>Goals, actions and outcomes</title>
+    <!-\- Slides 64-68 -\->
+    <uqf:task id="Slides64to68" role="dwb">
+      <uqf:title/>
+      <uqf:questionobject id="Slides64to6801">
+    <?capdm advanced template=mkp-spina-slide64-layout.template ?>
+    <uqf:qpart>
+      <informaltable frame="none">
+        <tgroup cols="4" colsep="0" rowsep="0">
+    <colspec colnum="1" colname="col1"/>
+    <colspec colnum="2" colname="col2" />
+    <colspec colnum="3" colname="col3" />
+    <colspec colnum="4" colname="col4" />
+    <tbody>
+      <row rowsep="0" id="Slides64to6801r01">
+        <entry colname="col1" morerows="4">
+          <bridgehead>Underlying issues</bridgehead>
+          <para>Spina bifida</para>
+          <para>Defect at L2/3</para>
+          <para>neuropathic bladder</para>
+          <para>constipation</para>
+          <para>VP shunt in situ</para>
+          <para>Glasses for myopia</para>
+        </entry>
+        <entry colname="col2"><bridgehead>Goals</bridgehead></entry>
+        <entry colname="col3"><bridgehead>Actions</bridgehead></entry>
+        <entry colname="col4"><bridgehead>Outcomes</bridgehead></entry>
+      </row>
+      <row rowsep="0" id="Slides64to6801r02">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Young person goals</bridgehead>
+          <para>To feel better about himself</para>
+          <para>To have girl friend/erections</para>
+          <para>To go to Basketball summer school</para>
+          <para>To be independent with travel</para>
+          <para>To take history and politics at uni</para>
+        </entry>
+        <entry colname="col3">
+          <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
+          <para><blank id="Slides64to6801fibc0301" role="useranswer large"><?xm-replace_text {blank}?></blank></para>
+          <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
+        </entry>
+        <entry colname="col4">
+          <bridgehead renderas="sect5">Fitness</bridgehead>
+          <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
+          <para><blank id="Slides64to6801fibc0401" role="useranswer small"><?xm-replace_text {blank}?></blank></para>
+          <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides64to6801r03">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Family goals</bridgehead>
+          <para>To be happy and to stop <link linkend="chapter_s1g_xrr_lrb">self
+                      harming</link></para>
+          <para>To become independent</para>
+          <para>To go to University</para>
+        </entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Fun</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides64to6801fibc0402" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides64to6801r04">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Health issues</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides64to6801fibc0201" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para>
+        </entry>
+        <entry colname="col4"><bridgehead renderas="sect5">Friendships</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides64to6801fibc0403" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+      <row rowsep="0" id="Slides64to6801r05">
+        <entry colname="col4"><bridgehead renderas="sect5">Future</bridgehead>
+                    <para role="printonly myanswer"><emphasis role="bold">My
+                      answer</emphasis></para><para><blank id="Slides64to6801fibc0404" role="useranswer small"
+                      ><?xm-replace_text {blank}?></blank></para>
+                    <para role="printonly youranswer"><emphasis role="bold">Model
+                      answer</emphasis></para></entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+</uqf:qpart>
+<uqf:apart>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides64to6801fibc0201">
+    <uqf:statement>
+      <para>Low mood</para>
+      <para>Weight</para>
+      <para>Scoliosis</para>
+      <para>Bladder, renal and bowel health and control</para>
+      <para>Transition to adult healthcare teams</para>
+      <para>Sexual health</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides64to6801fibc0301">
+    <uqf:statement>
+      <para>Get contact lenses</para>
+      <para>Negotiate allowance and how to see friends independently</para>
+      <para>To further assess low mood</para>
+      <para>Manage erectile difficulties &ndash; transfer to adult urology and at joint clinic discuss erectile difficulties</para>
+      <para>To discuss apply for driving license aged 16 years and specialist OT assessment for adapted vehicles &ndash; funded by higher rate mobility component of DLA</para>
+      <para>To refer to social care OT about kitchen adaptations</para>
+      <para>To send in health advice for EHCP about planning university transition / John to visit Unis and meet with disability support team</para>
+      <para>To write letter to support to funding for summer school basketball</para>
+      <para>Discuss disabled student allowance</para>
+      <para>For adult social care assessment to help with funding support for uni</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides64to6801fibc0401">
+    <uqf:statement>
+              <para>To play in national under 18 wheelchair basketball team.</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides64to6801fibc0402">
+    <uqf:statement>
+      <para>To enjoy summer school and being with basketball team mates.</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides64to6801fibc0403">
+    <uqf:statement>
+      <para>To take girlfriend to the prom!</para>
+    </uqf:statement>
+  </uqf:ansopt>
+  <uqf:ansopt correct="Y" markval="1" linkend="Slides64to6801fibc0404">
+    <uqf:statement>
+      <para>To learn to drive.</para>
+      <para>To move on to the adult urology and spinal orthopaedic teams.</para>
+      <para>To have the right specialists in place for when at university.</para>
+              <para>To have the right support, equipment and environmental adjustments in place at
+                university and for independent living.</para>
+    </uqf:statement>
+  </uqf:ansopt>
+</uqf:apart>
+</uqf:questionobject>
+    </uqf:task>  
+  </chapter><chapter id="chapter_q1g_xrr_lrb" role="essential">
+    <title>Low-mood assessment</title>
+    <para>When thinking about low mood, the following approach can help you to understand and assess
+      the situation. </para>
+    <itemizedlist mark="none">
+      <listitem>
+        <para><emphasis>Has there been a trigger? </emphasis></para>
+        <itemizedlist mark="bullet">
+          <listitem>
+            <para>All of our moods are affected by life events and it is important to understand
+              what has been going on. In particular think about bereavement, divorce or a severely
+              disappointing experience. </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para><emphasis>Could this be depression? Also think about how much it is impacting on the
+            child’s life. The big three: </emphasis></para>
+        <itemizedlist mark="bullet">
+          <listitem>
+            <para>Persistent low mood or irritability with parents or peers; or </para>
+          </listitem>
+          <listitem>
+            <para> lack of energy affecting their ability to join in life – both friendships and
+              school life; or </para>
+          </listitem>
+          <listitem>
+            <para>lack of enjoyment (anhedonia) – have they altered their activities and
+              engagement.</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para><emphasis>Other significant symptoms: </emphasis></para>
+        <itemizedlist mark="bullet">
+          <listitem>
+            <para>Poor concentration and difficulties with short term memory – Is there an
+              associated deterioration in school work?</para>
+          </listitem>
+          <listitem>
+            <para> Poor motivation, loss of interest</para>
+          </listitem>
+          <listitem>
+            <para> Poor self esteem/confidence</para>
+          </listitem>
+          <listitem>
+            <para> Somatic symptoms: </para>
+            <itemizedlist mark="dash">
+              <listitem>
+                <para>Poor sleep – early morning wakening</para>
+              </listitem>
+              <listitem>
+                <para>Poor appetite / weight loss </para>
+              </listitem>
+              <listitem>
+                <para> Loss of libido</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+          <listitem>
+            <para>Psychomotor retardation/agitation </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para><emphasis role="bold">Ask about self harm, and if the child is thinking about death or
+            suicide.</emphasis></para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="bold">Check about substance misuse.</emphasis></para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="bold">Consider child abuse.</emphasis></para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="bold">Consider other factors with a risk profile:</emphasis></para>
+        <itemizedlist mark="bullet">
+          <listitem>
+            <para>Previous history of moderate or severe depression </para>
+          </listitem>
+          <listitem>
+            <para> Family discord</para>
+          </listitem>
+          <listitem>
+            <para>Bullying</para>
+          </listitem>
+          <listitem>
+            <para>Sexual or emotional abuse </para>
+          </listitem>
+          <listitem>
+            <para>Drug or alcohol misuse</para>
+          </listitem>
+          <listitem>
+            <para>Parental depression </para>
+          </listitem>
+          <listitem>
+            <para>Homelessness</para>
+          </listitem>
+          <listitem>
+            <para> Refugee status</para>
+          </listitem>
+          <listitem>
+            <para>Living in an institution </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+    </itemizedlist>
+  </chapter><chapter id="chapter_r1g_xrr_lrb" role="essential">
+    <title>Management of low mood</title>
+    <para>Once you have assessed the situation, the first question is: Does this young person have a
+      significant depression? And in particular: Are there any concerns about suicidal
+      intent?</para>
+    <para> Depression is defined by DSM (Diagnostic and Statistical Manual of mental disorders)
+      version 5 as summarised in the box below. </para>
+    <tip>
+      <title>Summarised DSM V Criteria for Major depression</title>
+      <para><emphasis role="bold">The big 3</emphasis></para>
+      <para>A depressed mood, for most of the day and nearly every day; or
+        <?capdm *force_line_stop?> a loss of interest or pleasure in all or almost all activities
+        nearly every day or fatigue; or<?capdm *force_line_stop?> loss of energy nearly every day –
+        leading to disengaged from peers, leisure activities and school.</para>
+      <para><emphasis>Plus 3 others </emphasis></para>
+      <para>Weight loss or gain of more than 5% <?capdm *force_line_stop?> Insomnia (especially
+        early morning wakening) or hypersomnia nearly every day <?capdm *force_line_stop?> Feeling
+        of worthlessness or excessive or inappropriate guilt (which may be delusional) nearly every
+        day <?capdm *force_line_stop?> Diminished ability to think or concentrate, or
+        indecisiveness, nearly every day going on for more than 2 weeks <?capdm *force_line_stop?>
+        Recurrent thoughts of death (not just fear of dying), recurrent suicidal ideation.   </para>
+      <para>Ongoing for more than 2 weeks. </para>
+    </tip>
+  </chapter>
+  <chapter id="chapter_vb1_q3c_qrb" role="essential">
+    <?capdm template layout=121 1=3,2.1=2,2.2=1,3=* ?>
+    <title>The low mood and depression decision tree</title>
+    <para>The low mood and depression decision tree (NICE guidance) can help guide your next steps. </para>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata entityref="mkp-spinaf0119"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </chapter>
+  <chapter id="chapter_s34_csj_srb" role="essential">
+    <title>Practical strategies for low mood</title>
+    <para>If you think this is not a major depression and you do no have concerns about significant
+      self-harm and you are taking a watch-and-wait approach, you should offer practical lifestyle
+      advice. </para>
+    <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/Low_mood.pdf"
+        role="external pdf linkicon">Download the low mood printout</ulink></para>
+    <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/Low_mood.pdf"
+        role="external"><inlinemediaobject>
+          <imageobject>
+            <imagedata entityref="mkp-spinaf0120"/>
+          </imageobject>
+        </inlinemediaobject></ulink></para>
+  </chapter><chapter id="chapter_s1g_xrr_lrb" role="essential">
+    <?capdm template layout=2col left=5,right=*?>
+    <title>Self harm</title>
+    <tip role="redflag">
+      <title>Red flag</title>
+      <para>Significant suicidal intent is a psychiatric emergency and you need to seek immediate
+        advice</para>
+    </tip>
+    <para>Self harm can take a number of different forms: </para>
+    <itemizedlist mark="bullet">
+      <listitem>
+        <para>Cutting, scratching, carving, branding or marking the body</para>
+      </listitem>
+      <listitem>
+        <para>Picking at scabs so they don’t heal</para>
+      </listitem>
+      <listitem>
+        <para>Pulling hair</para>
+      </listitem>
+      <listitem>
+        <para>Burning or grazing</para>
+      </listitem>
+      <listitem>
+        <para>Biting, bruising due to hitting themselves </para>
+      </listitem>
+      <listitem>
+        <para>Binge drinking, taking a lot of drugs, having unsafe sex or starving themselves</para>
+      </listitem>
+    </itemizedlist>
+    <para>Digital self-harm or self-cyberbullying is when teenagers create alternative online
+      identities for themselves on social media sites and post cruel comments about themselves. The
+      alternative identities might also get cruel comments from other people. </para>
+    <tip>
+      <para><emphasis>Top tips on self harm </emphasis>
+      </para>
+      <itemizedlist mark="bullet">
+        <listitem>
+          <para>Be calm. </para>
+        </listitem>
+        <listitem>
+          <para>I noticed the cuts / scars on your arm. I hope it’s OK to say that. I would like to
+            help and then offer first aid if needed. </para>
+        </listitem>
+        <listitem>
+          <para> I know that young people only do this when they have really strong emotions and
+            feel very upset. Can you tell me about his? </para>
+        </listitem>
+        <listitem>
+          <para>If they cannot ask if they have someone they feel they can talk to when the time is
+            right so that so they work something out together. </para>
+        </listitem>
+        <listitem>
+          <para>Offer advice leaflet with websites and other self help strategies.</para>
+          <itemizedlist mark="dash">
+            <listitem>
+              <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/Selfharm2.pdf"
+                  role="external pdf linkicon">When you think you may self harm</ulink></para>
+            </listitem>
+            <listitem>
+              <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/Selfharm1.pdf"
+                  role="external pdf linkicon">How to help if someone is self harming</ulink></para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+    </tip>
+  </chapter><chapter id="chapter_t1g_xrr_lrb">
+    <title>Spina bifida and sexual health</title>
+    <para>Remember sexuality is not just intercourse and it is important for couples to understand
+      how to physically enjoy each other, e.g. verbal expressions, music, caressing, massage. </para>
+    <itemizedlist mark="bullet">
+      <listitem>
+        <para>Encourage young people to empty bowels and bladder prior to sex to avoid embarrassing
+          accidents. </para>
+      </listitem>
+      <listitem>
+        <para>For girls, fertility is not compromised and contraception remains important. </para>
+      </listitem>
+      <listitem>
+        <para>As for all adults sexually transmitted infections are an issue and therefore encourage
+          latex-free condom use. </para>
+      </listitem>
+      <listitem>
+        <para>General practitioners have good knowledge about contraception and also sexually
+          transmitted infections.</para>
+      </listitem>
+      <listitem>
+        <para>Spinal lesions can affect sensation, the ability to achieve an erection and the
+          experience of an orgasm. If young people are having sexual health difficulties then they
+          should be referred to experts in sexual health, such as the sexual health clinic, urology
+          or gynaecology. </para>
+      </listitem>
+    </itemizedlist>
+  </chapter>
+  <chapter id="chapter_u1g_xrr_lrb">
+    <title>Key learning 6</title>
+    <uqf:task id="KEYLEARN0106" role="dwb">
+      <uqf:question id="KEYLEARN0106_01" role="3after">
+        <uqf:content>
+          <para>What have you learned that is important to remember about teenage years and
+            transition?</para>
+        </uqf:content>
+        <uqf:answerTemplate>
+          <para><blank id="KEYLEARN0106_01fib" size="100" rows="4"
+              ><?xm-replace_text {blank}?></blank></para>
+        </uqf:answerTemplate>
+        <uqf:answer>
+          <itemizedlist mark="bullet">
+            <listitem>
+              <para>Review <link linkend="chapter_o1g_xrr_lrb">Important actions in teenage
+                  years</link>
+              </para>
+            </listitem>
+            <listitem>
+              <para>Review <link linkend="chapter_t1g_xrr_lrb">Spina bifida and sexuality</link>
+              </para>
+            </listitem>
+            <listitem>
+              <para>Review <link linkend="chapter_q1g_xrr_lrb">How to assess low mood</link>
+              </para>
+            </listitem>
+            <listitem>
+              <para>Review <link linkend="chapter_s34_csj_srb">Practical strategies for low
+                  mood</link>
+              </para>
+            </listitem>
+            <listitem>
+              <para>Review <link linkend="chapter_s1g_xrr_lrb">Self harm</link></para>
+            </listitem>
+          </itemizedlist>
+        </uqf:answer>
+      </uqf:question>
+    </uqf:task>
+  </chapter>
+  <chapter id="chapter_v1g_xrr_lrb">
+    <title>Key messages</title>
+    <itemizedlist mark="bullet">
+      <listitem>
+        <para>Good renal tract management from birth onwards prevents renal failure in adulthood.
+          Clean intermittent catheterisation is key and involving children in this as soon as
+          possible helps to build up their self management skills. </para>
+      </listitem>
+      <listitem>
+        <para> We are always aiming for social continence as children approach school age.</para>
+      </listitem>
+      <listitem>
+        <para> If the child has a VP shunt ensure an appropriate management plan is in place.</para>
+      </listitem>
+      <listitem>
+        <para>Appropriate support will enhance mobility, enable participation and enhance the
+          quality of life. </para>
+      </listitem>
+      <listitem>
+        <para>Monitor spine and joints and act promptly if issues are developing. </para>
+      </listitem>
+      <listitem>
+        <para>Celebrate the child’s success and talk and find solutions for difficulties.</para>
+      </listitem>
+      <listitem>
+        <para>For a young person with low mood screen for depression and if present act. Give
+          practical advice for low mood.</para>
+      </listitem>
+    </itemizedlist>
+  </chapter>
+  <chapter id="chapter_xjq_t1x_srb">
+    <title>Resources</title>
+    <itemizedlist mark="bullet">
+      <listitem>
+        <para><link linkend="chapter_d1g_xrr_lrb">Clinical approach to spina bifida</link></para>
+      </listitem>
+      <listitem>
+        <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/Bladder.pdf"
+            role="external pdf">Algorithm for bladders and bowel management</ulink>
+        </para>
+      </listitem>
+      <listitem>
+        <para><link linkend="mkp-spinaf0112">Algorithm for shunt problems</link></para>
+      </listitem>
+      <listitem>
+        <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/VP_shunt_plan.pdf"
+            role="external pdf">VP shunt emergency management plan</ulink>
+        </para>
+      </listitem>
+      <listitem>
+        <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/Selfesteem.pdf"
+            role="external pdf">How to help with self esteem</ulink></para>
+      </listitem>
+      <listitem>
+        <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/Low_mood.pdf"
+            role="external pdf">How to help families support young people with low
+          mood</ulink></para>
+      </listitem>
+      <listitem>
+        <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/Selfharm.pdf"
+            role="external pdf">How to help if someone is self harming</ulink>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </chapter>
+  <chapter id="chapter_jmx_jcx_srb">
+    <title>Spina bifida case-based discussion</title>
+    <para>This document highlights areas to consider and discuss as part of an assessment. Use this
+      as a prompt when you are discussing a case. <ulink
+        url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/CDB_assessment_tool.pdf"
+        role="external pdf">Download the file here.</ulink></para>
+  </chapter>
+  <chapter id="chapter_cd1_tc2_trb">
+    <title>Links and references</title>
+    <itemizedlist>
+      <title>Useful links</title>
+      <listitem>
+        <para><ulink url="https://www.shinecharity.org.uk/" role="external">SHINE
+          website</ulink></para>
+      </listitem>
+      <listitem>
+        <para><ulink url="https://raisingchildren.net.au/" role="external">Raising children
+            website</ulink></para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist>
+      <title>References</title>
+      <listitem>
+        <para>Current Concepts in Spina Bifida and Hydrocephalus. Bannister CM, Tew B. (1992) ISBN:
+          9780901260918</para>
+      </listitem>
+      <listitem>
+        <para>Introduction: Spina Bifida – a multidisciplinary perspective. Fletcher JM, Brei TJ.
+          Dev Disabil Res Rev 2010;16(1) 1-6</para>
+      </listitem>
+      <listitem>
+        <para>Depression DSM V diagnostic criteria</para>
+      </listitem>
+      <listitem>
+        <para>Depression in children and young people: identification and management- NICE guideline
+          [NG134] June 2019</para>
+      </listitem>
+    </itemizedlist>
+  </chapter>
+  <chapter id="chapter_oyx_5dy_2sb" role="essential">
+    <title>Essentials course holding page</title>
+    <para>This is a holding page for the Essentials course.</para>
+  </chapter>-->
+</book>
