@@ -15,7 +15,23 @@
 \xmlregisterdocumentsetup{mkp}{xml:mkp:base}
 
 %Entities
+
 \xmltexentity{nbsp}{\ }
+
+%Procins
+
+\startluacode
+ function lxml.preprocessor(data,settings)
+  return string.find(data,"<?capdm *force_line_stop?>")
+   and string.gsub(data,"<?capdm *force_line_stop?>","<capdmlinestop></capdmlinestop/>")
+   or data
+ end
+\stopluacode
+
+\startxmlsetups xml:mkp:capdmlinestop
+ \blank
+ \xmlflush{#1}
+\stopxmlsetups
 
 %Hierarchicals
 
@@ -78,8 +94,9 @@
 \xmlregisterdocumentsetup{mkp}{xml:mkp:lists}
 
 \startxmlsetups xml:mkp:itemizedlist:bullet
+ {\bf\xmlfirst{#1}{/title}}
  \startitemize[1]
-  \xmlflush{#1}
+  \xmlall{#1}{/!title}
  \stopitemize
 \stopxmlsetups
 
@@ -104,9 +121,10 @@
 \setupTABLE[offset=.3em,framecolor=gray,split=yes]
 
 \startxmlsetups xml:mkp:informaltable
- \blank
+ \blank[big,preference]
+ {\bf\xmlfirst{#1}{/title}}\blank[small,samepage]
  \bTABLE
-  \xmlflush{#1}
+  \xmlall{#1}{/!title}
  \eTABLE
 \stopxmlsetups
 
@@ -145,6 +163,7 @@
 \setupexternalfigures[directory=C:/Work/svn/MPE graphics,maxwidth=\textwidth]
 
 \startxmlsetups xml:mkp:informalfigure
+ \blank[big,preference]
  \xmlflush{#1}
 \stopxmlsetups
 

@@ -570,7 +570,7 @@
       study</emphasis>. R M Bowman RM, D G McLone D G , J A Grant JA et al . Pediatr Neurosurg.
       2001 Mar;34(3):114-20.</para>
   </chapter>
-  <!--  <chapter id="chapter_wzf_xrr_lrb">
+  <chapter id="chapter_wzf_xrr_lrb">
     <title>John’s life story – birth</title>
     <?capdm template layout=12121 1=1,2.1=2,2.2=5,3=2,4.1=1,4.2=1,5=* ?>
     <para>Baby John is born by elective caesarean section at term in a tertiary centre which has a
@@ -748,7 +748,7 @@
         prenatal spina bifida aperta repair</emphasis>: Hepp ZS, Haas VM, Latal B et al.
       DMCN;611302-7.</para>
   </chapter>
-  <chapter id="chapter_zzf_xrr_lrb">
+  <!--  <chapter id="chapter_zzf_xrr_lrb">
     <title>John's life story - post birth </title>
     <para>John’s defect was successfully closed and the wound has healed well. He had hydrocephalus
       and a VP shunt was inserted at the time of spinal surgery and his head circumference has
