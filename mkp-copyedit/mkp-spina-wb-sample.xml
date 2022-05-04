@@ -1,5 +1,30 @@
 <?xml version="1.0"?>
-
+<!DOCTYPE book PUBLIC "-//CAPDM Limited//DTD DocBook V4.1.2-Based Extension//EN" "http://schemas.capdm.com/dbcapdm/dbcapdm.dtd" [
+<!ENTITY mkp-spina-cw SYSTEM "mkp-spina-cw" NDATA XML>
+<!ENTITY mkp-spinaf0101 SYSTEM "mkp-spinaf0101" NDATA PNG>
+<!ENTITY mkp-spinaf0102 SYSTEM "mkp-spinaf0102" NDATA PNG>
+<!ENTITY mkp-spinaf0103 SYSTEM "mkp-spinaf0103" NDATA PNG>
+<!ENTITY mkp-spinaf0104 SYSTEM "mkp-spinaf0104" NDATA PNG>
+<!ENTITY mkp-spinaf0105 SYSTEM "mkp-spinaf0105" NDATA PNG>
+<!ENTITY mkp-spinaf0106 SYSTEM "mkp-spinaf0106" NDATA PNG>
+<!ENTITY mkp-spinaf0107 SYSTEM "mkp-spinaf0107" NDATA PNG>
+<!ENTITY mkp-spinaf0108 SYSTEM "mkp-spinaf0108" NDATA PNG>
+<!ENTITY mkp-spinaf0109 SYSTEM "mkp-spinaf0109" NDATA PNG>
+<!ENTITY mkp-spinaf0110 SYSTEM "mkp-spinaf0110" NDATA PNG>
+<!ENTITY mkp-spinaf0111 SYSTEM "mkp-spinaf0111" NDATA PNG>
+<!ENTITY mkp-spinaf0112 SYSTEM "mkp-spinaf0112" NDATA PNG>
+<!ENTITY mkp-spinaf0113 SYSTEM "mkp-spinaf0113" NDATA PNG>
+<!ENTITY mkp-spinaf0114 SYSTEM "mkp-spinaf0114" NDATA PNG>
+<!ENTITY mkp-spinaf0115 SYSTEM "mkp-spinaf0115" NDATA PNG>
+<!ENTITY mkp-spinaf0116 SYSTEM "mkp-spinaf0116" NDATA PNG>
+<!ENTITY mkp-spinaf0117 SYSTEM "mkp-spinaf0117" NDATA PNG>
+<!ENTITY mkp-spinaf0118 SYSTEM "mkp-spinaf0118" NDATA PNG>
+<!ENTITY mkp-spinaf0119 SYSTEM "mkp-spinaf0119" NDATA PNG>
+<!ENTITY mkp-spinaf0120 SYSTEM "mkp-spinaf0120" NDATA PNG>
+<!ENTITY mkp-spinaf0121 SYSTEM "mkp-spinaf0121" NDATA PNG>
+<!ENTITY mkp-spinafslide31 SYSTEM "mkp-spinafslide31" NDATA PNG>
+]>
+<!-- $Id$ -->
 <book id="mkp-spina-wb">
   <title>Spina Bifida and Hydrocephalus</title>
   <bookinfo>
@@ -69,6 +94,7 @@
         </tgroup>
       </informaltable>
     </learnobj>
+    <?capdm *force_page_break?>
     <learnobj>
       <title>Generic aims </title>
       <informaltable frame="topbot" colsep="0" rowsep="0">
@@ -748,7 +774,7 @@
         prenatal spina bifida aperta repair</emphasis>: Hepp ZS, Haas VM, Latal B et al.
       DMCN;611302-7.</para>
   </chapter>
-  <!--  <chapter id="chapter_zzf_xrr_lrb">
+  <chapter id="chapter_zzf_xrr_lrb">
     <title>John's life story - post birth </title>
     <para>John’s defect was successfully closed and the wound has healed well. He had hydrocephalus
       and a VP shunt was inserted at the time of spinal surgery and his head circumference has
@@ -768,7 +794,7 @@
     <para>Think about the outcomes the family are looking for John. Complete these sections in the
       form below. Reveal the answer to goals, then actions and outcomes to understand the clinical
       plan.</para>
-<!-\- RBK Slides 18-21 -\->
+<!-- RBK Slides 18-21 -->
 <uqf:task id="Slides18to21" role="dwb">
   <uqf:title/>
   <uqf:questionobject id="Slides18to2101">
@@ -924,7 +950,7 @@
   </uqf:questionobject>
 </uqf:task>
   </chapter>
-  <chapter id="chapter_a1g_xrr_lrb">
+   <chapter id="chapter_a1g_xrr_lrb">
     <title>Key learning 1</title>
     <uqf:task id="KEYLEARN0101" role="dwb">
       <uqf:question id="KEYLEARN0101_01" role="3after">
@@ -964,7 +990,9 @@
         </uqf:answer>
       </uqf:question>
     </uqf:task>
-  </chapter><chapter id="chapter_b1g_xrr_lrb">
+  </chapter>
+  
+  <chapter id="chapter_b1g_xrr_lrb">
     <title>Important actions in infancy</title>
     <itemizedlist mark="bullet">
       <listitem>
@@ -1038,7 +1066,8 @@
         </uqf:answer>
       </uqf:question>
     </uqf:task>
-  </chapter><chapter id="chapter_d1g_xrr_lrb">
+  </chapter>
+  <chapter id="chapter_d1g_xrr_lrb">
     <title>Clinical approach</title>
     <para>Clearly there is need to approach this as with any other child with an intercurrent
       illness but specific factors to consider in the recent history: </para>
@@ -1123,7 +1152,8 @@
         </uqf:answer>
       </uqf:question>
     </uqf:task>
-  </chapter><chapter id="chapter_f1g_xrr_lrb">
+  </chapter>
+  <chapter id="chapter_f1g_xrr_lrb">
     <title>John’s life story – early childhood</title>
     <para> John is now 2½ years old. When you last saw him at 18 months he has been sitting from 10
       months and but needed his calipers to stand in a frame. He has a good pincer grasp and had 3
@@ -1198,7 +1228,8 @@
         </uqf:apart>
       </uqf:questionobject>
     </uqf:task>
-  </chapter><chapter id="chapter_g1g_xrr_lrb">
+  </chapter>
+  <chapter id="chapter_g1g_xrr_lrb">
     <?capdm template layout=2col left=5,right=*?>
     <title>Important actions in early childhood</title>
     <itemizedlist mark="bullet">
@@ -2810,5 +2841,5 @@
   <chapter id="chapter_oyx_5dy_2sb" role="essential">
     <title>Essentials course holding page</title>
     <para>This is a holding page for the Essentials course.</para>
-  </chapter>-->
+  </chapter>
 </book>

@@ -2,7 +2,7 @@
 
 \setupbodyfont[modern,11pt]
 \setupwhitespace[medium]
-\setupalign[right,nothyphenated]
+\setupalign[right,nothyphenated,verytolerant]
 \setupinterlinespace[line=4ex]
 \setuppagenumbering[location=]
 
@@ -18,20 +18,30 @@
 
 \xmltexentity{nbsp}{\ }
 
-%Procins
+%Preprocess
 
 \startluacode
- function lxml.preprocessor(data,settings)
-  return string.find(data,"<?capdm *force_line_stop?>")
-   and string.gsub(data,"<?capdm *force_line_stop?>","<capdmlinestop></capdmlinestop/>")
-   or data
- end
+function lxml.preprocessor(data)
+ for index, value in pairs({
+  ['<!DOCTYPE book PUBLIC %"%-//CAPDM Limited//DTD DocBook V4%.1%.2%-Based Extension//EN%" %"http://schemas%.capdm%.com/dbcapdm/dbcapdm%.dtd%" %[[^%]]-%]>'] = '',
+  ['<%?capdm %*force_line_stop%?>'] = '<?context-directive injector newline ?>',
+  ['<%?capdm %*force_page_break%?>'] = '<?context-directive injector newpage ?>'
+  }) do
+   data = data:gsub(index, value)
+  end
+ return data
+end
 \stopluacode
 
-\startxmlsetups xml:mkp:capdmlinestop
- \blank
- \xmlflush{#1}
-\stopxmlsetups
+%Procins
+
+\startsetups xml:directive:injector:newline
+ \crlf
+\stopsetups
+
+\startsetups xml:directive:injector:newpage
+ \page[yes]
+\stopsetups
 
 %Hierarchicals
 
@@ -66,7 +76,8 @@
 \stopxmlsetups
 
 \startxmlsetups xml:mkp:tip
- \xmlflush{#1}
+ \xmldoif{#1}{/title}{{\tfa\xmlfirst{#1}{/title}}\blank[small,samepage]}
+ \xmlall{#1}{/!title}
 \stopxmlsetups
 
 %Lists
@@ -88,14 +99,39 @@
  \stopvarlistentry
 \stopxmlsetups
 
+\definesymbol[9]{}
+
 \startxmlsetups xml:mkp:lists
  \xmlsetsetup{#1}{itemizedlist[@mark='bullet']}{xml:mkp:itemizedlist:bullet}
+ \xmlsetsetup{#1}{itemizedlist[@mark='none']}{xml:mkp:itemizedlist:none}
+ \xmlsetsetup{#1}{itemizedlist[@mark='dash']}{xml:mkp:itemizedlist:dash}
 \stopxmlsetups
 \xmlregisterdocumentsetup{mkp}{xml:mkp:lists}
+
+\startxmlsetups xml:mkp:itemizedlist
+ {\bf\xmlfirst{#1}{/title}}
+ \startitemize[1]
+  \xmlall{#1}{/!title}
+ \stopitemize
+\stopxmlsetups
 
 \startxmlsetups xml:mkp:itemizedlist:bullet
  {\bf\xmlfirst{#1}{/title}}
  \startitemize[1]
+  \xmlall{#1}{/!title}
+ \stopitemize
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:itemizedlist:none
+ {\bf\xmlfirst{#1}{/title}}
+ \startitemize[9]
+  \xmlall{#1}{/!title}
+ \stopitemize
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:itemizedlist:dash
+ {\bf\xmlfirst{#1}{/title}}
+ \startitemize[2]
   \xmlall{#1}{/!title}
  \stopitemize
 \stopxmlsetups
@@ -164,7 +200,8 @@
 
 \startxmlsetups xml:mkp:informalfigure
  \blank[big,preference]
- \xmlflush{#1}
+ \xmlall{#1}{/!title}
+ \xmldoif{#1}{/title}{\blank[small,samepage]\xmlfirst{#1}{/title}}
 \stopxmlsetups
 
 \startxmlsetups xml:mkp:mediaobject
@@ -215,6 +252,57 @@
  \xmlflush{#1}
 \stopxmlsetups
 
+%UQF
+
+\startxmlsetups xml:mkp:task
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:preamble
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:question
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:content
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:answer
+ {\tfa\bf Hint}\endgraf
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:questionobject
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:qpart
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:apart
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:ansopt
+ \xmlflush{#1}
+\stopxmlsetups
+
+\definetextbackground[ModelAnswer]
+\setuptextbackground[ModelAnswer][location=paragraph,backgroundcolor=white,framethickness=1pt,frame=on,leftoffset=.5em,rightoffset=.5em,topoffset=.5em,bottomoffset=.5em]
+
+\startxmlsetups xml:mkp:statement
+ \blank[big,preference]
+ \starttextbackground[ModelAnswer]
+  \xmlflush{#1}
+ \stoptextbackground
+\stopxmlsetups
+
+
+
 %Shared
 
 \startxmlsetups xml:mkp:para
@@ -239,6 +327,12 @@
  {\it\xmlflush{#1}}
 \stopxmlsetups
 
+\startxmlsetups xml:mkp:note
+ {\tfx
+ \xmlflush{#1}
+ }
+\stopxmlsetups
+
 \startxmlsetups xml:mkp:title
  \xmlflush{#1}
 \stopxmlsetups
@@ -248,8 +342,19 @@
  {\tfa\bf\xmlflush{#1}}\endgraf
 \stopxmlsetups
 
+\startsetups url
+ \setupalign[hyphenated]
+\stopsetups
+
 \startxmlsetups xml:mkp:ulink % copy-edit format just needs the text and link
- \xmlflush{#1} {\tfx\color[blue]{\xmlatt{#1}{url}}}
+ \bgroup
+ \setup[url]
+  \hyphenatedurl{\xmlflush{#1}} {\tfx\color[blue]{EXTERNAL LINK: \xmlatt{#1}{url}}}
+ \egroup
+\stopxmlsetups
+
+\startxmlsetups xml:mkp:link
+ \xmlflush{#1} {\tfx\color[blue]{INTERNAL LINK: \xmlfirst{@id = 'chapter_o1g_xrr_lrb'}{/title}}}
 \stopxmlsetups
 
 %Process

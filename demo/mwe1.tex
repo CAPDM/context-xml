@@ -1,0 +1,37 @@
+\startbuffer[demo]
+<book>
+  <para>A paragraph with<?capdm force_line_stop?>a processing instruction.</para>
+</book>
+\stopbuffer
+
+\startxmlsetups xml:demo:base
+ \xmlsetsetup{#1}{*}{xml:demo:*}
+\stopxmlsetups
+
+\xmlregisterdocumentsetup{demo}{xml:demo:base}
+
+\startxmlsetups xml:demo:book
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:demo:para
+ \xmlflush{#1}\endgraf
+\stopxmlsetups
+
+\startluacode
+ function lxml.preprocessor(data,settings)
+  return string.find(data,"<?capdm force_line_stop?>")
+   and string.gsub(data,"<?capdm force_line_stop?>","<?context-directive tex command crlf ?>")
+   or data
+ end
+\stopluacode
+
+\startxmlsetups xml:demo:capdmlinestop
+ \crlf
+ \xmlflush{#1}
+\stopxmlsetups
+
+\setupbodyfont[modern]
+\starttext
+\xmlprocessbuffer{demo}{demo}{}
+\stoptext
