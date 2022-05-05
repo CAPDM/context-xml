@@ -1,0 +1,79 @@
+\startbuffer[demo]
+<informaltable>
+ <tgroup>
+  <thead>
+   <row>
+    <entry>Alpha</entry>
+    <entry>Beta</entry>
+   </row>
+  </thead>
+  <tbody>
+   <row>
+    <entry morerows="1">alpha</entry>
+    <entry>beta</entry>
+   </row>
+   <row>
+    <entry>gamma</entry>
+   </row>
+  </tbody>
+ </tgroup>
+</informaltable>
+\stopbuffer
+
+\startxmlsetups xml:demo:base
+ \xmlsetsetup{#1}{*}{xml:demo:*}
+ \xmlsetfunction {\xmldocument}{entry}{userdata.xmlfunctions.entry}
+\stopxmlsetups
+
+\xmlregisterdocumentsetup{demo}{xml:demo:base}
+
+\startxmlsetups xml:demo:informaltable
+ \bTABLE
+  \xmlflush{#1}
+ \eTABLE
+\stopxmlsetups
+
+\startxmlsetups xml:demo:tgroup
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:demo:thead
+ \startluacode
+  intablehead = true
+ \stopluacode
+ \xmlflush{#1}
+ \startluacode
+  intablehead = false
+ \stopluacode
+\stopxmlsetups
+
+\startxmlsetups xml:demo:tbody
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:demo:row
+ \bTR
+  \xmlflush{#1}
+ \eTR
+\stopxmlsetups
+
+\startluacode
+userdata.xmlfunctions = {}
+function userdata.xmlfunctions.entry (t)
+  local rows = (t.at.morerows or 0) + 1
+  if intablehead then
+    context.bTH({nr=rows})
+    lxml.flush(t)
+    context.eTH()
+  else
+    context.bTD({nr=rows})
+    lxml.flush(t)
+    context.eTD()
+  end
+end
+\stopluacode
+
+\setupbodyfont[modern]
+\starttext
+\xmlprocessbuffer{demo}{demo}{}
+\stoptext

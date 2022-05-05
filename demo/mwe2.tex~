@@ -1,0 +1,40 @@
+\startbuffer[demo]
+<book>
+ <chapter id='randomid'>
+  <title>First title</title>
+  <para>A paragraph.</para>
+ </chapter>
+ <chapter id='anotherid'>
+  <title>Second title</title>
+  <para>A reference. See <xref linkend='randomid' />.</para>
+ </chapter>
+</book>
+\stopbuffer
+
+\startxmlsetups xml:demo:base
+ \xmlsetsetup{#1}{*}{xml:demo:*}
+\stopxmlsetups
+
+\xmlregisterdocumentsetup{demo}{xml:demo:base}
+
+\startxmlsetups xml:demo:book
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:demo:chapter
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:demo:title
+ \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:demo:para
+ \xmlflush{#1}\endgraf
+\stopxmlsetups
+
+
+\setupbodyfont[modern]
+\starttext
+\xmlprocessbuffer{demo}{demo}{}
+\stoptext

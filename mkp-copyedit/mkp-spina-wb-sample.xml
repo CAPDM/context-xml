@@ -94,7 +94,6 @@
         </tgroup>
       </informaltable>
     </learnobj>
-    <?capdm *force_page_break?>
     <learnobj>
       <title>Generic aims </title>
       <informaltable frame="topbot" colsep="0" rowsep="0">
@@ -821,7 +820,7 @@
         <entry colname="col4"><bridgehead>Outcomes</bridgehead></entry>
       </row>
       <row rowsep="0" id="Slides18to2101r02">
-        <entry colname="col2">
+        <entry colname="col2" morerows="1">
           <bridgehead renderas="sect5">Family goals</bridgehead>
           <para>How do we look after John?</para>
           <para>How will I know if there are problems with the shunt?</para>
@@ -842,15 +841,6 @@
                       answer</emphasis></para></entry>
       </row>
       <row rowsep="0" id="Slides18to2101r03">
-        <entry colname="col2">
-          <bridgehead renderas="sect5">Health goals</bridgehead>
-                    <para role="printonly myanswer"><emphasis role="bold">My
-                      answer</emphasis></para>
-          <para><blank id="Slides18to2101fibc0201" role="useranswer medium"
-                        ><?xm-replace_text {blank}?></blank></para>
-                    <para role="printonly youranswer"><emphasis role="bold">Model
-                      answer</emphasis></para>
-        </entry>
         <entry colname="col4"><bridgehead renderas="sect5">Fun</bridgehead>
                     <para role="printonly myanswer"><emphasis role="bold">My
                       answer</emphasis></para><para><blank id="Slides18to2101fibc0402" role="useranswer small"
@@ -859,7 +849,15 @@
                       answer</emphasis></para></entry>
       </row>
       <row rowsep="0" id="Slides18to2101r04">
-        <entry colname="col2"></entry>
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Health goals</bridgehead>
+          <para role="printonly myanswer"><emphasis role="bold">My
+            answer</emphasis></para>
+          <para><blank id="Slides18to2101fibc0201" role="useranswer medium"
+            ><?xm-replace_text {blank}?></blank></para>
+          <para role="printonly youranswer"><emphasis role="bold">Model
+            answer</emphasis></para>
+        </entry>
         <entry colname="col3"></entry>
         <entry colname="col4"><bridgehead renderas="sect5">Friendships</bridgehead>
                     <para role="printonly myanswer"><emphasis role="bold">My
@@ -1162,7 +1160,7 @@
       had 2 urinary tract infections. </para>
     <para>You are now going to see John in clinic. Think about what additional information you would
       need from that consultation and complete the consultation proforma. </para>
-    <!-\- RBK Slides 31-32 -\->
+    <!-- RBK Slides 31-32 -->
     <uqf:task id="Slides31to32" role="dwb">
       <uqf:title/>
       <uqf:questionobject id="Slides31to3201">
@@ -1354,7 +1352,7 @@
     <para>Think about the outcomes the family are looking for John. Complete these sections in the
       form below. Reveal the answer to goals, then actions and outcomes to understand the clinical
       plan.</para>
-    <!-\- Slides 36-39 -\->
+    <!-- Slides 36-39 -->
     <uqf:task id="Slides36to39" role="dwb">
       <uqf:title/>
       <uqf:questionobject id="Slides36to3901">
@@ -1419,7 +1417,7 @@
                     <para role="printonly youranswer"><emphasis role="bold">Model
                       answer</emphasis></para>
         </entry>
-        <entry colname="col3"></entry>
+        
         <entry colname="col4"><bridgehead renderas="sect5">Friendships</bridgehead>
                     <para role="printonly myanswer"><emphasis role="bold">My
                       answer</emphasis></para><para><blank id="Slides36to3901fibc0403" role="useranswer small"
@@ -1429,7 +1427,7 @@
       </row>
       <row rowsep="0" id="Slides36to3901r05">
         <entry colname="col2"></entry>
-        <entry colname="col3"></entry>
+        
         <entry colname="col4"><bridgehead renderas="sect5">Future</bridgehead>
                     <para role="printonly myanswer"><emphasis role="bold">My
                       answer</emphasis></para><para><blank id="Slides36to3901fibc0404" role="useranswer small"
@@ -1836,7 +1834,7 @@
     <para>Think about the outcomes the family are looking for John. Complete these sections in the
       form below. Reveal the answer to goals, then actions and outcomes to understand the clinical
       plan. </para>
-    <!-\- Slides 49-52 -\->
+    <!-- Slides 49-52 -->
     <uqf:task id="Slides49to52" role="dwb">
       <uqf:title/>
       <uqf:questionobject id="Slides49to5201">
@@ -1869,9 +1867,10 @@
           <para>To no longer soil and be in pants</para>
           <para>To be able to go on school adventure weekend with mates</para>
         </entry>
-        <entry colname="col3">
+        <entry colname="col3" morerows="3">
           <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
-          <para><blank id="Slides49to5201fibc0301" role="useranswer small"><?xm-replace_text {blank}?></blank></para>
+          <para><blank id="Slides49to5201fibc0301" role="useranswer large"
+                        ><?xm-replace_text {blank}?></blank></para>
           <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
         </entry>
         <entry colname="col4">
@@ -1881,16 +1880,11 @@
           <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para></entry>
       </row>
       <row rowsep="0" id="Slides49to5201r03">
-        <entry colname="col2">
+        <entry colname="col2" morerows="1">
           <bridgehead renderas="sect5">Family goals</bridgehead>
           <para>To be clean and dry in pants</para>
           <para>To increase independence in particular hygiene needs</para>
                     <para>To increase self confidence, he worries about soiling</para>
-        </entry>
-        <entry colname="col3" morerows="3">
-          <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
-          <para><blank id="Slides49to5201fibc0302" role="useranswer small"><?xm-replace_text {blank}?></blank></para>
-          <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
         </entry>
         <entry colname="col4"><bridgehead renderas="sect5">Fun</bridgehead>
                     <para role="printonly myanswer"><emphasis role="bold">My
@@ -1900,19 +1894,6 @@
                       answer</emphasis></para></entry>
       </row>
       <row rowsep="0" id="Slides49to5201r04">
-        <entry colname="col2">
-          <bridgehead renderas="sect5">Health issues</bridgehead>
-                    <para role="printonly myanswer"><emphasis role="bold">My
-                      answer</emphasis></para><para><blank id="Slides49to5201fibc0201" role="useranswer small"
-                      ><?xm-replace_text {blank}?></blank></para>
-                    <para role="printonly youranswer"><emphasis role="bold">Model
-                      answer</emphasis></para>
-        </entry>
-        <entry colname="col3" morerows="3">
-          <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
-          <para><blank id="Slides49to5201fibc0303" role="useranswer small"><?xm-replace_text {blank}?></blank></para>
-          <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
-        </entry>
         <entry colname="col4"><bridgehead renderas="sect5">Friendships</bridgehead>
                     <para role="printonly myanswer"><emphasis role="bold">My
                       answer</emphasis></para><para><blank id="Slides49to5201fibc0403" role="useranswer small"
@@ -1921,8 +1902,14 @@
                       answer</emphasis></para></entry>
       </row>
       <row rowsep="0" id="Slides49to5201r05">
-        <entry colname="col2"></entry>
-        <entry colname="col3"></entry>
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Health issues</bridgehead>
+          <para role="printonly myanswer"><emphasis role="bold">My
+            answer</emphasis></para><para><blank id="Slides49to5201fibc0201" role="useranswer small"
+              ><?xm-replace_text {blank}?></blank></para>
+          <para role="printonly youranswer"><emphasis role="bold">Model
+            answer</emphasis></para>
+        </entry>
         <entry colname="col4"><bridgehead renderas="sect5">Future</bridgehead>
                     <para role="printonly myanswer"><emphasis role="bold">My
                       answer</emphasis></para><para><blank id="Slides49to5201fibc0404" role="useranswer small"
@@ -1950,20 +1937,12 @@
     <uqf:statement>
       <para>The paediatric urology and continence team may advise a trial of rectal irrigation and
                 consideration of a Mitrofanoff procedure.</para>
-    </uqf:statement>
-  </uqf:ansopt>
-  <uqf:ansopt correct="Y" markval="1" linkend="Slides49to5201fibc0302">
-    <uqf:statement>
       <para>Refer to occupational therapy for advice on independent showering including further
-                adaptations to house bathroom</para>
-    </uqf:statement>
-  </uqf:ansopt>
-  <uqf:ansopt correct="Y" markval="1" linkend="Slides49to5201fibc0303">
-    <uqf:statement>
+        adaptations to house bathroom</para>
       <para>Ensure Emergency Health Care Plan is up to date.</para>
-              <para>Ensure medical advice across settings is up to date, including in the Education,
-                Health and Care plan if there is one in place.</para>
-              <para>Work on self-esteem.</para>
+      <para>Ensure medical advice across settings is up to date, including in the Education,
+        Health and Care plan if there is one in place.</para>
+      <para>Work on self-esteem.</para>
       <para>Discuss with teaching staff about adventure weekend and address any health concerns so that John is included</para>
     </uqf:statement>
   </uqf:ansopt>
@@ -2302,7 +2281,7 @@
     </itemizedlist>
   </chapter><chapter id="chapter_p1g_xrr_lrb">
   <title>Goals, actions and outcomes</title>
-    <!-\- Slides 64-68 -\->
+    <!-- Slides 64-68 -->
     <uqf:task id="Slides64to68" role="dwb">
       <uqf:title/>
       <uqf:questionobject id="Slides64to6801">
@@ -2330,7 +2309,7 @@
         <entry colname="col4"><bridgehead>Outcomes</bridgehead></entry>
       </row>
       <row rowsep="0" id="Slides64to6801r02">
-        <entry colname="col2">
+        <entry colname="col2" morerows="1">
           <bridgehead renderas="sect5">Young person goals</bridgehead>
           <para>To feel better about himself</para>
           <para>To have girl friend/erections</para>
@@ -2338,7 +2317,7 @@
           <para>To be independent with travel</para>
           <para>To take history and politics at uni</para>
         </entry>
-        <entry colname="col3">
+        <entry colname="col3" morerows="3">
           <para role="printonly myanswer"><emphasis role="bold">My answer</emphasis></para>
           <para><blank id="Slides64to6801fibc0301" role="useranswer large"><?xm-replace_text {blank}?></blank></para>
           <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para>
@@ -2350,13 +2329,6 @@
           <para role="printonly youranswer"><emphasis role="bold">Model answer</emphasis></para></entry>
       </row>
       <row rowsep="0" id="Slides64to6801r03">
-        <entry colname="col2">
-          <bridgehead renderas="sect5">Family goals</bridgehead>
-          <para>To be happy and to stop <link linkend="chapter_s1g_xrr_lrb">self
-                      harming</link></para>
-          <para>To become independent</para>
-          <para>To go to University</para>
-        </entry>
         <entry colname="col4"><bridgehead renderas="sect5">Fun</bridgehead>
                     <para role="printonly myanswer"><emphasis role="bold">My
                       answer</emphasis></para><para><blank id="Slides64to6801fibc0402" role="useranswer small"
@@ -2366,12 +2338,11 @@
       </row>
       <row rowsep="0" id="Slides64to6801r04">
         <entry colname="col2">
-          <bridgehead renderas="sect5">Health issues</bridgehead>
-                    <para role="printonly myanswer"><emphasis role="bold">My
-                      answer</emphasis></para><para><blank id="Slides64to6801fibc0201" role="useranswer small"
-                      ><?xm-replace_text {blank}?></blank></para>
-                    <para role="printonly youranswer"><emphasis role="bold">Model
-                      answer</emphasis></para>
+          <bridgehead renderas="sect5">Family goals</bridgehead>
+          <para>To be happy and to stop <link linkend="chapter_s1g_xrr_lrb">self
+            harming</link></para>
+          <para>To become independent</para>
+          <para>To go to University</para>
         </entry>
         <entry colname="col4"><bridgehead renderas="sect5">Friendships</bridgehead>
                     <para role="printonly myanswer"><emphasis role="bold">My
@@ -2381,6 +2352,14 @@
                       answer</emphasis></para></entry>
       </row>
       <row rowsep="0" id="Slides64to6801r05">
+        <entry colname="col2">
+          <bridgehead renderas="sect5">Health issues</bridgehead>
+          <para role="printonly myanswer"><emphasis role="bold">My
+            answer</emphasis></para><para><blank id="Slides64to6801fibc0201" role="useranswer small"
+              ><?xm-replace_text {blank}?></blank></para>
+          <para role="printonly youranswer"><emphasis role="bold">Model
+            answer</emphasis></para>
+        </entry>
         <entry colname="col4"><bridgehead renderas="sect5">Future</bridgehead>
                     <para role="printonly myanswer"><emphasis role="bold">My
                       answer</emphasis></para><para><blank id="Slides64to6801fibc0404" role="useranswer small"
@@ -2776,7 +2755,7 @@
         </para>
       </listitem>
       <listitem>
-        <para><link linkend="mkp-spinaf0112">Algorithm for shunt problems</link></para>
+        <para><link linkend="chapter_bmj_p2c_qrb">Algorithm for shunt problems</link></para>
       </listitem>
       <listitem>
         <para><ulink url="https://www.myilemedia.co.uk/docstore/mkp/spina/pdf/VP_shunt_plan.pdf"
