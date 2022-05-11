@@ -3,7 +3,7 @@
 \setupbodyfont[modern,11pt]
 \setupwhitespace[medium]
 \setupalign[right,nothyphenated,verytolerant]
-\setupinterlinespace[line=4ex]
+\setupinterlinespace[line=5ex]
 \setuppagenumbering[location=]
 
 %XML baseline
@@ -354,12 +354,12 @@ end
 \startxmlsetups xml:mkp:ulink % copy-edit format just needs the text and link
  \bgroup
   \setup[url]
-  \xmlflush{#1} {\tfx\color[blue]{EXTERNAL LINK: \hyphenatedurl{\xmlatt{#1}{url}}}}
+  {\tfxx\color[blue]{{\bf LINK:}}} \xmlflush{#1} {\tfxx\color[blue]{{\bf TO URL:} {\tfx\hyphenatedurl{\xmlatt{#1}{url}}}}}
  \egroup
 \stopxmlsetups
 
 \startxmlsetups xml:mkp:link
- \xmlflush{#1} {\tfx\color[blue]{INTERNAL LINK: \about[\xmlatt{#1}{linkend}]}}
+ {\tfxx\color[blue]{{\bf LINK:}}} \xmlflush{#1} {\tfxx\color[blue]{{\bf TO PAGE:} {\tfx\about[\xmlatt{#1}{linkend}]}}}
 \stopxmlsetups
 
 %Process
