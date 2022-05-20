@@ -8,17 +8,15 @@
 
 %XML baseline
 
-\startxmlsetups xml:mkp:base
- \xmlsetsetup{#1}{*}{xml:mkp:*}
+\startxmlsetups xml:capdm:base
+ \xmlsetsetup{#1}{*}{xml:capdm:*}
  \xmlsetfunction {\xmldocument}{entry}{userdata.xmlfunctions.entry}
 \stopxmlsetups
 
-\xmlregisterdocumentsetup{mkp}{xml:mkp:base}
+\xmlregisterdocumentsetup{capdm}{xml:capdm:base}
 
 %Entities
 
-\xmltexentity{alpha}{\alpha{}}
-\xmltexentity{euro}{€}
 \xmltexentity{nbsp}{\ }
 \xmltexentity{ndash}{--}
 \xmltexentity{amp}{\&}
@@ -51,7 +49,7 @@ end
 
 %Hierarchicals
 
-\startxmlsetups xml:mkp:book
+\startxmlsetups xml:capdm:book
  \setupheader[state=high]
  \cbox{\hsize=\makeupwidth\tfd\bf \xmlfirst{#1}{/title}
   \blank
@@ -66,7 +64,7 @@ end
 
 \setuphead[chapter][number=no,header=high]
 
-\startxmlsetups xml:mkp:chapter
+\startxmlsetups xml:capdm:chapter
  \startchapter[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
   \setupfootertexts[text][{\color[blue]{\getvariable{book}{title}}}][{\color[blue]{\completepagenumber}}][{\color[blue]{\getvariable{book}{title}}}][{\color[blue]{\completepagenumber}}]
   \xmlall{#1}{/!title}
@@ -79,13 +77,13 @@ end
 \definehead[LearnObj][section]
 \setuphead[LearnObj][number=no,style=bold]
 
-\startxmlsetups xml:mkp:learnobj
+\startxmlsetups xml:capdm:learnobj
  \startLearnObj[title=\xmlfirst{#1}{/title}]
   \xmlall{#1}{/!title}
  \stopLearnObj
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:tip
+\startxmlsetups xml:capdm:tip
  \xmldoif{#1}{/title}{{\tfa\xmlfirst{#1}{/title}}\blank[small,samepage]}
  \xmlall{#1}{/!title}
 \stopxmlsetups
@@ -94,15 +92,15 @@ end
 
 \definedescription[varlistentry][headstyle=bold,style=normal,align=flushleft,alternative=serried,width=broad]
 
-\startxmlsetups xml:mkp:variablelist
+\startxmlsetups xml:capdm:variablelist
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:term
+\startxmlsetups xml:capdm:term
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:varlistentry
+\startxmlsetups xml:capdm:varlistentry
  \pagebreak[preference]
  \startvarlistentry{\xmlfirst{#1}{/term}}
   {\xmlall{#1}{/!term}}
@@ -111,48 +109,48 @@ end
 
 \definesymbol[9]{}
 
-\startxmlsetups xml:mkp:lists
- \xmlsetsetup{#1}{itemizedlist[@mark='bullet']}{xml:mkp:itemizedlist:bullet}
- \xmlsetsetup{#1}{itemizedlist[@mark='none']}{xml:mkp:itemizedlist:none}
- \xmlsetsetup{#1}{itemizedlist[@mark='dash']}{xml:mkp:itemizedlist:dash}
+\startxmlsetups xml:capdm:lists
+ \xmlsetsetup{#1}{itemizedlist[@mark='bullet']}{xml:capdm:itemizedlist:bullet}
+ \xmlsetsetup{#1}{itemizedlist[@mark='none']}{xml:capdm:itemizedlist:none}
+ \xmlsetsetup{#1}{itemizedlist[@mark='dash']}{xml:capdm:itemizedlist:dash}
 \stopxmlsetups
-\xmlregisterdocumentsetup{mkp}{xml:mkp:lists}
+\xmlregisterdocumentsetup{capdm}{xml:capdm:lists}
 
-\startxmlsetups xml:mkp:itemizedlist
+\startxmlsetups xml:capdm:itemizedlist
  {\bf\xmlfirst{#1}{/title}}
  \startitemize[1]
   \xmlall{#1}{/!title}
  \stopitemize
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:itemizedlist:bullet
+\startxmlsetups xml:capdm:itemizedlist:bullet
  {\bf\xmlfirst{#1}{/title}}
  \startitemize[1]
   \xmlall{#1}{/!title}
  \stopitemize
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:itemizedlist:none
+\startxmlsetups xml:capdm:itemizedlist:none
  {\bf\xmlfirst{#1}{/title}}
  \startitemize[9]
   \xmlall{#1}{/!title}
  \stopitemize
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:itemizedlist:dash
+\startxmlsetups xml:capdm:itemizedlist:dash
  {\bf\xmlfirst{#1}{/title}}
  \startitemize[2]
   \xmlall{#1}{/!title}
  \stopitemize
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:orderedlist
+\startxmlsetups xml:capdm:orderedlist
  \startitemize[n]
   \xmlflush{#1}
  \stopitemize
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:listitem
+\startxmlsetups xml:capdm:listitem
  \xmldoifelse{#1}{ancestor::variablelist}{
   \xmlflush{#1}
  }{
@@ -166,7 +164,7 @@ end
 
 \setupTABLE[offset=.3em,framecolor=gray,split=yes]
 
-\startxmlsetups xml:mkp:informaltable
+\startxmlsetups xml:capdm:informaltable
  \blank[big,preference]
  {\bf\xmlfirst{#1}{/title}}\blank[small,samepage]
  \bTABLE
@@ -174,21 +172,21 @@ end
  \eTABLE
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:tgroup
+\startxmlsetups xml:capdm:tgroup
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:thead
+\startxmlsetups xml:capdm:thead
  \startluacode intablehead = true \stopluacode
  \xmlflush{#1}
  \startluacode intablehead = false \stopluacode
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:tbody
+\startxmlsetups xml:capdm:tbody
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:row
+\startxmlsetups xml:capdm:row
  \bTR
   \xmlflush{#1}
  \eTR
@@ -214,104 +212,104 @@ end
 
 \setupexternalfigures[directory=C:/Work/svn/MPE graphics,maxwidth=\textwidth]
 
-\startxmlsetups xml:mkp:informalfigure
+\startxmlsetups xml:capdm:informalfigure
  \blank[big,preference]
  \xmlall{#1}{/!title}
  \xmldoif{#1}{/title}{\blank[small,samepage]\xmlfirst{#1}{/title}}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:mediaobject
+\startxmlsetups xml:capdm:mediaobject
  \xmldoifatt{#1}{vendor}{playlist}{\blank[back]\color[blue]{\tfx Video playlist}}
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:inlinemediaobject
+\startxmlsetups xml:capdm:inlinemediaobject
  \blank[medium,preference]
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:imageobject
+\startxmlsetups xml:capdm:imageobject
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:images
- \xmlsetsetup{#1}{imagedata[@entityref]}{xml:mkp:imagedata:entityref}
- \xmlsetsetup{#1}{imagedata[@fileref]}{xml:mkp:imagedata:fileref}
+\startxmlsetups xml:capdm:images
+ \xmlsetsetup{#1}{imagedata[@entityref]}{xml:capdm:imagedata:entityref}
+ \xmlsetsetup{#1}{imagedata[@fileref]}{xml:capdm:imagedata:fileref}
 \stopxmlsetups
-\xmlregisterdocumentsetup{mkp}{xml:mkp:images}
+\xmlregisterdocumentsetup{capdm}{xml:capdm:images}
 
-\startxmlsetups xml:mkp:imagedata:entityref
+\startxmlsetups xml:capdm:imagedata:entityref
  \starttexcode\externalfigure[\xmlatt{#1}{entityref}][conversion=mp]\stoptexcode
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:imagedata:fileref
+\startxmlsetups xml:capdm:imagedata:fileref
  \starttexcode\externalfigure[\xmlatt{#1}{fileref}][conversion=mp]\stoptexcode
  \xmlflush{#1}
 \stopxmlsetups
 
 %Callouts
 
-\startxmlsetups xml:mkp:mediaobjectco
+\startxmlsetups xml:capdm:mediaobjectco
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:imageobjectco
+\startxmlsetups xml:capdm:imageobjectco
  \blank
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:calloutlist
+\startxmlsetups xml:capdm:calloutlist
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:callout
+\startxmlsetups xml:capdm:callout
  \xmlflush{#1}
 \stopxmlsetups
 
 %UQF
 
-\startxmlsetups xml:mkp:task
+\startxmlsetups xml:capdm:task
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:preamble
+\startxmlsetups xml:capdm:preamble
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:question
+\startxmlsetups xml:capdm:question
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:content
+\startxmlsetups xml:capdm:content
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:answer
+\startxmlsetups xml:capdm:answer
  {\tfa\bf Hint}\endgraf
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:questionobject
+\startxmlsetups xml:capdm:questionobject
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:qpart
+\startxmlsetups xml:capdm:qpart
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:apart
+\startxmlsetups xml:capdm:apart
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:ansopt
+\startxmlsetups xml:capdm:ansopt
  \xmlflush{#1}
 \stopxmlsetups
 
 \definetextbackground[ModelAnswer]
 \setuptextbackground[ModelAnswer][location=paragraph,backgroundcolor=white,framethickness=1pt,frame=on,leftoffset=.5em,rightoffset=.5em,topoffset=.5em,bottomoffset=.5em]
 
-\startxmlsetups xml:mkp:statement
+\startxmlsetups xml:capdm:statement
  \blank[big,preference]
  \starttextbackground[ModelAnswer]
   \xmlflush{#1}
@@ -320,31 +318,31 @@ end
 
 %Shared
 
-\startxmlsetups xml:mkp:para
+\startxmlsetups xml:capdm:para
  \xmlflush{#1}\endgraf
 \stopxmlsetups
 
 \xmlmapvalue{emphasis}{bold}{\bf}
 \xmlmapvalue{emphasis}{italic}{\it}
 
-\startxmlsetups xml:mkp:emphasis
+\startxmlsetups xml:capdm:emphasis
  \begingroup
   \xmlvalue{emphasis}{\xmlatt{#1}{role}}{\bf}
   \xmlflush{#1}
  \endgroup
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:note
+\startxmlsetups xml:capdm:note
  {\tfx
  \xmlflush{#1}
  }
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:title
+\startxmlsetups xml:capdm:title
  \xmlflush{#1}
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:bridgehead
+\startxmlsetups xml:capdm:bridgehead
  \pagebreak[preference]
  {\tfa\bf\xmlflush{#1}}\endgraf
 \stopxmlsetups
@@ -353,19 +351,19 @@ end
  \setupalign[hyphenated]
 \stopsetups
 
-\startxmlsetups xml:mkp:ulink % copy-edit format just needs the text and link
+\startxmlsetups xml:capdm:ulink % copy-edit format just needs the text and link
  \bgroup
   \setup[url]
   {\tfxx\color[blue]{{\bf LINK:}}} \xmlflush{#1} {\tfxx\color[blue]{{\bf TO URL:} {\tfx\hyphenatedurl{\xmlatt{#1}{url}}}}}
  \egroup
 \stopxmlsetups
 
-\startxmlsetups xml:mkp:link
+\startxmlsetups xml:capdm:link
  {\tfxx\color[blue]{{\bf LINK:}}} \xmlflush{#1} {\tfxx\color[blue]{{\bf TO PAGE:} {\tfx\about[\xmlatt{#1}{linkend}]}}}
 \stopxmlsetups
 
 %Process
 
 \starttext
-\xmlprocessfile{mkp}{mkp-spina-wb-sample.xml}{}
+\xmlprocessfile{capdm}{capdm-spina-wb-sample.xml}{}
 \stoptext
