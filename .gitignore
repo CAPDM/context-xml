@@ -303,3 +303,7 @@ mkp-copyedit/mkp-spina-ce.tuc
 mkp-copyedit/mkp-spina-ce.pdf
 mkp-copyedit/mkp-spina-ce.pdf
 mkp-copyedit/mkp-spina-ce.tex~
+*.pdf
+*.tex~
+*.tuc
+*.pdf
