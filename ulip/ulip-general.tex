@@ -1,10 +1,52 @@
-%Baseline setups
+%Fonts and basics
 
-\setupbodyfont[modern,11pt]
+\mainlanguage[uk]
+\usetypescript[adobekb][ec]
+\enableregime[utf]
+
+\starttypescript [sans] [roboto]
+ \definefontsynonym [Sans]              [name:Roboto-SlabRegular]
+ \definefontsynonym [SansItalic]        [name:Roboto-SlabRegular]
+ \definefontsynonym [SansBold]          [name:Roboto-SlabBold]
+ \definefontsynonym [SansBoldItalic]    [name:Roboto-SlabBold]
+\stoptypescript
+
+\starttypescript [serif] [myriad]
+ \definefontsynonym [Serif]              [name:MyriadPro-Regular]
+ \definefontsynonym [SerifItalic]        [name:MyriadPro-It]
+ \definefontsynonym [SerifBold]          [name:MyriadPro-Bold]
+ \definefontsynonym [SerifBoldItalic]    [name:MyriadPro-BoldIt]
+\stoptypescript
+
+\starttypescript [ULIPfonts] 
+  \definetypeface [ULIPfonts] [ss] [sans]  [roboto]
+  \definetypeface [ULIPfonts] [rm] [serif] [myriad]
+  \definetypeface [ULIPfonts] [tt] [mono]  [courier]
+  \definetypeface [ULIPfonts] [mm] [math]  [modern]
+\stoptypescript
+
+\usetypescript[ULIPfonts][uc]
+\setupbodyfont[ULIPfonts]
+\rm
+
+\definefontsize[e]
+\definefontsize[f]
+\definefontsize[g]
+\definefontsize[xxx]
+\definebodyfontenvironment[12pt][a=14pt,b=16pt,c=18pt,d=20pt,e=24pt,f=28pt,g=32pt,x=10.5pt,xx=9pt,xxx=8pt]
+
 \setupwhitespace[medium]
 \setupalign[right,nothyphenated,verytolerant]
-\setupinterlinespace[line=5ex]
 \setuppagenumbering[location=]
+
+%Symbols
+
+\usesymbols[mvs,fontawesome]
+
+%Colours
+
+\setupcolors[state=start,cmyk=yes]
+\definecolor[ULIPblue][c=1,m=0.42,y=0,k=0.24]
 
 %XML baseline
 
@@ -17,10 +59,7 @@
 
 %Entities
 
-\xmltexentity{nbsp}{\ }
-\xmltexentity{ndash}{--}
-\xmltexentity{amp}{\&}
-\xmltexentity{plusmn}{\pm{}}
+\input resources/all-xmltexentity
 
 %Preprocess
 
@@ -51,25 +90,61 @@ end
 
 \startxmlsetups xml:capdm:book
  \setupheader[state=high]
- \cbox{\hsize=\makeupwidth\tfd\bf \xmlfirst{#1}{/title}
-  \blank
-  {\tfb\color[blue]{Copy-edit format generated from XML master}}
-  \blank
-  {\tfa\color[blue]{\currentdate}}}
+ \cbox{\hsize=\makeupwidth\ss\tfd\bf\color[ULIPblue]{\xmlfirst{#1}{/title}}}
  \page[yes]
  \setupheader[state=high]
  \setvariable{book}{title}{\xmlfirst{#1}{/title}}
  \xmlall{#1}{/!title}
 \stopxmlsetups
 
-\setuphead[chapter][number=no,header=high]
+\setuphead[chapter][number=no,header=high,style=\tfe\ss,color=ULIPblue]
+\setupfooter[text][color=ULIPblue,style=\rm\tfx]
 
 \startxmlsetups xml:capdm:chapter
  \startchapter[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
-  \setupfootertexts[text][{\color[blue]{\getvariable{book}{title}}}][{\color[blue]{\completepagenumber}}][{\color[blue]{\getvariable{book}{title}}}][{\color[blue]{\completepagenumber}}]
+  \setupfootertexts[text][\getvariable{book}{title}][\completepagenumber][\getvariable{book}{title}][\completepagenumber]
   \xmlall{#1}{/!title}
  \stopchapter
  \page[yes]
+\stopxmlsetups
+
+\setuphead[section,subsection,subsubsection,subsubsubsection][color=ULIPblue]
+
+\setuphead[section][number=no,style=\ss\tfd]
+
+\startxmlsetups xml:capdm:sect1
+ \startsection[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
+  \xmlall{#1}{/!title}
+ \stopsection
+\stopxmlsetups
+
+\setuphead[section][style=\ss\tfc]
+
+\startxmlsetups xml:capdm:sect2
+ \startsubsection[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
+  \xmlall{#1}{/!title}
+ \stopsubsection
+\stopxmlsetups
+
+\setuphead[section][style=\ss\tfb]
+
+\startxmlsetups xml:capdm:sect3
+ \startsubsubsection[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
+  \xmlall{#1}{/!title}
+ \stopsubsubsection
+\stopxmlsetups
+
+\setuphead[section][style=\ss\tfa]
+
+\startxmlsetups xml:capdm:sect4
+ \startsubsubsubsection[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
+  \xmlall{#1}{/!title}
+ \stopsubsubsubsection
+\stopxmlsetups
+
+%BLANK
+\startxmlsetups xml:capdm:blank
+ \xmlflush{#1}
 \stopxmlsetups
 
 %Features
@@ -165,6 +240,7 @@ end
 \setupTABLE[offset=.3em,framecolor=gray,split=yes]
 
 \startxmlsetups xml:capdm:informaltable
+ \immediate\write0{Table:}
  \blank[big,preference]
  {\bf\xmlfirst{#1}{/title}}\blank[small,samepage]
  \bTABLE
@@ -248,6 +324,31 @@ end
  \xmlflush{#1}
 \stopxmlsetups
 
+%Videos
+
+\definesidebar[videotranscript][rulecolor=ULIPblue,rulethickness=2pt]
+
+%VIDEOOBJECT
+\startxmlsetups xml:capdm:videoobject
+ \xmldoifelse{#1}{../textobject}{
+  \margintitle{\vskip-16pt\color[ULIPblue]{\tfc\symbol[fontawesome][film]}}
+ }{
+  \margintitle{\vskip-18pt\color[ULIPblue]{\tfc\symbol[fontawesome][film]}}
+  \startsidebar[videotranscript]
+   \color[ULIPblue]{Video (no transcript)}
+  \stopsidebar
+ }
+\stopxmlsetups
+
+%TEXTOBJECT
+\startxmlsetups xml:capdm:textobject
+ \startsidebar[videotranscript]
+  \color[ULIPblue]{Video transcript:}\par
+  \xmlflush{#1}
+ \stopsidebar
+\stopxmlsetups
+
+
 %Callouts
 
 \startxmlsetups xml:capdm:mediaobjectco
@@ -306,20 +407,14 @@ end
  \xmlflush{#1}
 \stopxmlsetups
 
-\definetextbackground[ModelAnswer]
-\setuptextbackground[ModelAnswer][location=paragraph,backgroundcolor=white,framethickness=1pt,frame=on,leftoffset=.5em,rightoffset=.5em,topoffset=.5em,bottomoffset=.5em]
-
 \startxmlsetups xml:capdm:statement
- \blank[big,preference]
- \starttextbackground[ModelAnswer]
-  \xmlflush{#1}
- \stoptextbackground
+ \xmlflush{#1}
 \stopxmlsetups
 
 %Shared
 
 \startxmlsetups xml:capdm:para
- \xmlflush{#1}\endgraf
+ \xmlflush{#1}\par
 \stopxmlsetups
 
 \xmlmapvalue{emphasis}{bold}{\bf}
@@ -362,8 +457,1118 @@ end
  {\tfxx\color[blue]{{\bf LINK:}}} \xmlflush{#1} {\tfxx\color[blue]{{\bf TO PAGE:} {\tfx\about[\xmlatt{#1}{linkend}]}}}
 \stopxmlsetups
 
+%Dump
+
+%% %PARA
+%% \startxmlsetups xml:capdm:para
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %ENTRY
+%% \startxmlsetups xml:capdm:entry
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %EMPHASIS
+%% \startxmlsetups xml:capdm:emphasis
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %LISTITEM
+%% \startxmlsetups xml:capdm:listitem
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %ROW
+%% \startxmlsetups xml:capdm:row
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %TITLE
+%% \startxmlsetups xml:capdm:title
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%COLSPEC
+\startxmlsetups xml:capdm:colspec
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %ITEMIZEDLIST
+%% \startxmlsetups xml:capdm:itemizedlist
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %LINK
+%% \startxmlsetups xml:capdm:link
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%CITETITLE
+\startxmlsetups xml:capdm:citetitle
+ \xmlflush{#1}
+\stopxmlsetups
+
+%BIBLIOENTRY
+\startxmlsetups xml:capdm:biblioentry
+ \xmlflush{#1}
+\stopxmlsetups
+
+%XREF
+\startxmlsetups xml:capdm:xref
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %MEDIAOBJECT
+%% \startxmlsetups xml:capdm:mediaobject
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%INLINEEQUATION
+\startxmlsetups xml:capdm:inlineequation
+ \xmlflush{#1}
+\stopxmlsetups
+
+%IMAGEOBJECT
+\startxmlsetups xml:capdm:imageobject
+ \xmlflush{#1}
+\stopxmlsetups
+
+%GLOSSTERM
+\startxmlsetups xml:capdm:glossterm
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %TBODY
+%% \startxmlsetups xml:capdm:tbody
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %TGROUP
+%% \startxmlsetups xml:capdm:tgroup
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %ORDEREDLIST
+%% \startxmlsetups xml:capdm:orderedlist
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %IMAGEDATA
+%% \startxmlsetups xml:capdm:imagedata
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %ULINK
+%% \startxmlsetups xml:capdm:ulink
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %INFORMALTABLE
+%% \startxmlsetups xml:capdm:informaltable
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%PRIMARY
+\startxmlsetups xml:capdm:primary
+ \xmlflush{#1}
+\stopxmlsetups
+
+%INDEXTERM
+\startxmlsetups xml:capdm:indexterm
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SUBSCRIPT
+\startxmlsetups xml:capdm:subscript
+ \xmlflush{#1}
+\stopxmlsetups
+
+%FOOTNOTE
+\startxmlsetups xml:capdm:footnote
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %INFORMALFIGURE
+%% \startxmlsetups xml:capdm:informalfigure
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%GLOSSDEF
+\startxmlsetups xml:capdm:glossdef
+ \xmlflush{#1}
+\stopxmlsetups
+
+%GLOSSENTRY
+\startxmlsetups xml:capdm:glossentry
+ \xmlflush{#1}
+\stopxmlsetups
+
+%INFORMALEQUATION
+\startxmlsetups xml:capdm:informalequation
+ \xmlflush{#1}
+\stopxmlsetups
+
+%FIGURE
+\startxmlsetups xml:capdm:figure
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %NOTE
+%% \startxmlsetups xml:capdm:note
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %BRIDGEHEAD
+%% \startxmlsetups xml:capdm:bridgehead
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%SECONDARY
+\startxmlsetups xml:capdm:secondary
+ \xmlflush{#1}
+\stopxmlsetups
+
+%EXAMPLE
+\startxmlsetups xml:capdm:example
+ \xmlflush{#1}
+\stopxmlsetups
+
+%BLOCKQUOTE
+\startxmlsetups xml:capdm:blockquote
+ \xmlflush{#1}
+\stopxmlsetups
+
+
+%% %CHAPTER
+%% \startxmlsetups xml:capdm:chapter
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%PHRASE
+\startxmlsetups xml:capdm:phrase
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SUPERSCRIPT
+\startxmlsetups xml:capdm:superscript
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %TABLE
+%% \startxmlsetups xml:capdm:table
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%WORDDEFSET
+\startxmlsetups xml:capdm:worddefset
+ \xmlflush{#1}
+\stopxmlsetups
+
+%WORDS
+\startxmlsetups xml:capdm:words
+ \xmlflush{#1}
+\stopxmlsetups
+
+%WORDPREDEF
+\startxmlsetups xml:capdm:wordpredef
+ \xmlflush{#1}
+\stopxmlsetups
+
+%FORMALPARA
+\startxmlsetups xml:capdm:formalpara
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ASEQUENTIALSECTION
+\startxmlsetups xml:capdm:asequentialsection
+ \xmlflush{#1}
+\stopxmlsetups
+
+%EQUATION
+\startxmlsetups xml:capdm:equation
+ \xmlflush{#1}
+\stopxmlsetups
+
+%COMPUTEROUTPUT
+\startxmlsetups xml:capdm:computeroutput
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %THEAD
+%% \startxmlsetups xml:capdm:thead
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%OLINK
+\startxmlsetups xml:capdm:olink
+ \xmlflush{#1}
+\stopxmlsetups
+
+%INFORMALEXAMPLE
+\startxmlsetups xml:capdm:informalexample
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %LEARNOBJ
+%% \startxmlsetups xml:capdm:learnobj
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%VIDEODATA
+\startxmlsetups xml:capdm:videodata
+ \xmlflush{#1}
+\stopxmlsetups
+
+%CAPTION
+\startxmlsetups xml:capdm:caption
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MATHPHRASE
+\startxmlsetups xml:capdm:mathphrase
+ \xmlflush{#1}
+\stopxmlsetups
+
+%OBJECTINFO
+\startxmlsetups xml:capdm:objectinfo
+ \xmlflush{#1}
+\stopxmlsetups
+
+%IMPORTANT
+\startxmlsetups xml:capdm:important
+ \xmlflush{#1}
+\stopxmlsetups
+
+%KEYWORD
+\startxmlsetups xml:capdm:keyword
+ \xmlflush{#1}
+\stopxmlsetups
+
+%AUTHORBLURB
+\startxmlsetups xml:capdm:authorblurb
+ \xmlflush{#1}
+\stopxmlsetups
+
+%BIBLIOGRAPHY
+\startxmlsetups xml:capdm:bibliography
+ \xmlflush{#1}
+\stopxmlsetups
+
+%WORDCATEGORY
+\startxmlsetups xml:capdm:wordcategory
+ \xmlflush{#1}
+\stopxmlsetups
+
+%WORDLIST
+\startxmlsetups xml:capdm:wordlist
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %TIP
+%% \startxmlsetups xml:capdm:tip
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%LEGALNOTICE
+\startxmlsetups xml:capdm:legalnotice
+ \xmlflush{#1}
+\stopxmlsetups
+
+%DEFINITION
+\startxmlsetups xml:capdm:definition
+ \xmlflush{#1}
+\stopxmlsetups
+
+%GRAPHIC
+\startxmlsetups xml:capdm:graphic
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %INLINEMEDIAOBJECT
+%% \startxmlsetups xml:capdm:inlinemediaobject
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%LEARNSUM
+\startxmlsetups xml:capdm:learnsum
+ \xmlflush{#1}
+\stopxmlsetups
+
+%PART
+\startxmlsetups xml:capdm:part
+ \xmlflush{#1}
+\stopxmlsetups
+
+%WORDLISTSET
+\startxmlsetups xml:capdm:wordlistset
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SECONDARYIE
+\startxmlsetups xml:capdm:secondaryie
+ \xmlflush{#1}
+\stopxmlsetups
+
+%TOC
+\startxmlsetups xml:capdm:toc
+ \xmlflush{#1}
+\stopxmlsetups
+
+%INDEXENTRY
+\startxmlsetups xml:capdm:indexentry
+ \xmlflush{#1}
+\stopxmlsetups
+
+%PRIMARYIE
+\startxmlsetups xml:capdm:primaryie
+ \xmlflush{#1}
+\stopxmlsetups
+
+%BIBLIOMIXED
+\startxmlsetups xml:capdm:bibliomixed
+ \xmlflush{#1}
+\stopxmlsetups
+
+%FIRSTNAME
+\startxmlsetups xml:capdm:firstname
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SURNAME
+\startxmlsetups xml:capdm:surname
+ \xmlflush{#1}
+\stopxmlsetups
+
+%WORDSET
+\startxmlsetups xml:capdm:wordset
+ \xmlflush{#1}
+\stopxmlsetups
+
+%AUTHOR
+\startxmlsetups xml:capdm:author
+ \xmlflush{#1}
+\stopxmlsetups
+
+%KEYWORDSET
+\startxmlsetups xml:capdm:keywordset
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %BOOK
+%% \startxmlsetups xml:capdm:book
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%BOOKINFO
+\startxmlsetups xml:capdm:bookinfo
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %VARLISTENTRY
+%% \startxmlsetups xml:capdm:varlistentry
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %TERM
+%% \startxmlsetups xml:capdm:term
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%TERTIARY
+\startxmlsetups xml:capdm:tertiary
+ \xmlflush{#1}
+\stopxmlsetups
+
+%HOLDER
+\startxmlsetups xml:capdm:holder
+ \xmlflush{#1}
+\stopxmlsetups
+
+%PUBDATE
+\startxmlsetups xml:capdm:pubdate
+ \xmlflush{#1}
+\stopxmlsetups
+
+%COPYRIGHT
+\startxmlsetups xml:capdm:copyright
+ \xmlflush{#1}
+\stopxmlsetups
+
+%YEAR
+\startxmlsetups xml:capdm:year
+ \xmlflush{#1}
+\stopxmlsetups
+
+%EDITION
+\startxmlsetups xml:capdm:edition
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ANCHOR
+\startxmlsetups xml:capdm:anchor
+ \xmlflush{#1}
+\stopxmlsetups
+
+%CHAPTERINFO
+\startxmlsetups xml:capdm:chapterinfo
+ \xmlflush{#1}
+\stopxmlsetups
+
+%PREFACE
+\startxmlsetups xml:capdm:preface
+ \xmlflush{#1}
+\stopxmlsetups
+
+%AUTHORGROUP
+\startxmlsetups xml:capdm:authorgroup
+ \xmlflush{#1}
+\stopxmlsetups
+
+%AUDIOOBJECT
+\startxmlsetups xml:capdm:audioobject
+ \xmlflush{#1}
+\stopxmlsetups
+
+%AUDIODATA
+\startxmlsetups xml:capdm:audiodata
+ \xmlflush{#1}
+\stopxmlsetups
+
+%BIBLIODIV
+\startxmlsetups xml:capdm:bibliodiv
+ \xmlflush{#1}
+\stopxmlsetups
+
+%WORDPOSTDEF
+\startxmlsetups xml:capdm:wordpostdef
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SUBTITLE
+\startxmlsetups xml:capdm:subtitle
+ \xmlflush{#1}
+\stopxmlsetups
+
+%PARTINTRO
+\startxmlsetups xml:capdm:partintro
+ \xmlflush{#1}
+\stopxmlsetups
+
+%PROGRAMLISTING
+\startxmlsetups xml:capdm:programlisting
+ \xmlflush{#1}
+\stopxmlsetups
+
+%AREA
+\startxmlsetups xml:capdm:area
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ISBN
+\startxmlsetups xml:capdm:isbn
+ \xmlflush{#1}
+\stopxmlsetups
+
+%GLOSSARY
+\startxmlsetups xml:capdm:glossary
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %CALLOUT
+%% \startxmlsetups xml:capdm:callout
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%SPANSPEC
+\startxmlsetups xml:capdm:spanspec
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SEEALSO
+\startxmlsetups xml:capdm:seealso
+ \xmlflush{#1}
+\stopxmlsetups
+
+%PRODUCTNUMBER
+\startxmlsetups xml:capdm:productnumber
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SEE
+\startxmlsetups xml:capdm:see
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %VARIABLELIST
+%% \startxmlsetups xml:capdm:variablelist
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%APPENDIX
+\startxmlsetups xml:capdm:appendix
+ \xmlflush{#1}
+\stopxmlsetups
+
+%EMAIL
+\startxmlsetups xml:capdm:email
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SGMLTAG
+\startxmlsetups xml:capdm:sgmltag
+ \xmlflush{#1}
+\stopxmlsetups
+
+%TERTIARYIE
+\startxmlsetups xml:capdm:tertiaryie
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %CALLOUTLIST
+%% \startxmlsetups xml:capdm:calloutlist
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%SIDEBAR
+\startxmlsetups xml:capdm:sidebar
+ \xmlflush{#1}
+\stopxmlsetups
+
+%PRINTHISTORY
+\startxmlsetups xml:capdm:printhistory
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ACTION
+\startxmlsetups xml:capdm:action
+ \xmlflush{#1}
+\stopxmlsetups
+
+%FOOTNOTEREF
+\startxmlsetups xml:capdm:footnoteref
+ \xmlflush{#1}
+\stopxmlsetups
+
+%AFFILIATION
+\startxmlsetups xml:capdm:affiliation
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ORGNAME
+\startxmlsetups xml:capdm:orgname
+ \xmlflush{#1}
+\stopxmlsetups
+
+%GLOSSDIV
+\startxmlsetups xml:capdm:glossdiv
+ \xmlflush{#1}
+\stopxmlsetups
+
+%INDEXDIV
+\startxmlsetups xml:capdm:indexdiv
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MARKUP
+\startxmlsetups xml:capdm:markup
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SCREEN
+\startxmlsetups xml:capdm:screen
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ABSTRACT
+\startxmlsetups xml:capdm:abstract
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %MEDIAOBJECTCO
+%% \startxmlsetups xml:capdm:mediaobjectco
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %IMAGEOBJECTCO
+%% \startxmlsetups xml:capdm:imageobjectco
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%AREASPEC
+\startxmlsetups xml:capdm:areaspec
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ABBREV
+\startxmlsetups xml:capdm:abbrev
+ \xmlflush{#1}
+\stopxmlsetups
+
+%INLINEGRAPHIC
+\startxmlsetups xml:capdm:inlinegraphic
+ \xmlflush{#1}
+\stopxmlsetups
+
+%EXHIBIT
+\startxmlsetups xml:capdm:exhibit
+ \xmlflush{#1}
+\stopxmlsetups
+
+%EDITOR
+\startxmlsetups xml:capdm:editor
+ \xmlflush{#1}
+\stopxmlsetups
+
+%OTHERCREDIT
+\startxmlsetups xml:capdm:othercredit
+ \xmlflush{#1}
+\stopxmlsetups
+
+%AREASET
+\startxmlsetups xml:capdm:areaset
+ \xmlflush{#1}
+\stopxmlsetups
+
+%QANDAENTRY
+\startxmlsetups xml:capdm:qandaentry
+ \xmlflush{#1}
+\stopxmlsetups
+
+%% %QUESTION
+%% \startxmlsetups xml:capdm:question
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%% %ANSWER
+%% \startxmlsetups xml:capdm:answer
+%%  \xmlflush{#1}
+%% \stopxmlsetups
+
+%HIGHLIGHTS
+\startxmlsetups xml:capdm:highlights
+ \xmlflush{#1}
+\stopxmlsetups
+
+%INTRO
+\startxmlsetups xml:capdm:intro
+ \xmlflush{#1}
+\stopxmlsetups
+
+%INDEX
+\startxmlsetups xml:capdm:index
+ \xmlflush{#1}
+\stopxmlsetups
+
+%OTHERNAME
+\startxmlsetups xml:capdm:othername
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ADDRESS
+\startxmlsetups xml:capdm:address
+ \xmlflush{#1}
+\stopxmlsetups
+
+%VOLUMENUM
+\startxmlsetups xml:capdm:volumenum
+ \xmlflush{#1}
+\stopxmlsetups
+
+%PUBLISHERNAME
+\startxmlsetups xml:capdm:publishername
+ \xmlflush{#1}
+\stopxmlsetups
+
+%DEDICATION
+\startxmlsetups xml:capdm:dedication
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MEMBER
+\startxmlsetups xml:capdm:member
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ONLINEOBJECT
+\startxmlsetups xml:capdm:onlineobject
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SUBJECTSET
+\startxmlsetups xml:capdm:subjectset
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SUBJECT
+\startxmlsetups xml:capdm:subject
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SUBJECTTERM
+\startxmlsetups xml:capdm:subjectterm
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ATTRIBUTION
+\startxmlsetups xml:capdm:attribution
+ \xmlflush{#1}
+\stopxmlsetups
+
+%PHONE
+\startxmlsetups xml:capdm:phone
+ \xmlflush{#1}
+\stopxmlsetups
+
+%GLOSSARYINFO
+\startxmlsetups xml:capdm:glossaryinfo
+ \xmlflush{#1}
+\stopxmlsetups
+
+%TFOOT
+\startxmlsetups xml:capdm:tfoot
+ \xmlflush{#1}
+\stopxmlsetups
+
+%PRODUCTNAME
+\startxmlsetups xml:capdm:productname
+ \xmlflush{#1}
+\stopxmlsetups
+
+%CORPAUTHOR
+\startxmlsetups xml:capdm:corpauthor
+ \xmlflush{#1}
+\stopxmlsetups
+
+%RELEASEINFO
+\startxmlsetups xml:capdm:releaseinfo
+ \xmlflush{#1}
+\stopxmlsetups
+
+%QANDASET
+\startxmlsetups xml:capdm:qandaset
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ACRONYM
+\startxmlsetups xml:capdm:acronym
+ \xmlflush{#1}
+\stopxmlsetups
+
+%LITERALLAYOUT
+\startxmlsetups xml:capdm:literallayout
+ \xmlflush{#1}
+\stopxmlsetups
+
+%SIMPLELIST
+\startxmlsetups xml:capdm:simplelist
+ \xmlflush{#1}
+\stopxmlsetups
+
+%CHAPPART
+\startxmlsetups xml:capdm:chappart
+ \xmlflush{#1}
+\stopxmlsetups
+
+%AUTHORINITIALS
+\startxmlsetups xml:capdm:authorinitials
+ \xmlflush{#1}
+\stopxmlsetups
+
+%CONTRIB
+\startxmlsetups xml:capdm:contrib
+ \xmlflush{#1}
+\stopxmlsetups
+
+%COLOPHON
+\startxmlsetups xml:capdm:colophon
+ \xmlflush{#1}
+\stopxmlsetups
+
+%FILENAME
+\startxmlsetups xml:capdm:filename
+ \xmlflush{#1}
+\stopxmlsetups
+
+%ONLINEDATA
+\startxmlsetups xml:capdm:onlinedata
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQF section
+
+\startxmlsetups xml:capdm:uqfnamespace
+ \xmlsetsetup{#1}{uqf:ansopt}{xml:capdm:uqfansopt}
+ \xmlsetsetup{#1}{uqf:statement}{xml:capdm:uqfstatement}
+ \xmlsetsetup{#1}{uqf:content}{xml:capdm:uqfcontent}
+ \xmlsetsetup{#1}{uqf:question}{xml:capdm:uqfquestion}
+ \xmlsetsetup{#1}{uqf:answerTemplate}{xml:capdm:uqfanswerTemplate}
+ \xmlsetsetup{#1}{uqf:task}{xml:capdm:uqftask}
+ \xmlsetsetup{#1}{uqf:title}{xml:capdm:uqftitle}
+ \xmlsetsetup{#1}{uqf:activity}{xml:capdm:uqfactivity}
+ \xmlsetsetup{#1}{uqf:qpart}{xml:capdm:uqfqpart}
+ \xmlsetsetup{#1}{uqf:apart}{xml:capdm:uqfapart}
+ \xmlsetsetup{#1}{uqf:questionobject}{xml:capdm:uqfquestionobject}
+ \xmlsetsetup{#1}{uqf:preamble}{xml:capdm:uqfpreamble}
+ \xmlsetsetup{#1}{uqf:answer}{xml:capdm:uqfanswer}
+ \xmlsetsetup{#1}{uqf:fibItem}{xml:capdm:uqffibItem}
+ \xmlsetsetup{#1}{uqf:addendum}{xml:capdm:uqfaddendum}
+ \xmlsetsetup{#1}{uqf:fibSelect}{xml:capdm:uqffibSelect}
+ \xmlsetsetup{#1}{uqf:blank}{xml:capdm:uqfblank}
+ \xmlsetsetup{#1}{uqf:caseStudy}{xml:capdm:uqfcaseStudy}
+ \xmlsetsetup{#1}{uqf:assessment}{xml:capdm:uqfassessment}
+ \xmlsetsetup{#1}{uqf:mcrq}{xml:capdm:uqfmcrq}
+ \xmlsetsetup{#1}{uqf:ansFeedback}{xml:capdm:uqfansFeedback}
+\stopxmlsetups
+\xmlregisterdocumentsetup{capdm}{xml:capdm:uqfnamespace}
+
+%UQFANSOPT
+\startxmlsetups xml:capdm:uqfansopt
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFSTATEMENT
+\startxmlsetups xml:capdm:uqfstatement
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFCONTENT
+\startxmlsetups xml:capdm:uqfcontent
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFQUESTION
+\startxmlsetups xml:capdm:uqfquestion
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFANSWERTEMPLATE
+\startxmlsetups xml:capdm:uqfanswerTemplate
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFTASK
+\startxmlsetups xml:capdm:uqftask
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFTITLE
+\startxmlsetups xml:capdm:uqftitle
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFACTIVITY
+\startxmlsetups xml:capdm:uqfactivity
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFQPART
+\startxmlsetups xml:capdm:uqfqpart
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFAPART
+\startxmlsetups xml:capdm:uqfapart
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFQUESTIONOBJECT
+\startxmlsetups xml:capdm:uqfquestionobject
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFPREAMBLE
+\startxmlsetups xml:capdm:uqfpreamble
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFANSWER
+\startxmlsetups xml:capdm:uqfanswer
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFFIBITEM
+\startxmlsetups xml:capdm:uqffibItem
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFADDENDUM
+\startxmlsetups xml:capdm:uqfaddendum
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFFIBSELECT
+\startxmlsetups xml:capdm:uqffibSelect
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFBLANK
+\startxmlsetups xml:capdm:uqfblank
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFCASESTUDY
+\startxmlsetups xml:capdm:uqfcaseStudy
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFASSESSMENT
+\startxmlsetups xml:capdm:uqfassessment
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFMCRQ
+\startxmlsetups xml:capdm:uqfmcrq
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFANSFEEDBACK
+\startxmlsetups xml:capdm:uqfansFeedback
+ \xmlflush{#1}
+\stopxmlsetups
+
+
+%MathML section
+\startxmlsetups xml:capdm:mathmlnamespace
+ \xmlsetsetup{#1}{mml:mi}{xml:capdm:mmlmi}
+ \xmlsetsetup{#1}{mml:mo}{xml:capdm:mmlmo}
+ \xmlsetsetup{#1}{mml:mrow}{xml:capdm:mmlmrow}
+ \xmlsetsetup{#1}{mml:mn}{xml:capdm:mmlmn}
+ \xmlsetsetup{#1}{mml:msub}{xml:capdm:mmlmsub}
+ \xmlsetsetup{#1}{mml:mtext}{xml:capdm:mmlmtext}
+ \xmlsetsetup{#1}{mml:math}{xml:capdm:mmlmath}
+ \xmlsetsetup{#1}{mml:mfenced}{xml:capdm:mmlmfenced}
+ \xmlsetsetup{#1}{mml:mfrac}{xml:capdm:mmlmfrac}
+ \xmlsetsetup{#1}{mml:mtd}{xml:capdm:mmlmtd}
+ \xmlsetsetup{#1}{mml:msup}{xml:capdm:mmlmsup}
+ \xmlsetsetup{#1}{mml:mtr}{xml:capdm:mmlmtr}
+ \xmlsetsetup{#1}{mml:mtable}{xml:capdm:mmlmtable}
+ \xmlsetsetup{#1}{mml:msubsup}{xml:capdm:mmlmsubsup}
+ \xmlsetsetup{#1}{mml:mover}{xml:capdm:mmlmover}
+ \xmlsetsetup{#1}{mml:mspace}{xml:capdm:mmlmspace}
+ \xmlsetsetup{#1}{mml:munderover}{xml:capdm:mmlmunderover}
+ \xmlsetsetup{#1}{mml:msqrt}{xml:capdm:mmlmsqrt}
+ \xmlsetsetup{#1}{mml:mstyle}{xml:capdm:mmlmstyle}
+ \xmlsetsetup{#1}{mml:munder}{xml:capdm:mmlmunder}
+ \xmlsetsetup{#1}{mml:mroot}{xml:capdm:mmlmroot}
+ \xmlsetsetup{#1}{mml:mmultiscripts}{xml:capdm:mmlmmultiscripts}
+\stopxmlsetups
+\xmlregisterdocumentsetup{capdm}{xml:capdm:mathmlnamespace}
+
+%MMLMI
+\startxmlsetups xml:capdm:mmlmi
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMO
+\startxmlsetups xml:capdm:mmlmo
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMROW
+\startxmlsetups xml:capdm:mmlmrow
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMN
+\startxmlsetups xml:capdm:mmlmn
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMSUB
+\startxmlsetups xml:capdm:mmlmsub
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMTEXT
+\startxmlsetups xml:capdm:mmlmtext
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMATH
+\startxmlsetups xml:capdm:mmlmath
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMFENCED
+\startxmlsetups xml:capdm:mmlmfenced
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMFRAC
+\startxmlsetups xml:capdm:mmlmfrac
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMTD
+\startxmlsetups xml:capdm:mmlmtd
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMSUP
+\startxmlsetups xml:capdm:mmlmsup
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMTR
+\startxmlsetups xml:capdm:mmlmtr
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMTABLE
+\startxmlsetups xml:capdm:mmlmtable
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMSUBSUP
+\startxmlsetups xml:capdm:mmlmsubsup
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMOVER
+\startxmlsetups xml:capdm:mmlmover
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMSPACE
+\startxmlsetups xml:capdm:mmlmspace
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMUNDEROVER
+\startxmlsetups xml:capdm:mmlmunderover
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMSQRT
+\startxmlsetups xml:capdm:mmlmsqrt
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMSTYLE
+\startxmlsetups xml:capdm:mmlmstyle
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMUNDER
+\startxmlsetups xml:capdm:mmlmunder
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMROOT
+\startxmlsetups xml:capdm:mmlmroot
+ \xmlflush{#1}
+\stopxmlsetups
+
+%MMLMMULTISCRIPTS
+\startxmlsetups xml:capdm:mmlmmultiscripts
+ \xmlflush{#1}
+\stopxmlsetups
+
+
+
 %Process
 
 \starttext
-\xmlprocessfile{capdm}{capdm-spina-wb-sample.xml}{}
+\xmlprocessfile{capdm}{C:/Work/svn/ULIP repo/bam010/ulip-bam010-wb-test.xml}{}
 \stoptext
