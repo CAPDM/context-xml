@@ -307,3 +307,8 @@ mkp-copyedit/mkp-spina-ce.tex~
 *.tex~
 *.tuc
 *.pdf
+ulip/all-elements-as-xmlsetups.tex
+ulip/all-entities-as-xmltexentity.tex
+ulip/mathml-elements-as-xmlsetups.tex
+ulip/nonamespace-elements-as-xmlsetups.tex
+ulip/uqf-elements-as-xmlsetups.tex
