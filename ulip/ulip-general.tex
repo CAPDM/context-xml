@@ -18,15 +18,22 @@
  \definefontsynonym [SerifBoldItalic]    [name:MyriadPro-BoldIt]
 \stoptypescript
 
-\starttypescript [ULIPfonts] 
-  \definetypeface [ULIPfonts] [ss] [sans]  [roboto]
-  \definetypeface [ULIPfonts] [rm] [serif] [myriad]
-  \definetypeface [ULIPfonts] [tt] [mono]  [courier]
-  \definetypeface [ULIPfonts] [mm] [math]  [modern]
+\starttypescript [WBfonts] 
+  \definetypeface [WBfonts] [ss] [sans]  [roboto]
+  \definetypeface [WBfonts] [rm] [serif] [myriad]
+  \definetypeface [WBfonts] [tt] [mono]  [courier]
+  \definetypeface [WBfonts] [mm] [math]  [modern]
 \stoptypescript
 
-\usetypescript[ULIPfonts][uc]
-\setupbodyfont[ULIPfonts]
+\starttypescript [BKfonts] 
+  \definetypeface [BKfonts] [ss] [sans]  [roboto]
+  \definetypeface [BKfonts] [rm] [serif] [palatino]
+  \definetypeface [BKfonts] [tt] [mono]  [courier]
+  \definetypeface [BKfonts] [mm] [math]  [modern]
+\stoptypescript
+
+\usetypescript[WBfonts,12pt][uc]
+\setupbodyfont[WBfonts]
 \rm
 
 \definefontsize[e]
@@ -34,10 +41,51 @@
 \definefontsize[g]
 \definefontsize[xxx]
 \definebodyfontenvironment[12pt][a=14pt,b=16pt,c=18pt,d=20pt,e=24pt,f=28pt,g=32pt,x=10.5pt,xx=9pt,xxx=8pt]
+\definebodyfontenvironment[11pt][a=14pt,b=16pt,c=18pt,d=22pt,e=24pt,f=28pt,g=32pt,x=10pt,xx=9pt,xxx=8pt]
 
 \setupwhitespace[medium]
 \setupalign[right,nothyphenated,verytolerant]
 \setuppagenumbering[location=]
+
+%Layouts
+
+\definepapersize[DefaulTportrait][A4][A4]
+\definepapersize[DefaulTlandscape][A4,landscape][A4,landscape]
+\setuppapersize[DefaulTportrait]
+
+\setuplayout[location=middle,
+        marking=empty,
+%main dimensions
+        topspace=10mm, %page edge to top of header
+	height=265mm, %top of header to bottom of footer
+        backspace=30mm, %page edge to text
+	width=150mm, %text width
+%headers and footers (all within height)
+	header=4mm,
+	headerdistance=13mm,
+	footer=10mm,
+	footerdistance=8mm,
+%edges and margins in order (all outwith width)
+	leftedge=0mm,
+	leftedgedistance=0mm,
+	leftmargin=30mm,
+	leftmargindistance=5mm,
+	rightmargindistance=5mm,
+	rightmargin=30mm,
+	rightedgedistance=0mm,
+	rightedge=0mm,
+%offsets
+	veroffset=0mm,
+	horoffset=0mm,
+	bottomspace=0mm,
+%above header / below footer
+	topdistance=0mm,
+	top=0mm,
+	bottomdistance=0mm,
+	bottom=0mm]
+
+\definelayout[landscapepage][topspace=3pc,height=36.5pc,width=59pc,backspace=1.5pc,leftmargin=0pc]
+
 
 %Symbols
 
@@ -47,11 +95,15 @@
 
 \setupcolors[state=start,cmyk=yes]
 \definecolor[ULIPblue][c=1,m=0.42,y=0,k=0.24]
+\definecolor[ULIPpurple][c=0.84,m=0.9,y=0.33,k=0.31]
+\definecolor[ULIPpurplefive][c=0.042,m=0.045,y=0.017,k=0.015]
 
 %XML baseline
 
 \startxmlsetups xml:capdm:base
  \xmlsetsetup{#1}{*}{xml:capdm:*}
+ \xmlsetfunction {\xmldocument}{colspec}{userdata.xmlfunctions.colspec}
+ \xmlsetfunction {\xmldocument}{tbody}{userdata.xmlfunctions.tbody}
  \xmlsetfunction {\xmldocument}{entry}{userdata.xmlfunctions.entry}
 \stopxmlsetups
 
@@ -88,6 +140,12 @@ end
 
 %Hierarchicals
 
+\startxmlsetups xml:capdm:hierarchies
+ \xmlsetsetup{#1}{sect1[@role='essentialreading']}{xml:capdm:sect1:essentialreading}
+\stopxmlsetups
+\xmlregisterdocumentsetup{capdm}{xml:capdm:hierarchies}
+
+
 \startxmlsetups xml:capdm:book
  \setupheader[state=high]
  \cbox{\hsize=\makeupwidth\ss\tfd\bf\color[ULIPblue]{\xmlfirst{#1}{/title}}}
@@ -118,7 +176,29 @@ end
  \stopsection
 \stopxmlsetups
 
-\setuphead[section][style=\ss\tfc]
+\startsetups essentialreading
+ \setupbackgrounds[paper][background=color,backgroundcolor=ULIPpurplefive]
+ \setupbackgrounds[footer][text][background=color,backgroundcolor=ULIPblue]
+ \setupfooter[text][color=white]
+ \switchtobodyfont[BKfonts,11pt]\rm
+\stopsetups
+
+\startxmlsetups xml:capdm:sect1:essentialreading
+ \pagebreak[yes]
+ \start
+ \setup[essentialreading]
+ \setupfootertexts[text][{\inframed[frame=off,align={flushleft,nothyphenated,verytolerant,lohi},width=30pc]{\xmlfirst{#1}{/sect1info/legalnotice[@role='bottom']/para}\vskip2pt}}][\completepagenumber][{\inframed[frame=off,align={flushright,nothyphenated,verytolerant,lohi},width=30pc]{\xmlfirst{#1}{/sect1info/legalnotice[@role='bottom']/para}\vskip2pt}}][\completepagenumber]
+ \startsection[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
+  \framed[frame=of,background=color,backgroundcolor=ULIPblue,align={flushleft,nothyphenated,verytolerant,lohi},width=broad,offset=3pt]{\color[white]{\switchtobodyfont[helvetica]\tfx\xmlfirst{#1}{/sect1info/legalnotice[@role='top']/para}}}
+  \blank
+  \xmlall{#1}{/!title}
+ \stopsection
+ \pagebreak[yes]
+ \setupbackgrounds[footer][text][stop]
+ \stop
+\stopxmlsetups
+
+\setuphead[subsection][style=\ss\tfc]
 
 \startxmlsetups xml:capdm:sect2
  \startsubsection[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
@@ -126,7 +206,7 @@ end
  \stopsubsection
 \stopxmlsetups
 
-\setuphead[section][style=\ss\tfb]
+\setuphead[subsubsection][style=\ss\tfb]
 
 \startxmlsetups xml:capdm:sect3
  \startsubsubsection[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
@@ -134,7 +214,7 @@ end
  \stopsubsubsection
 \stopxmlsetups
 
-\setuphead[section][style=\ss\tfa]
+\setuphead[subsubsubsection][style=\ss\tfa]
 
 \startxmlsetups xml:capdm:sect4
  \startsubsubsubsection[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
@@ -149,19 +229,54 @@ end
 
 %Features
 
-\definehead[LearnObj][section]
-\setuphead[LearnObj][number=no,style=bold]
+\definehead[LearnObj][subsection]
+\setuphead[LearnObj][number=no,margin=12pt]
+\definetextbackground[LearnObjBackground][before={\blank[line]},location=paragraph,background=color,backgroundcolor=white,topoffset=6pt,leftoffset=12pt,rightoffset=12pt,frame=off]
 
 \startxmlsetups xml:capdm:learnobj
- \startLearnObj[title=\xmlfirst{#1}{/title}]
-  \xmlall{#1}{/!title}
- \stopLearnObj
+ \pagebreak[preference]
+ \startLearnObjBackground
+  \startLearnObj[title=\xmlfirst{#1}{/title}]
+   \xmlall{#1}{/!title}
+  \stopLearnObj
+ \stopLearnObjBackground
 \stopxmlsetups
 
 \startxmlsetups xml:capdm:tip
  \xmldoif{#1}{/title}{{\tfa\xmlfirst{#1}{/title}}\blank[small,samepage]}
  \xmlall{#1}{/!title}
 \stopxmlsetups
+
+%EXAMPLE
+\definehead[Example][subsubsubsection]
+\setuphead[Example][style=\ss\bf,number=no,margin=12pt,align={right,nothyphenated,verytolerant},color=white]
+\definetextbackground[ExampleTitleBackground][before={\blank[line]},location=paragraph,background=color,backgroundcolor=ULIPblue,topoffset=3pt,bottomoffset=0pt,leftoffset=0pt,rightoffset=0pt,frame=off]
+\definetextbackground[ExampleBackground][before=,after={\blank[line]},location=paragraph,background=color,backgroundcolor=white,topoffset=6pt,bottomoffset=9pt,leftoffset=12pt,rightoffset=12pt,frame=on,framecolor=ULIPblue]
+
+\startsetups Example
+ \setupTABLE[leftmargindistance=12pt]
+\stopsetups
+
+\startxmlsetups xml:capdm:example
+ \pagebreak[preference]
+ \startExampleTitleBackground
+  \startExample[title=\xmlfirst{#1}{/title}]
+ \stopExampleTitleBackground
+ \vskip-16pt
+ \startExampleBackground
+  \start
+   \setup[Example]
+   \xmlall{#1}{/!title}
+  \stop
+  \stopExample
+ \stopExampleBackground
+\stopxmlsetups
+
+%INFORMALEXAMPLE
+\startxmlsetups xml:capdm:informalexample
+ \xmlflush{#1}
+\stopxmlsetups
+
 
 %Lists
 
@@ -183,6 +298,7 @@ end
 \stopxmlsetups
 
 \definesymbol[9]{}
+\setupitemize[each][intro]
 
 \startxmlsetups xml:capdm:lists
  \xmlsetsetup{#1}{itemizedlist[@mark='bullet']}{xml:capdm:itemizedlist:bullet}
@@ -237,10 +353,9 @@ end
 
 %Tables
 
-\setupTABLE[offset=.3em,framecolor=gray,split=yes]
+\setupTABLE[offset=.3em,frame=off,split=yes,width=broad]
 
 \startxmlsetups xml:capdm:informaltable
- \immediate\write0{Table:}
  \blank[big,preference]
  {\bf\xmlfirst{#1}{/title}}\blank[small,samepage]
  \bTABLE
@@ -249,6 +364,15 @@ end
 \stopxmlsetups
 
 \startxmlsetups xml:capdm:tgroup
+ % reset global colspec attribute values for use in table lua functions
+ \startluacode
+  tablecolspecalign = {}
+  tablecolspecname = {}
+  tablecolspecwidth = {}
+  tablecolspecwidthtotal = 0
+--  tablecolspeccolsep = {}
+--  tablecolspecrowsep = {}
+ \stopluacode
  \xmlflush{#1}
 \stopxmlsetups
 
@@ -258,31 +382,13 @@ end
  \startluacode intablehead = false \stopluacode
 \stopxmlsetups
 
-\startxmlsetups xml:capdm:tbody
- \xmlflush{#1}
-\stopxmlsetups
-
 \startxmlsetups xml:capdm:row
  \bTR
   \xmlflush{#1}
  \eTR
 \stopxmlsetups
 
-\startluacode
-userdata.xmlfunctions = {}
-function userdata.xmlfunctions.entry (t)
-  local rows = (t.at.morerows or 0) + 1
-  if intablehead then
-    context.bTH({nr=rows})
-    lxml.flush(t)
-    context.eTH()
-  else
-    context.bTD({nr=rows})
-    lxml.flush(t)
-    context.eTD()
-  end
-end
-\stopluacode
+\registerctxluafile{ulip-tables}{}
 
 %Figures
 
@@ -439,22 +545,22 @@ end
 
 \startxmlsetups xml:capdm:bridgehead
  \pagebreak[preference]
- {\tfa\bf\xmlflush{#1}}\endgraf
+ {\tfa\bf\color[ULIPblue]{\xmlflush{#1}}}\endgraf
 \stopxmlsetups
 
 \startsetups url
  \setupalign[hyphenated]
 \stopsetups
 
-\startxmlsetups xml:capdm:ulink % copy-edit format just needs the text and link
+\startxmlsetups xml:capdm:ulink 
  \bgroup
   \setup[url]
-  {\tfxx\color[blue]{{\bf LINK:}}} \xmlflush{#1} {\tfxx\color[blue]{{\bf TO URL:} {\tfx\hyphenatedurl{\xmlatt{#1}{url}}}}}
+  \color[ULIPblue]{\xmlflush{#1}}
  \egroup
 \stopxmlsetups
 
 \startxmlsetups xml:capdm:link
- {\tfxx\color[blue]{{\bf LINK:}}} \xmlflush{#1} {\tfxx\color[blue]{{\bf TO PAGE:} {\tfx\about[\xmlatt{#1}{linkend}]}}}
+ \color[ULIPblue]{\xmlflush{#1}}% \about[\xmlatt{#1}{linkend}]
 \stopxmlsetups
 
 %Dump
@@ -488,11 +594,6 @@ end
 %% \startxmlsetups xml:capdm:title
 %%  \xmlflush{#1}
 %% \stopxmlsetups
-
-%COLSPEC
-\startxmlsetups xml:capdm:colspec
- \xmlflush{#1}
-\stopxmlsetups
 
 %% %ITEMIZEDLIST
 %% \startxmlsetups xml:capdm:itemizedlist
@@ -629,11 +730,6 @@ end
  \xmlflush{#1}
 \stopxmlsetups
 
-%EXAMPLE
-\startxmlsetups xml:capdm:example
- \xmlflush{#1}
-\stopxmlsetups
-
 %BLOCKQUOTE
 \startxmlsetups xml:capdm:blockquote
  \xmlflush{#1}
@@ -705,10 +801,6 @@ end
  \xmlflush{#1}
 \stopxmlsetups
 
-%INFORMALEXAMPLE
-\startxmlsetups xml:capdm:informalexample
- \xmlflush{#1}
-\stopxmlsetups
 
 %% %LEARNOBJ
 %% \startxmlsetups xml:capdm:learnobj
