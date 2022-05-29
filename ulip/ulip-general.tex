@@ -104,7 +104,6 @@
  \xmlsetsetup{#1}{*}{xml:capdm:*}
  \xmlsetfunction {\xmldocument}{tgroup}{userdata.xmlfunctions.tgroup}
  \xmlsetfunction {\xmldocument}{colspec}{userdata.xmlfunctions.colspec}
- \xmlsetfunction {\xmldocument}{tbody}{userdata.xmlfunctions.tbody}
  \xmlsetfunction {\xmldocument}{row}{userdata.xmlfunctions.row}
  \xmlsetfunction {\xmldocument}{entry}{userdata.xmlfunctions.entry}
 \stopxmlsetups
@@ -112,7 +111,6 @@
 \xmlregisterdocumentsetup{capdm}{xml:capdm:base}
 
 %Entities
-
 \input resources/all-xmltexentity
 
 %Preprocess
@@ -365,11 +363,14 @@ end
  \eTABLE
 \stopxmlsetups
 
-
 \startxmlsetups xml:capdm:thead
  \startluacode intablehead = true \stopluacode
  \xmlflush{#1}
  \startluacode intablehead = false \stopluacode
+\stopxmlsetups
+
+\startxmlsetups xml:capdm:tbody
+ \xmlflush{#1}
 \stopxmlsetups
 
 \registerctxluafile{ulip-tables}{}

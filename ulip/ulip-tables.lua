@@ -6,20 +6,23 @@ tablealignlookup = {['center'] = 'middle',
    ['left'] = 'table',
    ['right'] = 'flushright'}
 
+-- may extend later
 tablerowseplookup = {['0'] = 'off', ['1'] = 'on'}
-
 tablecolseplookup = {['0'] = 'off', ['1'] = 'on'}
 
 --TGROUP
 
 function userdata.xmlfunctions.tgroup (t)
+   -- reset the global stuff which is used in the entry calculations
    tablecolspecalign = {}
    tablecolspecname = {}
    tablecolspecwidth = {}
    tablecolspecwidthtotal = (0)
+   tablecolspecconverted = (false)
    tablecolspeccolsep = {}
    tablecolspecrowsep = {}
    tablerowtracker = (0)
+   tablerowtotal = (0)
    lxml.flush(t)
 end
 
@@ -49,29 +52,20 @@ function userdata.xmlfunctions.colspec (t)
    -- add the colsep and rowsep attributes to the relevant global tables
    tablecolspeccolsep[lcounter] = t.at.colsep
    tablecolspecrowsep[lcounter] = t.at.rowsep
-   
-   logs.pushtarget("logfile")
-   logs.writer("colspec width: " .. tablecolspecwidth[lcounter] .. "\n")
-   logs.writer("Running total width: " .. tablecolspecwidthtotal .. "\n")
-end
 
--- TBODY
-
-function userdata.xmlfunctions.tbody (t)
-   
-   -- convert column widths to TeX widths
-   for colcount, colwidth in ipairs(tablecolspecwidth) do
-      tablecolspecwidth[colcount] = (colwidth/tablecolspecwidthtotal .. "\\hsize")
-      logs.pushtarget("logfile")
-      logs.writer("Calculated colspec width: " .. tablecolspecwidth[colcount] .. "\n")
-   end
-   
-   lxml.flush(t)
 end
 
 -- ROW
 
 function userdata.xmlfunctions.row (t)
+   if not tablecolspecconverted then
+      for colcount, colwidth in ipairs(tablecolspecwidth) do
+	 tablecolspecwidth[colcount] = (colwidth/tablecolspecwidthtotal .. "\\hsize")
+	 logs.pushtarget("logfile")
+	 logs.writer("Calculated colspec width: " .. tablecolspecwidth[colcount] .. "\n")
+      end
+      tablecolspecconverted = true
+   end
    tablerowtracker = tablerowtracker + 1
    context.bTR()
    lxml.flush(t)
