@@ -277,6 +277,51 @@ end
  \xmlflush{#1}
 \stopxmlsetups
 
+%UQFACTIVITY
+\definehead[Activity][subsubsubsection]
+\setuphead[Activity][style=\ss\bf,number=no,margin=12pt,align={right,nothyphenated,verytolerant},color=white]
+\definetextbackground[ActivityTitleBackground][before={\blank[line]},location=paragraph,background=color,backgroundcolor=ULIPblue,topoffset=3pt,bottomoffset=0pt,leftoffset=0pt,rightoffset=0pt,frame=off]
+\definetextbackground[ActivityBackground][before=,after={\blank[line]},location=paragraph,background=color,backgroundcolor=ULIPpurplefive,topoffset=6pt,bottomoffset=9pt,leftoffset=12pt,rightoffset=12pt,frame=on,framecolor=ULIPblue]
+
+\startsetups Activity
+ \setupTABLE[leftmargindistance=12pt]
+\stopsetups
+
+\startxmlsetups xml:capdm:uqfactivity
+ \pagebreak[preference]
+ \startActivityTitleBackground
+  \startActivity[title=\xmlfirst{#1}{/title}]
+ \stopActivityTitleBackground
+ \vskip-16pt
+ \startActivityBackground
+  \start
+   \setup[Activity]
+   \xmlall{#1}{/!title}
+  \stop
+  \stopActivity
+ \stopActivityBackground
+\stopxmlsetups
+
+%UQFQUESTION
+\startxmlsetups xml:capdm:uqfquestion
+ \xmlflush{#1}
+\stopxmlsetups
+
+%UQFCONTENT
+\startxmlsetups xml:capdm:uqfcontent
+ \xmlflush{#1}
+ \blank[samepage]
+ \startalignment[middle]
+  \color[ULIPblue]{\tfc\symbol[fontawesome][comments]}
+ \stopalignment
+\stopxmlsetups
+
+%UQFANSWERTEMPLATE
+\startxmlsetups xml:capdm:uqfanswerTemplate
+ \pagebreak[preference]
+ \xmlflush{#1}
+\stopxmlsetups
+
 
 %Lists
 
@@ -1409,21 +1454,6 @@ end
  \xmlflush{#1}
 \stopxmlsetups
 
-%UQFCONTENT
-\startxmlsetups xml:capdm:uqfcontent
- \xmlflush{#1}
-\stopxmlsetups
-
-%UQFQUESTION
-\startxmlsetups xml:capdm:uqfquestion
- \xmlflush{#1}
-\stopxmlsetups
-
-%UQFANSWERTEMPLATE
-\startxmlsetups xml:capdm:uqfanswerTemplate
- \xmlflush{#1}
-\stopxmlsetups
-
 %UQFTASK
 \startxmlsetups xml:capdm:uqftask
  \xmlflush{#1}
@@ -1431,11 +1461,6 @@ end
 
 %UQFTITLE
 \startxmlsetups xml:capdm:uqftitle
- \xmlflush{#1}
-\stopxmlsetups
-
-%UQFACTIVITY
-\startxmlsetups xml:capdm:uqfactivity
  \xmlflush{#1}
 \stopxmlsetups
 
