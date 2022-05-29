@@ -22,8 +22,12 @@ function userdata.xmlfunctions.tgroup (t)
    tablecolspeccolsep = {}
    tablecolspecrowsep = {}
    tablerowtracker = (0)
-   tablerowtotal = (0)
+   
+   tablerowtotal = xml.count(t, "/thead/row") or 0
+   tablerowtotal = tablerowtotal + xml.count(t, "/tbody/row")
+
    lxml.flush(t)
+   
 end
 
 -- COLSPEC
@@ -113,22 +117,32 @@ function userdata.xmlfunctions.entry (t)
    -- now onto character alignment; default is none but if align is set to 'char' it is turned on
    local talignchar = 'no'
    if t.at.align == 'char' then talignchar = 'yes' end
-   
-   -- now we build the rowsep: this entry's rowsep attribute, or if that isn't present,
-   -- the row's rowsep attribute, or if that isn't present, the relevant colspec's rowsep
-   -- attribute, or if that isn't present, the tgroup's rowsep attribute, or if that isn't
-   -- present, the table/informaltable's rowsep attribute, or if that isn't present, the
-   -- default value of '0' (no rowsep)
-   local trowsep = (tablerowseplookup[xml.attribute(t,"/","rowsep")] or tablerowseplookup[xml.attribute(t,"../","rowsep")] or tablerowseplookup[tcolspecrowsep] or tablerowseplookup[xml.attribute(t,"../../../","rowsep")] or tablerowseplookup[xml.attribute(t,"../../../../","rowsep")] or '0')
+
+   -- default trowsep is off
+   local trowsep = 'off'
+   -- if the enclosing table/informaltable has a frame attribute set to all, topbot or bottom,
+   -- and this is the last row in the table, then that overrides any rowsep value
+   if (tablerowtracker == tablerowtotal) and ((xml.attribute(t,"../../../../","frame") == 'bottom') or (xml.attribute(t,"../../../../","frame") == 'topbot') or (xml.attribute(t,"../../../../","frame") == 'all')) then
+      trowsep = 'on'
+      logs.pushtarget("logfile")
+      logs.writer("Table row " .. tablerowtracker .. " of " .. tablerowtotal .. "\n")
+   else
+      -- otherwise we build the rowsep: this entry's rowsep attribute, or if that isn't present,
+      -- the row's rowsep attribute, or if that isn't present, the relevant colspec's rowsep
+      -- attribute, or if that isn't present, the tgroup's rowsep attribute, or if that isn't
+      -- present, the table/informaltable's rowsep attribute, or if that isn't present, the
+      -- default value of '0' (no rowsep)
+      trowsep = (tablerowseplookup[xml.attribute(t,"/","rowsep")] or tablerowseplookup[xml.attribute(t,"../","rowsep")] or tablerowseplookup[tcolspecrowsep] or tablerowseplookup[xml.attribute(t,"../../../","rowsep")] or tablerowseplookup[xml.attribute(t,"../../../../","rowsep")] or 'off')
+   end
    
    -- and now the colsep: this entry's colsep attribute, or if that isn't present, the relevant
    -- colspec's colsep attribute, or if that isn't present, the tgroup's colsep attribute, or
    -- if that isn't present, the table/informaltable's colsep attribute, or if that isn't
    -- present, the default value of '0' (no colsep)
-   local tcolsep = (tablecolseplookup[xml.attribute(t,"/","colsep")] or tablecolseplookup[tcolspeccolsep] or tablecolseplookup[xml.attribute(t,"../../../","colsep")] or tablecolseplookup[xml.attribute(t,"../../../../","colsep")] or '0')
+   local tcolsep = (tablecolseplookup[xml.attribute(t,"/","colsep")] or tablecolseplookup[tcolspeccolsep] or tablecolseplookup[xml.attribute(t,"../../../","colsep")] or tablecolseplookup[xml.attribute(t,"../../../../","colsep")] or 'off')
    
    --frame testing
-   ttopframe = 'off'
+   local ttopframe = 'off'
    if (tablerowtracker == 1) and ((xml.attribute(t,"../../../../","frame") == 'top') or (xml.attribute(t,"../../../../","frame") == 'topbot') or (xml.attribute(t,"../../../../","frame") == 'all')) then
       ttopframe='on'
    end
@@ -139,6 +153,8 @@ function userdata.xmlfunctions.entry (t)
       lxml.flush(t)
       context.eTH()
    else
+      logs.pushtarget("logfile")
+      logs.writer("Table entry in row " .. tablerowtracker .. " of " .. tablerowtotal .. " has trowsep value of " .. trowsep .. "\n")
       context.bTD({nr=trows,nc=tcols,width=twidth,align=talign,aligncharacter=talignchar,bottomframe=trowsep,rightframe=tcolsep,topframe=ttopframe})
       lxml.flush(t)
       context.eTD()
