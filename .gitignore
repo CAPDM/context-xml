@@ -313,3 +313,5 @@ ulip/mathml-elements-as-xmlsetups.tex
 ulip/nonamespace-elements-as-xmlsetups.tex
 ulip/uqf-elements-as-xmlsetups.tex
 *.lua~
+ulip/.\#ulip-general.tex
+*.tex#
