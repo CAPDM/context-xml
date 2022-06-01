@@ -315,3 +315,5 @@ ulip/uqf-elements-as-xmlsetups.tex
 *.lua~
 ulip/.\#ulip-general.tex
 *.tex#
+ulip/test-mathml.tex
+ulip/test-table.tex

@@ -64,10 +64,17 @@ end
 function userdata.xmlfunctions.row (t)
    if not tablecolspecconverted then
       for colcount, colwidth in ipairs(tablecolspecwidth) do
-	 tablecolspecwidth[colcount] = (colwidth/tablecolspecwidthtotal .. "\\hsize")
+	 tablecolspecwidth[colcount] = (colwidth/tablecolspecwidthtotal)
+	 context.setupTABLE(column, colcount, {width = tablecolspecwidth[colcount]})
 	 logs.pushtarget("logfile")
 	 logs.writer("Calculated colspec width: " .. tablecolspecwidth[colcount] .. "\n")
       end
+      context.bTR()
+      for colcount, colwidth in ipairs(tablecolspecwidth) do
+	 context.bTD({width = (colwidth .. "\\TableWidth")})
+	 context.eTD()
+      end
+      context.eTR()
       tablecolspecconverted = true
    end
    tablerowtracker = tablerowtracker + 1
@@ -93,7 +100,32 @@ function userdata.xmlfunctions.entry (t)
    local cellcount = xml.position(t,"/")
    
    -- set twidth to the width set in the colspecs for this column
-   local twidth = tablecolspecwidth[cellcount]
+   local twidth
+   -- if this is a column span then the entry needs to be the total width of all included columns
+   if t.at.namest and t.at.nameend then
+      twidth = (tablecolspecwidth[(tablecolspecname[t.at.namest])] .. "\\TableWidth")
+      logs.writer("First named column span width: " .. twidth .. "\n")
+      -- local twidthtotal = 0
+      -- local twidthcount = cellcount - 1
+      -- -- start at the current column and keep adding to the width until you reach the end of the
+      -- -- span
+      -- repeat
+      -- 	 twidthcount = twidthcount + 1
+      -- 	 twidthtotal = twidthtotal + tonumber(tablecolspecwidth[twidthcount])
+      -- 	 logs.pushtarget("logfile")
+      -- 	 logs.writer("Column span width running total: " .. twidthtotal .. "\n")
+      -- until tablecolspecname[t.at.nameend] == twidthcount
+      -- -- now append \TableWidth to create the final twidth value
+      -- twidth = (twidthtotal .. "\\TableWidth")
+      -- logs.writer("Totalled column span width: " .. twidth .. "\n")
+   -- otherwise, if this entry has a colname specified, use the named column's colspec width
+   elseif t.at.colname then
+      twidth = (tablecolspecwidth[(tablecolspecname[t.at.colname])] .. "\\TableWidth")
+      logs.writer("Named column span width: " .. twidth .. "\n")
+   else
+      twidth = (tablecolspecwidth[cellcount] .. "\\TableWidth")
+      logs.writer("Counted column span width: " .. twidth .. "\n")
+   end
    
    -- tcolspecalign is set either by colname matching or by positional matching
    local tcolspecalign
@@ -124,8 +156,6 @@ function userdata.xmlfunctions.entry (t)
    -- and this is the last row in the table, then that overrides any rowsep value
    if (tablerowtracker == tablerowtotal) and ((xml.attribute(t,"../../../../","frame") == 'bottom') or (xml.attribute(t,"../../../../","frame") == 'topbot') or (xml.attribute(t,"../../../../","frame") == 'all')) then
       trowsep = 'on'
-      logs.pushtarget("logfile")
-      logs.writer("Table row " .. tablerowtracker .. " of " .. tablerowtotal .. "\n")
    else
       -- otherwise we build the rowsep: this entry's rowsep attribute, or if that isn't present,
       -- the row's rowsep attribute, or if that isn't present, the relevant colspec's rowsep
@@ -153,8 +183,6 @@ function userdata.xmlfunctions.entry (t)
       lxml.flush(t)
       context.eTH()
    else
-      logs.pushtarget("logfile")
-      logs.writer("Table entry in row " .. tablerowtracker .. " of " .. tablerowtotal .. " has trowsep value of " .. trowsep .. "\n")
       context.bTD({nr=trows,nc=tcols,width=twidth,align=talign,aligncharacter=talignchar,bottomframe=trowsep,rightframe=tcolsep,topframe=ttopframe})
       lxml.flush(t)
       context.eTD()

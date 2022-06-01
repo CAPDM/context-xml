@@ -44,8 +44,14 @@
 \definebodyfontenvironment[11pt][a=14pt,b=16pt,c=18pt,d=22pt,e=24pt,f=28pt,g=32pt,x=10pt,xx=9pt,xxx=8pt]
 
 \setupwhitespace[medium]
-\setupalign[right,nothyphenated,verytolerant]
+\setupalign[normal,hyphenated,verytolerant]
 \setuppagenumbering[location=]
+
+%\usemodule[mathml]
+
+\input ulip-mathml
+\setupMMLappearance[mtable][alternative=b]
+
 
 %Layouts
 
@@ -95,6 +101,7 @@
 
 \setupcolors[state=start,cmyk=yes]
 \definecolor[ULIPblue][c=1,m=0.42,y=0,k=0.24]
+\definecolor[ULIPbluefifty][c=0.5,m=0.21,y=0,k=0.12]
 \definecolor[ULIPpurple][c=0.84,m=0.9,y=0.33,k=0.31]
 \definecolor[ULIPpurplefive][c=0.042,m=0.045,y=0.017,k=0.015]
 
@@ -111,7 +118,7 @@
 \xmlregisterdocumentsetup{capdm}{xml:capdm:base}
 
 %Entities
-\input resources/all-xmltexentity
+%\input resources/all-xmltexentity
 
 %Preprocess
 
@@ -250,10 +257,11 @@ end
 %EXAMPLE
 \definehead[Example][subsubsubsection]
 \setuphead[Example][style=\ss\bf,number=no,margin=12pt,align={right,nothyphenated,verytolerant},color=white]
-\definetextbackground[ExampleTitleBackground][before={\blank[line]},location=paragraph,background=color,backgroundcolor=ULIPblue,topoffset=3pt,bottomoffset=0pt,leftoffset=0pt,rightoffset=0pt,frame=off]
+\definetextbackground[ExampleTitleBackground][before={\blank[line,preference]},location=paragraph,background=color,backgroundcolor=ULIPblue,topoffset=3pt,bottomoffset=0pt,leftoffset=0pt,rightoffset=0pt,frame=off]
 \definetextbackground[ExampleBackground][before=,after={\blank[line]},location=paragraph,background=color,backgroundcolor=white,topoffset=6pt,bottomoffset=9pt,leftoffset=12pt,rightoffset=12pt,frame=on,framecolor=ULIPblue]
 
 \startsetups Example
+ \TableWidth=\hsize\advance\TableWidth by-\leftskip\advance\TableWidth by-\rightskip
  \setupTABLE[leftmargindistance=12pt]
 \stopsetups
 
@@ -274,16 +282,21 @@ end
 
 %INFORMALEXAMPLE
 \startxmlsetups xml:capdm:informalexample
- \xmlflush{#1}
+ \blank[line,preference]
+ \startExampleBackground
+  \xmlflush{#1}
+  \blank[back]
+ \stopExampleBackground
 \stopxmlsetups
 
 %UQFACTIVITY
 \definehead[Activity][subsubsubsection]
 \setuphead[Activity][style=\ss\bf,number=no,margin=12pt,align={right,nothyphenated,verytolerant},color=white]
-\definetextbackground[ActivityTitleBackground][before={\blank[line]},location=paragraph,background=color,backgroundcolor=ULIPblue,topoffset=3pt,bottomoffset=0pt,leftoffset=0pt,rightoffset=0pt,frame=off]
+\definetextbackground[ActivityTitleBackground][before={\blank[line,preference]},location=paragraph,background=color,backgroundcolor=ULIPbluefifty,topoffset=3pt,bottomoffset=0pt,leftoffset=0pt,rightoffset=0pt,frame=off]
 \definetextbackground[ActivityBackground][before=,after={\blank[line]},location=paragraph,background=color,backgroundcolor=ULIPpurplefive,topoffset=6pt,bottomoffset=9pt,leftoffset=12pt,rightoffset=12pt,frame=on,framecolor=ULIPblue]
 
 \startsetups Activity
+ \TableWidth=\hsize\advance\TableWidth by-\leftskip\advance\TableWidth by-\rightskip
  \setupTABLE[leftmargindistance=12pt]
 \stopsetups
 
@@ -310,10 +323,11 @@ end
 %UQFCONTENT
 \startxmlsetups xml:capdm:uqfcontent
  \xmlflush{#1}
- \blank[samepage]
+ \blank[big,samepage]
  \startalignment[middle]
   \color[ULIPblue]{\tfc\symbol[fontawesome][comments]}
  \stopalignment
+ \blank[big]
 \stopxmlsetups
 
 %UQFANSWERTEMPLATE
@@ -398,14 +412,19 @@ end
 
 %Tables
 
-\setupTABLE[boffset=.2em,toffset=.2em,frame=off,split=yes,width=\hsize]
+\newdimen\TableWidth
+\TableWidth=\hsize
+\setupTABLE[boffset=.15em,toffset=.15em,frame=off,split=yes]
 
 \startxmlsetups xml:capdm:informaltable
- \blank[big,preference]
- {\bf\xmlfirst{#1}{/title}}\blank[small,samepage]
- \bTABLE
-  \xmlall{#1}{/!title}
- \eTABLE
+ \blank[small,preference]
+ \start
+  {\bf\xmlfirst{#1}{/title}}\blank[small,samepage]
+  \bTABLE[width=\TableWidth]
+   \xmlall{#1}{/!title}
+  \eTABLE
+ \stop
+ \blank[small]
 \stopxmlsetups
 
 \startxmlsetups xml:capdm:thead
@@ -422,12 +441,27 @@ end
 
 %Figures
 
-\setupexternalfigures[directory=C:/Work/svn/MPE graphics,maxwidth=\textwidth]
+\setupexternalfigures[directory=C:/Work/svn/ULIP repo/Xternal/pearson/pearson-atrill,maxwidth=0.95\textwidth]
+
+\definefloat[informalFigure][figure]
+\setupfloat[informalFigure][location=center,background=color,backgroundcolor=white,frame=on,framecolor=ULIPblue,boffset=6pt]
+\setupcaption[informalFigure][number=no,style=\ss\tfx\bf,align=flushleft,color=white,background=color,backgroundcolor=ULIPblue,width=\hsize,inbetween=,offset=.2em]
+
+%FIGURE
+\startxmlsetups xml:capdm:figure
+ \placefigure[here][\xmlatt{#1}{id}]{\xmlfirst{#1}{/title}}{
+ \xmlall{#1}{/!title}}
+\stopxmlsetups
 
 \startxmlsetups xml:capdm:informalfigure
- \blank[big,preference]
- \xmlall{#1}{/!title}
- \xmldoif{#1}{/title}{\blank[small,samepage]\xmlfirst{#1}{/title}}
+ \xmldoifelse{#1}{/mediaobject/videoobject}{
+  \blank[big,preference]
+  \xmlall{#1}{/!title}
+  \xmldoif{#1}{/title}{\blank[small,samepage]\xmlfirst{#1}{/title}}
+  }{
+  \placeinformalFigure[here][\xmlatt{#1}{id}]{\xmlfirst{#1}{/title}}{\framed[width=broad,frame=off,align=middle,toffset=6pt]{
+  \xmlall{#1}{/!title}}}
+  }
 \stopxmlsetups
 
 \startxmlsetups xml:capdm:mediaobject
@@ -471,7 +505,7 @@ end
  }{
   \margintitle{\vskip-18pt\color[ULIPblue]{\tfc\symbol[fontawesome][film]}}
   \startsidebar[videotranscript]
-   \color[ULIPblue]{Video (no transcript)}
+   \color[ULIPblue]{\tfx Video (no transcript)}
   \stopsidebar
  }
 \stopxmlsetups
@@ -479,7 +513,7 @@ end
 %TEXTOBJECT
 \startxmlsetups xml:capdm:textobject
  \startsidebar[videotranscript]
-  \color[ULIPblue]{Video transcript:}\par
+  \tfx\color[ULIPblue]{Video transcript:}\par
   \xmlflush{#1}
  \stopsidebar
 \stopxmlsetups
@@ -564,8 +598,11 @@ end
 \stopxmlsetups
 
 \startxmlsetups xml:capdm:note
- {\tfx
- \xmlflush{#1}
+ \xmldoifelse{#1}{../../informalfigure}{
+  \blank[small,samepage]
+  \framed[frame=off,align=flushleft,offset=0.2em]{\tfx\xmlflush{#1}}
+ }{
+  {\tfx \xmlflush{#1}}
  }
 \stopxmlsetups
 
@@ -585,7 +622,7 @@ end
 \startxmlsetups xml:capdm:ulink 
  \bgroup
   \setup[url]
-  \color[ULIPblue]{\xmlflush{#1}}
+  \color[ULIPblue]{\hyphenatedurl{\xmlflush{#1}}}
  \egroup
 \stopxmlsetups
 
@@ -737,11 +774,6 @@ end
 
 %INFORMALEQUATION
 \startxmlsetups xml:capdm:informalequation
- \xmlflush{#1}
-\stopxmlsetups
-
-%FIGURE
-\startxmlsetups xml:capdm:figure
  \xmlflush{#1}
 \stopxmlsetups
 
@@ -1532,140 +1564,147 @@ end
 
 %MathML section
 \startxmlsetups xml:capdm:mathmlnamespace
- \xmlsetsetup{#1}{mml:mi}{xml:capdm:mmlmi}
- \xmlsetsetup{#1}{mml:mo}{xml:capdm:mmlmo}
- \xmlsetsetup{#1}{mml:mrow}{xml:capdm:mmlmrow}
- \xmlsetsetup{#1}{mml:mn}{xml:capdm:mmlmn}
- \xmlsetsetup{#1}{mml:msub}{xml:capdm:mmlmsub}
- \xmlsetsetup{#1}{mml:mtext}{xml:capdm:mmlmtext}
- \xmlsetsetup{#1}{mml:math}{xml:capdm:mmlmath}
- \xmlsetsetup{#1}{mml:mfenced}{xml:capdm:mmlmfenced}
- \xmlsetsetup{#1}{mml:mfrac}{xml:capdm:mmlmfrac}
- \xmlsetsetup{#1}{mml:mtd}{xml:capdm:mmlmtd}
- \xmlsetsetup{#1}{mml:msup}{xml:capdm:mmlmsup}
- \xmlsetsetup{#1}{mml:mtr}{xml:capdm:mmlmtr}
- \xmlsetsetup{#1}{mml:mtable}{xml:capdm:mmlmtable}
- \xmlsetsetup{#1}{mml:msubsup}{xml:capdm:mmlmsubsup}
- \xmlsetsetup{#1}{mml:mover}{xml:capdm:mmlmover}
- \xmlsetsetup{#1}{mml:mspace}{xml:capdm:mmlmspace}
- \xmlsetsetup{#1}{mml:munderover}{xml:capdm:mmlmunderover}
- \xmlsetsetup{#1}{mml:msqrt}{xml:capdm:mmlmsqrt}
- \xmlsetsetup{#1}{mml:mstyle}{xml:capdm:mmlmstyle}
- \xmlsetsetup{#1}{mml:munder}{xml:capdm:mmlmunder}
- \xmlsetsetup{#1}{mml:mroot}{xml:capdm:mmlmroot}
- \xmlsetsetup{#1}{mml:mmultiscripts}{xml:capdm:mmlmmultiscripts}
+ \xmlsetsetup{#1}{mml:mi}{mml:mi}
+ \xmlsetsetup{#1}{mml:mo}{mml:mo}
+ \xmlsetsetup{#1}{mml:mrow}{mml:mrow}
+ \xmlsetsetup{#1}{mml:mn}{mml:mn}
+ \xmlsetsetup{#1}{mml:msub}{mml:msub}
+ \xmlsetsetup{#1}{mml:mtext}{mml:mtext}
+ \xmlsetsetup{#1}{mml:math}{mml:math}
+ \xmlsetsetup{#1}{mml:mfenced}{mml:mfenced}
+ \xmlsetsetup{#1}{mml:mfrac}{mml:mfrac}
+ \xmlsetsetup{#1}{mml:mtd}{mml:mtd}
+ \xmlsetsetup{#1}{mml:msup}{mml:msup}
+ \xmlsetsetup{#1}{mml:mtr}{mml:mtr}
+ \xmlsetsetup{#1}{mml:mtable}{mml:mtable}
+ \xmlsetsetup{#1}{mml:msubsup}{mml:msubsup}
+ \xmlsetsetup{#1}{mml:mover}{mml:mover}
+ \xmlsetsetup{#1}{mml:mspace}{mml:mspace}
+ \xmlsetsetup{#1}{mml:munderover}{mml:munderover}
+ \xmlsetsetup{#1}{mml:msqrt}{mml:msqrt}
+ \xmlsetsetup{#1}{mml:mstyle}{mml:mstyle}
+ \xmlsetsetup{#1}{mml:munder}{mml:munder}
+ \xmlsetsetup{#1}{mml:mroot}{mml:mroot}
+ \xmlsetsetup{#1}{mml:mmultiscripts}{mml:mmultiscripts}
 \stopxmlsetups
 \xmlregisterdocumentsetup{capdm}{xml:capdm:mathmlnamespace}
 
-%MMLMI
-\startxmlsetups xml:capdm:mmlmi
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMI
+%% \startxmlsetups xml:capdm:mi
+%%  {\xmlflush{#1}}
+%% \stopxmlsetups
 
-%MMLMO
-\startxmlsetups xml:capdm:mmlmo
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMO
+%% \startxmlsetups xml:capdm:mo
+%%  {\xmlflush{#1}}
+%% \stopxmlsetups
 
-%MMLMROW
-\startxmlsetups xml:capdm:mmlmrow
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMROW
+%% \startxmlsetups xml:capdm:mrow
+%%  {\xmlflush{#1}}
+%% \stopxmlsetups
 
-%MMLMN
-\startxmlsetups xml:capdm:mmlmn
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMN
+%% \startxmlsetups xml:capdm:mn
+%%  {\xmlflush{#1}}
+%% \stopxmlsetups
 
-%MMLMSUB
-\startxmlsetups xml:capdm:mmlmsub
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMSUB
+%% \startxmlsetups xml:capdm:msub
+%%  {\xmlelement{#1}{1}}_{\xmlelement{#1}{2}}
+%% \stopxmlsetups
 
-%MMLMTEXT
-\startxmlsetups xml:capdm:mmlmtext
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMTEXT
+%% \startxmlsetups xml:capdm:mtext
+%%   \text{\xmlflush{#1}}
+%% \stopxmlsetups
 
-%MMLMATH
-\startxmlsetups xml:capdm:mmlmath
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMATH
+%% \startxmlsetups xml:capdm:math
+%%  \startformula
+%%  \setupTABLE[width=fit]
+%%   \xmlflush{#1}
+%%  \stopformula
+%% \stopxmlsetups
 
-%MMLMFENCED
-\startxmlsetups xml:capdm:mmlmfenced
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMFENCED
+%% \startxmlsetups xml:capdm:mfenced
+%%  \xmlflush{#1}
+%% \stopxmlsetups
 
-%MMLMFRAC
-\startxmlsetups xml:capdm:mmlmfrac
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMFRAC
+%% \startxmlsetups xml:capdm:mfrac
+%%  {\xmlelement{#1}{1}}/{\xmlelement{#1}{2}}
+%% \stopxmlsetups
 
-%MMLMTD
-\startxmlsetups xml:capdm:mmlmtd
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMTD
+%% \startxmlsetups xml:capdm:mtd
+%%  \bTD[align=lohi]\xmlflush{#1}\eTD
+%% \stopxmlsetups
 
-%MMLMSUP
-\startxmlsetups xml:capdm:mmlmsup
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMSUP
+%% \startxmlsetups xml:capdm:msup
+%%  {\xmlelement{#1}{1}}^{\xmlelement{#1}{2}}
+%% \stopxmlsetups
 
-%MMLMTR
-\startxmlsetups xml:capdm:mmlmtr
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMTR
+%% \startxmlsetups xml:capdm:mtr
+%%  \bTR
+%%  \xmlflush{#1}
+%%  \eTR
+%% \stopxmlsetups
 
-%MMLMTABLE
-\startxmlsetups xml:capdm:mmlmtable
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMTABLE
+%% \startxmlsetups xml:capdm:mtable
+%%  \bTABLE
+%%  \xmlflush{#1}
+%%  \eTABLE
+%% \stopxmlsetups
 
-%MMLMSUBSUP
-\startxmlsetups xml:capdm:mmlmsubsup
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMSUBSUP
+%% \startxmlsetups xml:capdm:msubsup
+%%  {\xmlelement{#1}{1}}_{\xmlelement{#1}{2}}^{\xmlelement{#1}{3}}
+%% \stopxmlsetups
 
-%MMLMOVER
-\startxmlsetups xml:capdm:mmlmover
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMOVER
+%% \startxmlsetups xml:capdm:mover
+%%  {\xmlelement{#1}{2}}\atop{\xmlelement{#1}{1}}
+%% \stopxmlsetups
 
-%MMLMSPACE
-\startxmlsetups xml:capdm:mmlmspace
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMSPACE
+%% \startxmlsetups xml:capdm:mspace
+%%  \ 
+%% \stopxmlsetups
 
-%MMLMUNDEROVER
-\startxmlsetups xml:capdm:mmlmunderover
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMUNDEROVER
+%% \startxmlsetups xml:capdm:munderover
+%%  \xmlflush{#1}
+%% \stopxmlsetups
 
-%MMLMSQRT
-\startxmlsetups xml:capdm:mmlmsqrt
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMSQRT
+%% \startxmlsetups xml:capdm:msqrt
+%%  \xmlflush{#1}
+%% \stopxmlsetups
 
-%MMLMSTYLE
-\startxmlsetups xml:capdm:mmlmstyle
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMSTYLE
+%% \startxmlsetups xml:capdm:mstyle
+%%  \xmlflush{#1}
+%% \stopxmlsetups
 
-%MMLMUNDER
-\startxmlsetups xml:capdm:mmlmunder
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMUNDER
+%% \startxmlsetups xml:capdm:munder
+%%  \xmlflush{#1}
+%% \stopxmlsetups
 
-%MMLMROOT
-\startxmlsetups xml:capdm:mmlmroot
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMROOT
+%% \startxmlsetups xml:capdm:mroot
+%%  \xmlflush{#1}
+%% \stopxmlsetups
 
-%MMLMMULTISCRIPTS
-\startxmlsetups xml:capdm:mmlmmultiscripts
- \xmlflush{#1}
-\stopxmlsetups
+%% %MMLMMULTISCRIPTS
+%% \startxmlsetups xml:capdm:mmultiscripts
+%%  \xmlflush{#1}
+%% \stopxmlsetups
 
 
 
