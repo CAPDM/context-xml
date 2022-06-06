@@ -63,7 +63,7 @@
         marking=empty,
 %main dimensions
         topspace=10mm, %page edge to top of header
-	height=265mm, %top of header to bottom of footer
+	height=275mm, %top of header to bottom of footer
         backspace=30mm, %page edge to text
 	width=150mm, %text width
 %headers and footers (all within height)
@@ -92,6 +92,23 @@
 
 \definelayout[landscapepage][topspace=3pc,height=36.5pc,width=59pc,backspace=1.5pc,leftmargin=0pc]
 
+\setupbackgrounds[page][background=]
+\defineoverlay[essentialfooterbackground][\setups{essentialfooterbackground}]
+\startsetups essentialfooterbackground
+     \vbox to \paperheight \bgroup
+         \vskip15.5mm
+         \hskip0mm
+         \framed[frame=off,bottomframe=on,offset=overlay,
+                 framecolor=ULIPbluefifty,rulethickness=16pt,
+                 height=0mm,width=211mm]{}
+         \vskip264.5mm
+         \hskip0mm
+         \framed[frame=off,bottomframe=on,offset=overlay,
+                 framecolor=ULIPbluefifty,rulethickness=32pt,
+                 height=0mm,width=211mm]{}
+         \vss
+     \egroup
+\stopsetups
 
 %Symbols
 
@@ -113,6 +130,7 @@
  \xmlsetfunction {\xmldocument}{colspec}{userdata.xmlfunctions.colspec}
  \xmlsetfunction {\xmldocument}{row}{userdata.xmlfunctions.row}
  \xmlsetfunction {\xmldocument}{entry}{userdata.xmlfunctions.entry}
+ \xmlsetfunction {\xmldocument}{chapter}{userdata.xmlfunctions.chapter}
 \stopxmlsetups
 
 \xmlregisterdocumentsetup{capdm}{xml:capdm:base}
@@ -154,26 +172,41 @@ end
 
 
 \startxmlsetups xml:capdm:book
- \setupheader[state=high]
- \cbox{\hsize=\makeupwidth\ss\tfd\bf\color[ULIPblue]{\xmlfirst{#1}{/title}}}
- \page[yes]
- \setupheader[state=high]
  \setvariable{book}{title}{\xmlfirst{#1}{/title}}
- \xmlall{#1}{/!title}
+ \setvariable{book}{subtitle}{\xmlfirst{#1}{/subtitle}}
+ \xmlall{#1}{/!(title|subtitle|bookinfo|preface)}
 \stopxmlsetups
 
-\setuphead[chapter][number=no,header=high,style=\tfe\ss,color=ULIPblue]
+\startsetups[chapter:before]
+ \defineoverlay[Cover][\overlayfigure{ulipcoverpagebackground}]
+ \setupbackgrounds[page][background=Cover,state=start]
+ \hbox{}\vskip50mm
+ \color[white]{\tfe\getvariable{book}{title}}
+ \vskip5mm
+ \color[ULIPbluefifty]{\tfc\getvariable{book}{subtitle}}
+ \vskip20mm
+\stopsetups
+
+\startsetups[chapter:after]
+ \page[right]
+ \setupbackgrounds[page][background=,state=stop]
+ \setupfootertexts[text][\getvariable{book}{title}][\completepagenumber][\getvariable{book}{title}][\completepagenumber]
+ \setupheadertexts[text][][{Topic~\getmarking[chapternumber]\quad{}\getmarking[chapter]}][][{Topic~\getmarking[chapternumber]\quad{}\getmarking[chapter]}]
+\stopsetups
+
+\setuphead[chapter][header=high,textstyle=\tfd,numberstyle=\tfb\bf,color=white,distance=2em,page=yes,before=\directsetup{chapter:before},after=\directsetup{chapter:after}]
+\setuplabeltext[en][chapter=Topic~]
+
 \setupfooter[text][color=ULIPblue,style=\rm\tfx]
+\setupheader[text][color=ULIPblue,style=\bf\tfx]
 
-\startxmlsetups xml:capdm:chapter
- \startchapter[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
-  \setupfootertexts[text][\getvariable{book}{title}][\completepagenumber][\getvariable{book}{title}][\completepagenumber]
-  \xmlall{#1}{/!title}
- \stopchapter
- \page[yes]
-\stopxmlsetups
+%%For
+%%
+%% \startxmlsetups xml:capdm:chapter
+%%
+%% see ulip-hierarchies.lua
 
-\setuphead[section,subsection,subsubsection,subsubsubsection][color=ULIPblue]
+\setuphead[section,subsection,subsubsection,subsubsubsection][color=ULIPblue,align={nothyphenated,verytolerant}]
 
 \setuphead[section][number=no,style=\ss\tfd]
 
@@ -185,8 +218,9 @@ end
 
 \startsetups essentialreading
  \setupbackgrounds[paper][background=color,backgroundcolor=ULIPpurplefive]
- \setupbackgrounds[footer][text][background=color,backgroundcolor=ULIPblue]
+ \setupbackgrounds[page][background=essentialfooterbackground]
  \setupfooter[text][color=white]
+ \setupheader[text][color=white]
  \switchtobodyfont[BKfonts,11pt]\rm
 \stopsetups
 
@@ -194,7 +228,11 @@ end
  \pagebreak[yes]
  \start
  \setup[essentialreading]
- \setupfootertexts[text][{\inframed[frame=off,align={flushleft,nothyphenated,verytolerant,lohi},width=30pc]{\xmlfirst{#1}{/sect1info/legalnotice[@role='bottom']/para}\vskip2pt}}][\completepagenumber][{\inframed[frame=off,align={flushright,nothyphenated,verytolerant,lohi},width=30pc]{\xmlfirst{#1}{/sect1info/legalnotice[@role='bottom']/para}\vskip2pt}}][\completepagenumber]
+ \setupfootertexts[text]
+        [{\inframed[frame=off,align={flushleft,nothyphenated,verytolerant,lohi},width=30pc]{\xmlfirst{#1}{/sect1info/legalnotice[@role='bottom']/para}\vskip2pt}}]
+        [\completepagenumber]
+        [{\inframed[frame=off,align={flushright,nothyphenated,verytolerant,lohi},width=30pc]{\xmlfirst{#1}{/sect1info/legalnotice[@role='bottom']/para}\vskip2pt}}]
+        [\completepagenumber]
  \startsection[reference=\xmlatt{#1}{id},title=\xmlfirst{#1}{/title}]
   \framed[frame=of,background=color,backgroundcolor=ULIPblue,align={flushleft,nothyphenated,verytolerant,lohi},width=broad,offset=3pt]{\color[white]{\switchtobodyfont[helvetica]\tfx\xmlfirst{#1}{/sect1info/legalnotice[@role='top']/para}}}
   \blank
@@ -301,11 +339,13 @@ end
 \stopsetups
 
 \startxmlsetups xml:capdm:uqfactivity
- \pagebreak[preference]
- \startActivityTitleBackground
-  \startActivity[title=\xmlfirst{#1}{/title}]
- \stopActivityTitleBackground
- \vskip-16pt
+ \xmldoif{#1}{/title}{
+  \pagebreak[preference]
+  \startActivityTitleBackground
+   \startActivity[title=\xmlfirst{#1}{/title}]
+  \stopActivityTitleBackground
+  \vskip-16pt
+ }
  \startActivityBackground
   \start
    \setup[Activity]
@@ -320,20 +360,40 @@ end
  \xmlflush{#1}
 \stopxmlsetups
 
+\definestartstop
+  [uqfexdent]
+  [before={\startnarrower[left]\setupindenting[-\leftskip,yes]},
+   after=\stopnarrower]
+
 %UQFCONTENT
 \startxmlsetups xml:capdm:uqfcontent
- \xmlflush{#1}
+ \xmldoifelse{#1}{ancestor::task}{
+  \startuqfexdent
+   {\color[ULIPblue]{\bullet\hskip3mm}}
+   \xmlflush{#1}
+  \stopuqfexdent
+ }{
+  \xmlflush{#1}
+ }
  \blank[big,samepage]
- \startalignment[middle]
-  \color[ULIPblue]{\tfc\symbol[fontawesome][comments]}
- \stopalignment
- \blank[big]
+ \xmldoif{#1}{ancestor::activity}{
+  \startalignment[middle]
+   \color[ULIPblue]{\tfc\symbol[fontawesome][comments]}
+  \stopalignment
+  }
 \stopxmlsetups
 
 %UQFANSWERTEMPLATE
 \startxmlsetups xml:capdm:uqfanswerTemplate
  \pagebreak[preference]
  \xmlflush{#1}
+\stopxmlsetups
+
+%UQFANSOPT
+\startxmlsetups xml:capdm:uqfansopt
+ \xmldoif{#1}{ancestor::!task[@role='dwb planner']}{
+  \xmlflush{#1}
+ }
 \stopxmlsetups
 
 
@@ -437,11 +497,19 @@ end
  \xmlflush{#1}
 \stopxmlsetups
 
-\registerctxluafile{ulip-tables}{}
+%% For
+%%
+%% \startxmlsetups xml:capdm:tgroup
+%% \startxmlsetups xml:capdm:colspec
+%% \startxmlsetups xml:capdm:row
+%% \startxmlsetups xml:capdm:entry
+%%
+%% see ulip-tables.lua
+
 
 %Figures
 
-\setupexternalfigures[directory=C:/Work/svn/ULIP repo/Xternal/pearson/pearson-atrill,maxwidth=0.95\textwidth]
+\setupexternalfigures[directory={C:/Work/github/context-xml/ulip/resources,C:/Work/svn/ULIP repo/Xternal/pearson/pearson-atrill}]
 
 \definefloat[informalFigure][figure]
 \setupfloat[informalFigure][location=center,background=color,backgroundcolor=white,frame=on,framecolor=ULIPblue,boffset=6pt]
@@ -485,12 +553,12 @@ end
 \xmlregisterdocumentsetup{capdm}{xml:capdm:images}
 
 \startxmlsetups xml:capdm:imagedata:entityref
- \starttexcode\externalfigure[\xmlatt{#1}{entityref}][conversion=mp]\stoptexcode
+ \starttexcode\externalfigure[\xmlatt{#1}{entityref}][conversion=mp,maxwidth=0.95\textwidth]\stoptexcode
  \xmlflush{#1}
 \stopxmlsetups
 
 \startxmlsetups xml:capdm:imagedata:fileref
- \starttexcode\externalfigure[\xmlatt{#1}{fileref}][conversion=mp]\stoptexcode
+ \starttexcode\externalfigure[\xmlatt{#1}{fileref}][conversion=mp,maxwidth=0.95\textwidth]\stoptexcode
  \xmlflush{#1}
 \stopxmlsetups
 
@@ -627,7 +695,11 @@ end
 \stopxmlsetups
 
 \startxmlsetups xml:capdm:link
- \color[ULIPblue]{\xmlflush{#1}}% \about[\xmlatt{#1}{linkend}]
+ \color[ULIPblue]{ \symbol[fontawesome][external-link] \xmlflush{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:capdm:olink
+ \color[ULIPblue]{ \symbol[fontawesome][external-link] \xmlflush{#1}}
 \stopxmlsetups
 
 %Dump
@@ -853,22 +925,6 @@ end
  \xmlflush{#1}
 \stopxmlsetups
 
-%% %THEAD
-%% \startxmlsetups xml:capdm:thead
-%%  \xmlflush{#1}
-%% \stopxmlsetups
-
-%OLINK
-\startxmlsetups xml:capdm:olink
- \xmlflush{#1}
-\stopxmlsetups
-
-
-%% %LEARNOBJ
-%% \startxmlsetups xml:capdm:learnobj
-%%  \xmlflush{#1}
-%% \stopxmlsetups
-
 %VIDEODATA
 \startxmlsetups xml:capdm:videodata
  \xmlflush{#1}
@@ -1015,9 +1071,9 @@ end
 %% \stopxmlsetups
 
 %BOOKINFO
-\startxmlsetups xml:capdm:bookinfo
- \xmlflush{#1}
-\stopxmlsetups
+%% \startxmlsetups xml:capdm:bookinfo
+%%  \xmlflush{#1}
+%% \stopxmlsetups
 
 %% %VARLISTENTRY
 %% \startxmlsetups xml:capdm:varlistentry
@@ -1476,11 +1532,6 @@ end
 \stopxmlsetups
 \xmlregisterdocumentsetup{capdm}{xml:capdm:uqfnamespace}
 
-%UQFANSOPT
-\startxmlsetups xml:capdm:uqfansopt
- \xmlflush{#1}
-\stopxmlsetups
-
 %UQFSTATEMENT
 \startxmlsetups xml:capdm:uqfstatement
  \xmlflush{#1}
@@ -1706,6 +1757,10 @@ end
 %%  \xmlflush{#1}
 %% \stopxmlsetups
 
+
+\registerctxluafile{ulip-tables}{}
+
+\registerctxluafile{ulip-hierarchies}{}
 
 
 %Process

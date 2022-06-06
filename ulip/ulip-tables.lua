@@ -171,19 +171,23 @@ function userdata.xmlfunctions.entry (t)
    -- present, the default value of '0' (no colsep)
    local tcolsep = (tablecolseplookup[xml.attribute(t,"/","colsep")] or tablecolseplookup[tcolspeccolsep] or tablecolseplookup[xml.attribute(t,"../../../","colsep")] or tablecolseplookup[xml.attribute(t,"../../../../","colsep")] or 'off')
    
-   --frame testing
+   --extra frame seps
    local ttopframe = 'off'
    if (tablerowtracker == 1) and ((xml.attribute(t,"../../../../","frame") == 'top') or (xml.attribute(t,"../../../../","frame") == 'topbot') or (xml.attribute(t,"../../../../","frame") == 'all')) then
       ttopframe='on'
    end
+   local tleftframe = 'off'
+   if (cellcount == 1) and ((xml.attribute(t,"../../../../","frame") == 'sides') or (xml.attribute(t,"../../../../","frame") == 'all')) then
+      tleftframe='on'
+   end
 
    -- finally we output the table cells and their formatting, TH if in thead, TD otherwise
    if intablehead then
-      context.bTH({nr=trows,nc=tcols,width=twidth,align=talign,bottomframe=trowsep,rightframe=tcolsep,topframe=ttopframe})
+      context.bTH({nr=trows,nc=tcols,width=twidth,align=talign,bottomframe=trowsep,rightframe=tcolsep,topframe=ttopframe,leftframe=tleftframe})
       lxml.flush(t)
       context.eTH()
    else
-      context.bTD({nr=trows,nc=tcols,width=twidth,align=talign,aligncharacter=talignchar,bottomframe=trowsep,rightframe=tcolsep,topframe=ttopframe})
+      context.bTD({nr=trows,nc=tcols,width=twidth,align=talign,aligncharacter=talignchar,bottomframe=trowsep,rightframe=tcolsep,topframe=ttopframe,leftframe=tleftframe})
       lxml.flush(t)
       context.eTD()
    end
