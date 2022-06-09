@@ -131,6 +131,8 @@
  \xmlsetfunction {\xmldocument}{row}{userdata.xmlfunctions.row}
  \xmlsetfunction {\xmldocument}{entry}{userdata.xmlfunctions.entry}
  \xmlsetfunction {\xmldocument}{chapter}{userdata.xmlfunctions.chapter}
+ \xmlsetfunction {\xmldocument}{blank}{userdata.xmlfunctions.blank}
+ \xmlsetfunction {\xmldocument}{videodata}{userdata.xmlfunctions.videodata}
 \stopxmlsetups
 
 \xmlregisterdocumentsetup{capdm}{xml:capdm:base}
@@ -267,10 +269,10 @@ end
  \stopsubsubsubsection
 \stopxmlsetups
 
-%BLANK
-\startxmlsetups xml:capdm:blank
- \xmlflush{#1}
-\stopxmlsetups
+%% %BLANK
+%% \startxmlsetups xml:capdm:blank
+%%  \framed[width=5em,frame=off,bottomframe=on]{\xmlflush{#1}}
+%% \stopxmlsetups
 
 %Features
 
@@ -300,11 +302,11 @@ end
 
 \startsetups Example
  \TableWidth=\hsize\advance\TableWidth by-\leftskip\advance\TableWidth by-\rightskip
- \setupTABLE[leftmargindistance=12pt]
+ \setupTABLE[split=no]
 \stopsetups
 
 \startxmlsetups xml:capdm:example
- \pagebreak[preference]
+ \pagebreak[bigpreference]
  \startExampleTitleBackground
   \startExample[title=\xmlfirst{#1}{/title}]
  \stopExampleTitleBackground
@@ -340,7 +342,7 @@ end
 
 \startxmlsetups xml:capdm:uqfactivity
  \xmldoif{#1}{/title}{
-  \pagebreak[preference]
+  \pagebreak[bigpreference]
   \startActivityTitleBackground
    \startActivity[title=\xmlfirst{#1}{/title}]
   \stopActivityTitleBackground
@@ -474,7 +476,7 @@ end
 
 \newdimen\TableWidth
 \TableWidth=\hsize
-\setupTABLE[boffset=.15em,toffset=.15em,frame=off,split=yes]
+\setupTABLE[boffset=.15em,toffset=.15em,frame=off,split=yes,framecolor=ULIPblue]
 
 \startxmlsetups xml:capdm:informaltable
  \blank[small,preference]
@@ -568,22 +570,28 @@ end
 
 %VIDEOOBJECT
 \startxmlsetups xml:capdm:videoobject
- \xmldoifelse{#1}{../textobject}{
-  \margintitle{\vskip-16pt\color[ULIPblue]{\tfc\symbol[fontawesome][film]}}
- }{
-  \margintitle{\vskip-18pt\color[ULIPblue]{\tfc\symbol[fontawesome][film]}}
-  \startsidebar[videotranscript]
-   \color[ULIPblue]{\tfx Video (no transcript)}
-  \stopsidebar
- }
+ %% \xmldoifelse{#1}{../textobject}{
+ %%  \margintitle{\vskip-16pt\color[ULIPblue]{\tfc\symbol[fontawesome][film]}}
+ %% }{
+ %%  \margintitle{\vskip-18pt\color[ULIPblue]{\tfc\symbol[fontawesome][film]}}
+ %%  \startsidebar[videotranscript]
+ %%   \color[ULIPblue]{\tfx Video (no transcript)}
+ %%  \stopsidebar
+ %% }
+ \xmlflush{#1}
 \stopxmlsetups
+
+%% %VIDEODATA
+%% \startxmlsetups xml:capdm:videodata
+%%  \llap{\color[ULIPblue]{\tfc\symbol[fontawesome][film]}\quad}\vskip-24pt\vtop{\externalfigure[https://dc3grvivwfwfw.cloudfront.net/videostore/bam010/images/bam010_topic01_intro.jpg][width=.7\hsize,framecolor=ULIPblue,frame=on]}
+%% \stopxmlsetups
 
 %TEXTOBJECT
 \startxmlsetups xml:capdm:textobject
- \startsidebar[videotranscript]
-  \tfx\color[ULIPblue]{Video transcript:}\par
-  \xmlflush{#1}
- \stopsidebar
+ %% \startsidebar[videotranscript]
+ %%  \tfx\color[ULIPblue]{Video transcript:}\par
+ %%  \xmlflush{#1}
+ %% \stopsidebar
 \stopxmlsetups
 
 
@@ -866,7 +874,9 @@ end
 
 %BLOCKQUOTE
 \startxmlsetups xml:capdm:blockquote
- \xmlflush{#1}
+ \startnarrower[middle]
+  \xmlflush{#1}
+ \stopnarrower
 \stopxmlsetups
 
 
@@ -922,11 +932,6 @@ end
 
 %COMPUTEROUTPUT
 \startxmlsetups xml:capdm:computeroutput
- \xmlflush{#1}
-\stopxmlsetups
-
-%VIDEODATA
-\startxmlsetups xml:capdm:videodata
  \xmlflush{#1}
 \stopxmlsetups
 
@@ -1766,5 +1771,5 @@ end
 %Process
 
 \starttext
-\xmlprocessfile{capdm}{C:/Work/svn/ULIP repo/bam010/ulip-bam010-wb-test.xml}{}
+\xmlprocessfile{capdm}{C:/Work/svn/ULIP repo/bam010/ulip-bam010-wb-test-full.xml}{}
 \stoptext

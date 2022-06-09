@@ -152,9 +152,12 @@ function userdata.xmlfunctions.entry (t)
 
    -- default trowsep is off
    local trowsep = 'off'
+   -- if this cell has morerows specified then the calculation for the bottom frame needs to
+   -- take that into account
+   local adjustedtablerowtracker = tablerowtracker + (t.at.morerows or 0)
    -- if the enclosing table/informaltable has a frame attribute set to all, topbot or bottom,
    -- and this is the last row in the table, then that overrides any rowsep value
-   if (tablerowtracker == tablerowtotal) and ((xml.attribute(t,"../../../../","frame") == 'bottom') or (xml.attribute(t,"../../../../","frame") == 'topbot') or (xml.attribute(t,"../../../../","frame") == 'all')) then
+   if (adjustedtablerowtracker == tablerowtotal) and ((xml.attribute(t,"../../../../","frame") == 'bottom') or (xml.attribute(t,"../../../../","frame") == 'topbot') or (xml.attribute(t,"../../../../","frame") == 'all')) then
       trowsep = 'on'
    else
       -- otherwise we build the rowsep: this entry's rowsep attribute, or if that isn't present,
